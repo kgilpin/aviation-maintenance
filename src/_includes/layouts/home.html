@@ -1,7 +1,4 @@
-{% extends "layouts/base.html" %} 
-
-{% block content %}
-{% include "partials/header.html" %}
+{% extends "layouts/base.html" %} {% block content %} {% include "partials/header.html" %}
 
 <!-- Hero Section -->
 <section class="hero">
@@ -10,21 +7,18 @@
 </section>
 
 <!-- Main Content -->
-<main>
-  {{ content | safe }}
-</main>
+<main>{{ content | safe }}</main>
 
 <!-- Contact Section -->
 <section class="contact-section">
-  <h2>Contact Information</h2>
   <div class="contact-details">
     <div>
-      <p><strong>Phone:</strong> {{ phone }}</p>
-      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Phone:</strong> {{ contact.phone }}</p>
+      <p><strong>Email:</strong> {{ contact.email }}</p>
     </div>
     <div>
-      <p><strong>Address:</strong> {{ address }}</p>
-      <p><strong>Hours:</strong> {{ hours }}</p>
+      <p><strong>Address:</strong> {{ contact.address }}</p>
+      <p><strong>Hours:</strong> {{ contact.hours }}</p>
     </div>
   </div>
 </section>

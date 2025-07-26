@@ -1,6 +1,16 @@
 {
   "permissions": {
-    "allow": ["WebFetch(domain:*)"],
+    "allow": [
+      "WebFetch(domain:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:localhost)",
+      "WebFetch(domain:localhost:8080)",
+      "WebFetch(domain:localhost:8081)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cp:*)"
+    ],
     "deny": []
   }
 }

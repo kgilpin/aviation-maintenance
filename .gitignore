@@ -13,3 +13,5 @@ node_modules
 dist
 src/_includes/css
 
+# Crawled sites
+crawls

@@ -1,3 +1,26 @@
-<header>
-  <img src="/images/logo.png" alt="Logo" />
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo-section">
+      <a href="/" class="logo-link">
+        <img src="{{ site.logo.src }}" alt="{{ site.logo.alt }}" width="{{ site.logo.width }}" height="{{ site.logo.height }}" class="logo-image" />
+        <span class="site-name">{{ site.name }}</span>
+      </a>
+    </div>
+    
+    <nav class="main-navigation" role="navigation" aria-label="Main navigation">
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        {% for item in navigation.primary %}
+        <li class="nav-item">
+          <a href="{{ item.url }}" class="nav-link{% if item.active %} active{% endif %}">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>

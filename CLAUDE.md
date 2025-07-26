@@ -38,9 +38,67 @@ This is a static website generator for aviation maintenance websites built with 
 - Images are copied through to output via passthrough copy
 - Output goes to `dist/` directory
 
-### Current Implementation
+# Site Crawl
 
-- Basic homepage with logo branding
-- Header partial with logo
-- Responsive base layout structure
-- Content managed through Markdown with front matter
+A crawl of the original site is performed to gather content and structure. The crawl results are stored in the `crawls/` directory. When asked to update the site, check the crawl to see what the source / original site looks like.
+
+## Crawled images
+
+When using crawled images, copy them to the `src/images/` directory and reference them in your templates. The images will be optimized and copied to the `dist/images/` directory during the build process.
+
+## Crawled styles
+
+Make a best effort to replicate the styles from the crawled site. Use the `src/css/` directory for your stylesheets.
+
+# Site Purpose
+
+Create a professional aviation maintenance website while using modern static site architecture.
+
+## Target Audience
+
+- Aircraft owners needing maintenance services
+- Aviation professionals seeking FAA-certified maintenance
+- Customers looking for reliable, experienced aviation services
+
+## Key Messaging Themes
+
+1. **Experience & Credibility** - 44+ years in business, FAA-designated representative
+2. **Regulatory Compliance** - Focus on FAA certifications and proper documentation
+3. **Location Advantage** - Plymouth, MA location between Boston and Cape Cod
+4. **Customer Relationships** - Long-term customer testimonials highlighting trust and reliability
+5. **Aircraft Maintenance Services** - Emphasizing comprehensive, professional maintenance
+
+## Section Implementation Order
+
+1. **Hero Section** - Primary brand messaging and CTA
+2. **Navigation Cards** - Visual site navigation
+3. **Company Overview** - Credibility and positioning
+4. **About Us** - Background and location advantages
+5. **Services Detail** - Specific FAA services offered
+6. **Testimonials** - Customer validation and social proof
+7. **Footer Contact** - Contact information and location map
+
+## Technical Architecture
+
+- **Static Site Generator**: Eleventy (11ty)
+- **Templating**: Nunjucks
+- **Data Management**: JSON files in `src/_data/`
+- **Content**: Markdown with front matter
+- **Styling**: CSS with responsive design
+- **Images**: Optimized web formats in `src/images/`
+
+## Data Structure Requirements
+
+- Contact information centralized in `contact.json`
+- Company information in `company.json`
+- Services data in `services.json`
+- Testimonials in `testimonials.json`
+- Navigation structure in `navigation.json`
+
+## Design Principles
+
+- **Professional**: Clean, trustworthy appearance
+- **Responsive**: Mobile-first design approach
+- **Accessible**: WCAG compliance for aviation industry standards
+- **Performance**: Optimized images and minimal JavaScript
+- **SEO-Friendly**: Proper heading structure and meta tags

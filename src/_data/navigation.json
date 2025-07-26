@@ -1,0 +1,24 @@
+{
+  "primary": [
+    {
+      "text": "Home",
+      "url": "/",
+      "active": true
+    },
+    {
+      "text": "About", 
+      "url": "/about",
+      "active": false
+    },
+    {
+      "text": "Services",
+      "url": "/services", 
+      "active": false
+    },
+    {
+      "text": "Contact",
+      "url": "/contact",
+      "active": false
+    }
+  ]
+}

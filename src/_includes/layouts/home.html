@@ -2,8 +2,28 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>{{ tagline }}</h1>
-  <p class="subtitle">{{ subtitle }}</p>
+  <div class="hero-content">
+    <h1>{{ hero.headline }}</h1>
+    <p class="hero-subtitle">{{ hero.subheading }}</p>
+    <a href="{{ hero.cta_link }}" class="hero-button">{{ hero.cta_text }}</a>
+  </div>
+</section>
+
+<!-- Navigation Cards Section -->
+<section class="navigation-cards">
+  <div class="container">
+    <div class="nav-cards-grid">
+      {% for card in navigation_cards %}
+      <a href="{{ card.link }}" class="nav-card" aria-label="Navigate to {{ card.title }} page">
+        <div class="nav-card-image" style="background-image: url('{{ card.image }}');">
+          <div class="nav-card-overlay">
+            <h3 class="nav-card-title">{{ card.title }}</h3>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 <!-- Main Content -->

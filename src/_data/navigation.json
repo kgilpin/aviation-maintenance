@@ -2,23 +2,36 @@
   "primary": [
     {
       "text": "Home",
-      "url": "/",
-      "active": true
+      "url": "/"
     },
     {
       "text": "About", 
-      "url": "/about",
-      "active": false
+      "url": "/about"
     },
     {
       "text": "Services",
-      "url": "/services", 
-      "active": false
+      "url": "/services"
     },
     {
       "text": "Contact",
-      "url": "/contact",
-      "active": false
+      "url": "/contact"
+    }
+  ],
+  "cards": [
+    {
+      "title": "ABOUT",
+      "image": "/images/about.jpg",
+      "link": "/about"
+    },
+    {
+      "title": "SERVICES", 
+      "image": "/images/services.jpg",
+      "link": "/services"
+    },
+    {
+      "title": "CONTACT",
+      "image": "/images/contact.jpg",
+      "link": "/contact"
     }
   ]
 }

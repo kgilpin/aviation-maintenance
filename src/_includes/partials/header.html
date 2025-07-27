@@ -15,31 +15,11 @@
       </button>
       
       <ul class="nav-menu">
-        {% if about_navigation and page.url == '/about/' %}
-          {% for item in about_navigation.primary %}
+        {% for item in navigation.primary %}
           <li class="nav-item">
-            <a href="{{ item.url }}" class="nav-link{% if item.active %} active{% endif %}">{{ item.text }}</a>
+            <a href="{{ item.url }}" class="nav-link{% if item.url == page.url | trim_trailing_slash %} active{% endif %}">{{ item.text }}</a>
           </li>
-          {% endfor %}
-        {% elif services_navigation and page.url == '/services/' %}
-          {% for item in services_navigation.primary %}
-          <li class="nav-item">
-            <a href="{{ item.url }}" class="nav-link{% if item.active %} active{% endif %}">{{ item.text }}</a>
-          </li>
-          {% endfor %}
-        {% elif contact_navigation and page.url == '/contact/' %}
-          {% for item in contact_navigation.primary %}
-          <li class="nav-item">
-            <a href="{{ item.url }}" class="nav-link{% if item.active %} active{% endif %}">{{ item.text }}</a>
-          </li>
-          {% endfor %}
-        {% else %}
-          {% for item in navigation.primary %}
-          <li class="nav-item">
-            <a href="{{ item.url }}" class="nav-link{% if item.active %} active{% endif %}">{{ item.text }}</a>
-          </li>
-          {% endfor %}
-        {% endif %}
+        {% endfor %}
       </ul>
     </nav>
   </div>

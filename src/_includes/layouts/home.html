@@ -13,7 +13,7 @@
 <section class="navigation-cards">
   <div class="container">
     <div class="nav-cards-grid">
-      {% for card in navigation_cards %}
+      {% for card in navigation.cards %}
       <a href="{{ card.link }}" class="nav-card" aria-label="Navigate to {{ card.title }} page">
         <div class="nav-card-image" style="background-image: url('{{ card.image }}');">
           <div class="nav-card-overlay">

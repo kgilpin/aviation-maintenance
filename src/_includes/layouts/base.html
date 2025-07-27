@@ -86,9 +86,9 @@
       <div class="container">
         <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
           <ul class="footer-nav-menu">
-            {% for link in contact_page.footer.navigation.links %}
+            {% for item in navigation.primary %}
             <li class="footer-nav-item">
-              <a href="{{ link.url }}" class="footer-nav-link{% if link.active %} active{% endif %}">{{ link.text }}</a>
+              <a href="{{ item.url }}" class="footer-nav-link{% if item.url == page.url | trim_trailing_slash %} active{% endif %}">{{ item.text }}</a>
             </li>
             {% endfor %}
           </ul>

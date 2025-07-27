@@ -12,7 +12,8 @@
       "Bash(cp:*)",
       "Bash(npx:*)",
       "Bash(cat:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(md5sum:*)"
     ],
     "deny": []
   }

@@ -1,7 +1,7 @@
 {
   "hero": {
     "page_title": "Contact",
-    "background_image": "/images/contact-hero-bg.jpg",
+    "background_image": "/images/contact.jpg",
     "background_alt": "Yankee Aviation contact and customer service"
   },
   "contact_form": {
@@ -54,7 +54,7 @@
       }
     },
     "contact_image": {
-      "src": "/images/contact-headset.jpg",
+      "src": "/images/contact.jpg",
       "alt": "Professional aviation headset and communication equipment",
       "width": 640,
       "height": 500

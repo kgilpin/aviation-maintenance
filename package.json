@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "website-scraper": "^5.3.1"
+    "website-scraper": "^5.3.1",
+    "wrangler": "^4.26.0"
   }
 }

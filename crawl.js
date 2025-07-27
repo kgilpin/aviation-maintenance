@@ -1,41 +1,46 @@
-const scraper = require('website-scraper').default || require('website-scraper');
-const path = require('path');
+const scraper = require("website-scraper").default || require("website-scraper");
+const path = require("path");
+
+const domainName = "mikegoulianaviation.com";
 
 const options = {
-  urls: ['https://yankeeaviation.com/'],
-  directory: path.join(__dirname, 'crawls', 'yankeeaviation.com'),
+  urls: [`https://${domainName}/`],
+  directory: path.join(__dirname, "crawls", domainName),
   recursive: true,
   maxRecursiveDepth: 2,
-  filenameGenerator: 'bySiteStructure',
+  filenameGenerator: "bySiteStructure",
   requestConcurrency: 1,
   sources: [
-    {selector: 'img', attr: 'src'},
-    {selector: 'link[rel="stylesheet"]', attr: 'href'},
-    {selector: 'script', attr: 'src'},
-    {selector: 'a', attr: 'href'}
+    { selector: "img", attr: "src" },
+    { selector: 'link[rel="stylesheet"]', attr: "href" },
+    { selector: "script", attr: "src" },
+    { selector: "a", attr: "href" },
   ],
-  urlFilter: function(url) {
-    // Only crawl URLs from yankeeaviation.com domain
-    return url.includes('yankeeaviation.com');
+  urlFilter: function (url) {
+    return url.includes(domainName);
   },
-  resourceFilter: function(resource) {
+  resourceFilter: function (resource) {
     // Include all resources from the same domain
-    return resource.url.includes('yankeeaviation.com') || 
-           resource.url.startsWith('/') || 
-           resource.url.startsWith('./') ||
-           resource.url.startsWith('../');
-  }
+    return (
+      resource.url.includes(domainName) ||
+      resource.url.startsWith("/") ||
+      resource.url.startsWith("./") ||
+      resource.url.startsWith("../")
+    );
+  },
 };
 
-console.log('Starting crawl of yankeeaviation.com...');
-console.log('Output directory:', options.directory);
+console.log(`Starting crawl of ${domainName}...`);
+console.log("Output directory:", options.directory);
 
-scraper(options).then((result) => {
-  console.log('Crawl completed successfully!');
-  console.log(`Crawled ${result.length} resources:`);
-  result.forEach((resource, index) => {
-    console.log(`${index + 1}. ${resource.url} -> ${resource.filename}`);
+scraper(options)
+  .then((result) => {
+    console.log("Crawl completed successfully!");
+    console.log(`Crawled ${result.length} resources:`);
+    result.forEach((resource, index) => {
+      console.log(`${index + 1}. ${resource.url} -> ${resource.filename}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Crawl failed:", err);
   });
-}).catch((err) => {
-  console.error('Crawl failed:', err);
-});

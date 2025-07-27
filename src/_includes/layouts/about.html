@@ -1,0 +1,71 @@
+{% extends "layouts/base.html" %} {% block content %}
+
+<!-- Hero Section -->
+<section class="hero about-hero">
+  <div class="hero-content">
+    <h1>About</h1>
+  </div>
+</section>
+
+<!-- Tagline Section -->
+<section class="about-tagline">
+  <div class="container">
+    <h2 class="tagline-heading">
+      <span class="tagline-primary">An Established Full-Service</span>
+      <span class="tagline-secondary">Aviation Maintenance Facility</span>
+    </h2>
+  </div>
+</section>
+
+<!-- Team Profiles Section -->
+<section class="team-profiles">
+  <div class="container">
+    {% for member in team.members %}
+    <div class="team-member{% if loop.index % 2 == 0 %} reverse{% endif %}" data-member="{{ loop.index }}">
+      <div class="member-image">
+        <img src="{{ member.image.src }}" alt="{{ member.image.alt }}" width="{{ member.image.width }}" height="{{ member.image.height }}" loading="lazy" />
+      </div>
+      
+      <div class="member-content">
+        <h2 class="member-name">{{ member.name }}</h2>
+        <h3 class="member-title">{{ member.title }}</h3>
+        
+        {% if member.intro %}
+        <p class="member-intro">{{ member.intro }}</p>
+        {% endif %}
+        
+        {% if member.description %}
+        <p class="member-description">{{ member.description }}</p>
+        {% endif %}
+        
+        {% if member.detailed_bio %}
+        <button class="read-more-btn" data-target="bio-{{ loop.index }}" aria-expanded="false">
+          Read More <i class="fas fa-chevron-down"></i>
+        </button>
+        
+        <!-- Modal for detailed biography -->
+        <div class="bio-modal" id="bio-{{ loop.index }}" role="dialog" aria-labelledby="bio-title-{{ loop.index }}" aria-hidden="true">
+          <div class="modal-overlay" data-close-modal="bio-{{ loop.index }}"></div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 id="bio-title-{{ loop.index }}">{{ member.name }} - Detailed Biography</h3>
+              <button class="modal-close" data-close-modal="bio-{{ loop.index }}" aria-label="Close biography modal">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>{{ member.detailed_bio }}</p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Main Content -->
+<main>{{ content | safe }}</main>
+
+{% endblock %}

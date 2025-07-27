@@ -38,17 +38,29 @@ This is a static website generator for aviation maintenance websites built with 
 - Images are copied through to output via passthrough copy
 - Output goes to `dist/` directory
 
-# Site Crawl
+# Copying the site crawl
 
 A crawl of the original site is performed to gather content and structure. The crawl results are stored in the `crawls/` directory. When asked to update the site, check the crawl to see what the source / original site looks like.
 
-## Crawled images
+## Planning
+
+Start by creating a plan for each section of the site. Use the crawled content as a reference to create new Markdown files in the `src/` directory.
+
+For each page, create a set of plans in the `plans/[page]` directory.
+
+## Images
 
 When using crawled images, copy them to the `src/images/` directory and reference them in your templates. The images will be optimized and copied to the `dist/images/` directory during the build process.
 
-## Crawled styles
+## Styles
 
 Make a best effort to replicate the styles from the crawled site. Use the `src/css/` directory for your stylesheets.
+
+## Text
+
+When duplicating text from the crawled site, ensure that you maintain the same words and paragraphs. Use the crawled content as a reference to create new Markdown files in the `src/` directory.
+
+Externalize all text into JSON data files in the `src/_data/` directory.
 
 # Site Purpose
 

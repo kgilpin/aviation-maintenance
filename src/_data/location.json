@@ -19,5 +19,12 @@
     "45 minutes from Boston",
     "45 minutes from Cape Cod",
     "Located at Plymouth Municipal Airport"
-  ]
+  ],
+  "map": {
+    "embed_url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877.047118746543!2d-70.7313188!3d41.9087309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7eb3c68301ff0fe6!2sPYM-Plymouth%20Municipal%20Airport!5e0!3m2!1sen!2sph!4v1601380173054!5m2!1sen!2sph",
+    "width": "100%",
+    "height": "150",
+    "loading": "lazy",
+    "title": "Yankee Aviation Services Location Map"
+  }
 }

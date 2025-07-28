@@ -14,7 +14,10 @@
       "Bash(cat:*)",
       "Bash(ls:*)",
       "Bash(md5sum:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(git lfs:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }

@@ -220,6 +220,9 @@ function initScrollAnimations() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Add js-enabled class for progressive enhancement
+    document.body.classList.add('js-enabled');
+    
     window.slideshowInstance = new Slideshow();
     new MobileMenu();
     new ContactForm();

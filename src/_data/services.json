@@ -4,8 +4,8 @@
       "id": "flight-training",
       "title": "Flight Training",
       "description": "Take the next step in your aviation journey with our professional flight training programs. From student pilots to advanced certifications, our experienced instructors provide personalized lessons to help you achieve your goals.",
-      "image": "/images/5J6A0650_v=1740494543&width=1500.jpg",
-      "alt": "Flight Training Instruction",
+      "image": "/images/IMG_2389_1_v=1740494816&width=1500.heic",
+      "alt": "Flight Training Aircraft",
       "cta": {
         "text": "Book a Lesson!",
         "url": "/flight-training/"
@@ -15,7 +15,7 @@
       "id": "tours-photography",
       "title": "Tours & Photography",
       "description": "Discover the beauty of New England from the skies with our scenic flight tours. Capture breathtaking aerial photos of the coastline, cityscapes, and beyond with the help of our experienced pilots.",
-      "image": "/images/IMG_7798_v=1740775641&width=3200.jpg",
+      "image": "/images/IMG_8455_v=1740499098&width=1500.heic",
       "alt": "Scenic Flight Tours",
       "cta": {
         "text": "Book a Tour!",
@@ -26,7 +26,7 @@
       "id": "aircraft-rentals",
       "title": "Aircraft Rentals",
       "description": "Rent from our well-maintained fleet of aircraft for your next adventure. Whether you're training or flying solo, we offer a variety of planes to suit your needs.",
-      "image": "/images/5J6A0667_v=1740495019&width=3840.jpg",
+      "image": "/images/20240626_192256_v=1740698588&width=1500.jpg",
       "alt": "Aircraft Rental Fleet",
       "cta": {
         "text": "Rent a Plane!",
@@ -37,7 +37,7 @@
       "id": "fbo-services",
       "title": "FBO Services",
       "description": "Experience top-tier FBO services with our range of offerings, including fueling, de-icing, and ground support. We ensure your aircraft is ready for takeoff with the highest standards of care.",
-      "image": "/images/Titan_Fuel_v=1740585614&width=1500.jpg",
+      "image": "/images/BB535495-56A9-49C2-9665-1261A747BF85_v=1740495107&width=1500.heic",
       "alt": "FBO Ground Services",
       "cta": {
         "text": "Learn More!",
@@ -48,7 +48,7 @@
       "id": "pilot-resources",
       "title": "Pilot Resources",
       "description": "Access essential tools and information for pilots, including the FAA website, weather updates, live ATC, and more. Stay informed and prepared for your next flight with our comprehensive resources.",
-      "image": "/images/faa_v=1740509391&width=1500.png",
+      "image": "/images/3321532_v=1740698919&width=1500.jpg",
       "alt": "Pilot Resources and Tools",
       "cta": {
         "text": "Learn More!",

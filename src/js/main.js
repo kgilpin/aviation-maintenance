@@ -200,29 +200,17 @@ function initSmoothScrolling() {
 
 // Animation on scroll
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements with animation classes
+    // Simplified scroll animations - just ensure content is visible
     const animatedElements = document.querySelectorAll('.service-item, .welcome-content, .contact-form-wrapper');
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach(el => {
+        el.classList.add('animate-in');
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    });
 }
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Add js-enabled class for progressive enhancement
-    document.body.classList.add('js-enabled');
-    
     window.slideshowInstance = new Slideshow();
     new MobileMenu();
     new ContactForm();

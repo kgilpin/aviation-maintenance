@@ -1,11 +1,15 @@
 const scraper = require("website-scraper").default || require("website-scraper");
 const path = require("path");
 
-const domainName = "eagleeastaviation.com";
+const domainName = process.argv[2];
+if (!domainName) {
+  console.error("Usage: node crawl.js <domainName>");
+  process.exit(1);
+}
 
 const options = {
   urls: [`https://${domainName}/`],
-  directory: path.join(__dirname, "crawls", domainName),
+  directory: path.join(__dirname, "crawl"),
   recursive: true,
   maxRecursiveDepth: 2,
   filenameGenerator: "bySiteStructure",

@@ -44,9 +44,7 @@ A crawl of the original site is performed to gather content and structure. The c
 
 ## Planning
 
-Start by creating a plan for each section of the site. Use the crawled content as a reference to create new Markdown files in the `src/` directory.
-
-For each page, create a set of plans in the `plans/[page]` directory.
+When planning new work, create a set of plans in the `plans/[task]` directory.
 
 ## Images
 

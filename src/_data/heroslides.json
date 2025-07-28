@@ -1,0 +1,40 @@
+{
+  "slides": [
+    {
+      "image": "/images/Hanger_v=1741616783&width=3840.jpg",
+      "alt": "Eagle East Aviation Hangar",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "/images/IMG_1081_v=1740498634&width=3840.heic",
+      "alt": "Aircraft Cockpit Interior",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "/images/FullSizeRender_v=1740498890&width=3840.heic",
+      "alt": "Aircraft on Tarmac",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "/images/IMG_4716_v=1740495727&width=3840.heic",
+      "alt": "Aircraft Close-up View",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "/images/unnamed3214213_v=1740699016&width=3840.jpg",
+      "alt": "Aviation Scene",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "settings": {
+    "autoplay": true,
+    "interval": 5000,
+    "showDots": true,
+    "showArrows": false
+  }
+}

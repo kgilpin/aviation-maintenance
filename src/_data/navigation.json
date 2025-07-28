@@ -1,0 +1,44 @@
+{
+  "primary": [
+    {
+      "title": "Home",
+      "url": "/",
+      "id": "home"
+    },
+    {
+      "title": "Flight Training",
+      "url": "/flight-training/",
+      "id": "flight-training"
+    },
+    {
+      "title": "FBO Services",
+      "url": "/fbo-services/",
+      "id": "fbo-services"
+    },
+    {
+      "title": "Aircraft Rentals",
+      "url": "/aircraft-rentals/",
+      "id": "aircraft-rentals"
+    },
+    {
+      "title": "Scenic Tours & Photography",
+      "url": "/scenic-tours/",
+      "id": "scenic-tours-photography"
+    },
+    {
+      "title": "Pilot Resources",
+      "url": "/pilot-resources/",
+      "id": "pilot-resources"
+    },
+    {
+      "title": "The Lounge",
+      "url": "/lounge/",
+      "id": "the-lounge"
+    },
+    {
+      "title": "Contact Us",
+      "url": "/contact/",
+      "id": "contact-us"
+    }
+  ]
+}

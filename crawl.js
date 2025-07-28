@@ -1,7 +1,7 @@
 const scraper = require("website-scraper").default || require("website-scraper");
 const path = require("path");
 
-const domainName = "mikegoulianaviation.com";
+const domainName = "eagleeastaviation.com";
 
 const options = {
   urls: [`https://${domainName}/`],

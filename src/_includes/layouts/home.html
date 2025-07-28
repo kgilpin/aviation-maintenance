@@ -1,0 +1,95 @@
+---
+layout: layouts/base.html
+---
+
+<!-- Hero Slideshow -->
+<section class="hero-slideshow">
+    <div class="slideshow-container">
+        {% for slide in heroslides.slides %}
+        <div class="slide{% if loop.first %} active{% endif %}" data-slide="{{ loop.index0 }}">
+            <img src="{{ slide.image }}" alt="{{ slide.alt }}" loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
+            {% if slide.title or slide.description %}
+            <div class="slide-content">
+                {% if slide.title %}<h2>{{ slide.title }}</h2>{% endif %}
+                {% if slide.description %}<p>{{ slide.description }}</p>{% endif %}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        {% if heroslides.settings.showDots %}
+        <div class="slideshow-dots">
+            {% for slide in heroslides.slides %}
+            <button class="dot{% if loop.first %} active{% endif %}" onclick="currentSlide({{ loop.index }})" aria-label="Go to slide {{ loop.index }}"></button>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Welcome Section -->
+<section class="welcome-section">
+    <div class="container">
+        <div class="welcome-content">
+            <h1 class="welcome-heading">Welcome to {{ company.name }}</h1>
+            <div class="welcome-text">
+                <p>{{ company.description }}</p>
+                <p>{{ company.description2 }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services-section">
+    <div class="container">
+        {% for service in services.services %}
+        <div class="service-item{% if loop.index % 2 == 0 %} reverse{% endif %}">
+            <div class="service-image">
+                <img src="{{ service.image }}" alt="{{ service.alt }}" loading="lazy">
+            </div>
+            <div class="service-content">
+                <h2>{{ service.title }}</h2>
+                <p>{{ service.description }}</p>
+                <a href="{{ service.cta.url }}" class="btn btn-secondary">{{ service.cta.text }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-form-wrapper">
+            <h2>{{ contact.form.title }}</h2>
+            <form method="{{ contact.form.method }}" action="{{ contact.form.action }}" class="contact-form" netlify>
+                {% for field in contact.form.fields %}
+                <div class="form-field">
+                    <label for="{{ field.name }}" class="form-label">{{ field.label }}{% if field.required %} *{% endif %}</label>
+                    {% if field.type == "textarea" %}
+                    <textarea 
+                        id="{{ field.name }}" 
+                        name="{{ field.name }}" 
+                        placeholder="{{ field.placeholder }}"
+                        {% if field.required %}required{% endif %}
+                        {% if field.rows %}rows="{{ field.rows }}"{% endif %}
+                        class="form-input"></textarea>
+                    {% else %}
+                    <input 
+                        type="{{ field.type }}" 
+                        id="{{ field.name }}" 
+                        name="{{ field.name }}" 
+                        placeholder="{{ field.placeholder }}"
+                        {% if field.required %}required{% endif %}
+                        class="form-input">
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">{{ contact.form.submitText }}</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{{ content | safe }}

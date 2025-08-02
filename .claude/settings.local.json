@@ -17,7 +17,9 @@
       "Bash(true)",
       "Bash(git lfs:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(claude mcp:*)"
     ],
     "deny": []
   }

@@ -20,7 +20,9 @@
       "Bash(git commit:*)",
       "WebFetch(domain:docs.anthropic.com)",
       "Bash(claude mcp:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:css:prod:*)"
     ],
     "deny": []
   }

@@ -1,0 +1,46 @@
+{
+  "instructors": [
+    {
+      "id": "tim-campbell",
+      "name": "Tim Campbell",
+      "title": "Head Instructor/Owner, CFI",
+      "image": "Tim_Funny_v=1740511087&width=1500.jpg",
+      "description": "With over **40 years of aviation experience**, Tim is a passionate instructor dedicated to helping his students thrive. Known as **\"the best dead stick pilot around,\"** his expertise and calm demeanor make him an invaluable mentor. Whether you're just starting or advancing your training, Tim's knowledge and hands-on approach will set you up for success in the skies."
+    },
+    {
+      "id": "alex-hoff", 
+      "name": "Alex Hoff",
+      "title": "Instructor, CFII",
+      "image": "Alex_Website_Photo_v=1749222019&width=1500.jpg",
+      "description": "Alex is our newest instructor, blending a strong background in **sales, customer service, and motorsports.** With four years of flight experience and ten years as a race car team mechanic and pit crewman, Alex brings **energy, skill, and passion** to every lesson, making him a standout instructor."
+    },
+    {
+      "id": "liam-foley",
+      "name": "Liam Foley", 
+      "title": "Instructor, CFII",
+      "image": "233532_v=1740766675&width=1500.jpg",
+      "description": "A **Purdue University aviation graduate**, Liam is passionate about flying and dedicated to giving back to the aviation community. With a **wealth of knowledge** and a **contagious enthusiasm for learning**, he creates an engaging and supportive environment for his students, making every lesson both educational and inspiring."
+    },
+    {
+      "id": "nate-fanara",
+      "name": "Nate Fanara",
+      "title": "Instructor, CFII/MEI", 
+      "image": "Nate_Centerline_v=1740835362&width=1500.jpg",
+      "description": "Bringing a wealth of experience and a strong background from his service in the USMC, Nate's **discipline and determination** set him apart. His ability to adapt to different learning styles ensures that every student receives personalized, effective instruction. Recently earning his private pilot helicopter license and holding a Multi-Engine Instructor (MEI) certification, Nate combines his dedication and expertise to provide top-notch training."
+    },
+    {
+      "id": "sam-gregson",
+      "name": "Sam Gregson",
+      "title": "Instructor, CFII",
+      "image": "img_1_1740767947370_v=1740768122&width=1500.jpg",
+      "description": "Sam brings a strong aviation background, holding a degree in Aviation Operations and Management from Southern New Hampshire University. His blend of **technical expertise and industry knowledge** helps students develop both skill and confidence in the cockpit.\n\nWith a **patient teaching style** and a passion for flight, Sam is committed to guiding pilots at all levels toward their aviation goals."
+    },
+    {
+      "id": "nathan-underwood",
+      "name": "Nathan Underwood",
+      "title": "Instructor, CFII",
+      "image": "Nathan_Site_Picture_v=1750350814&width=1500.jpg", 
+      "description": "Nathan Underwood is a **homegrown pilot** who completed his training through **United Aviate Academy**. He is fluent in **Spanish** and a graduate of **UNH** with both undergraduate and **master's** **degrees**. Nathan brings **professionalism** and **passion** to flight instruction and is **eager to mentor** the next generation of aviators."
+    }
+  ]
+}

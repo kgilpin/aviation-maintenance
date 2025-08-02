@@ -1,0 +1,72 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<!-- Page Title Section -->
+<section class="py-8 sm:py-12">
+  <div class="section-container">
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-6">
+      {{ fboServices.page.title }}
+    </h1>
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-lg text-gray-600">
+        {{ fboServices.page.description }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="bg-white">
+  {% for section in fboServices.sections %}
+  <!-- {{ section.title }} Section -->
+  <section class="py-16{% if section.background != 'white' %} bg-{{ section.background }}{% endif %}">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {% if section.layout == 'image-left' %}
+        <div class="order-2 lg:order-1">
+          <img 
+            src="{{ section.image.src }}" 
+            alt="{{ section.image.alt }}" 
+            class="discovery-flight-image"
+          >
+        </div>
+        <div class="order-1 lg:order-2">
+        {% else %}
+        <div class="order-1 lg:order-1">
+        {% endif %}
+          <h2 class="section-title mb-6">
+            {{ section.title }}
+          </h2>
+          <div class="prose prose-lg max-w-none">
+            {% for paragraph in section.content %}
+            <p>{{ paragraph | safe }}</p>
+            {% endfor %}
+            
+            {% if section.services %}
+            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+              {% for service in section.services %}
+              <li><strong>{{ service.name }}</strong>: {{ service.description }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            
+            {% if section.closing %}
+            <p class="mt-6">{{ section.closing | safe }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% if section.layout == 'image-right' %}
+        <div class="order-2 lg:order-2">
+          <img 
+            src="{{ section.image.src }}" 
+            alt="{{ section.image.alt }}" 
+            class="discovery-flight-image"
+          >
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

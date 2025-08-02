@@ -16,3 +16,6 @@ src/_includes/css
 # Working files
 crawls
 diffs
+screenshots
+screenshot-*
+

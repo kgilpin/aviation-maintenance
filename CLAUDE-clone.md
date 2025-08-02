@@ -14,6 +14,10 @@ The project is a clone of an existing aviation maintenance website, with the goa
 - **Development server**: `npm start` - Starts Eleventy with live reload on file changes
 - **Build**: `npx @11ty/eleventy` - Builds the site to the `dist/` directory
 
+## Development Server
+
+While developing interactively with the developer, a hot-reloading local server is already setup and running. This allows for immediate feedback on changes made to the source files.
+
 ## Architecture
 
 ### Directory Structure

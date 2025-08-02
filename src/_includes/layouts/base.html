@@ -33,7 +33,7 @@
     {% include "partials/header.html" %}
     
     <main id="main-content" class="main-content" role="main">
-        {{ content | safe }}
+        {% block content %}{{ content | safe }}{% endblock %}
     </main>
     
     {% include "partials/footer.html" %}

@@ -22,7 +22,8 @@
       "Bash(claude mcp:*)",
       "Bash(node:*)",
       "Bash(npm install:*)",
-      "Bash(npm run build:css:prod:*)"
+      "Bash(npm run build:css:prod:*)",
+      "Bash(npm run build:eleventy:*)"
     ],
     "deny": []
   }

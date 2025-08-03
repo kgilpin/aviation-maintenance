@@ -11,6 +11,7 @@ This is a modern React + Vite application built with TypeScript, designed as a r
 - **Development server**: `npm run dev` - Starts Vite dev server with hot module replacement
 - **Build**: `npm run build` - Builds optimized production version  
 - **Preview**: `npm run preview` - Preview production build locally
+- **Crawl website**: `npm run crawl <domain>` - Crawl a website for content and assets using TypeScript crawler
 
 ## Development Server
 
@@ -116,6 +117,12 @@ import { usePageData } from '@/hooks/usePageData';
   - `localhost/` - Screenshots of local development
 - `take-screenshot.js` - Screenshot utility script (if available)
 
+### Website Crawler
+- `crawl.ts` - TypeScript website crawler for downloading complete websites
+- `crawl/` - Output directory for crawled website content (auto-generated)
+- **Usage**: `npm run crawl <domain>` - Example: `npm run crawl yankeeaviation.com`
+- **Features**: Recursively crawls websites up to 2 levels deep, downloads HTML, CSS, JS, images, and other assets
+
 ### Legacy Code Reference
 If present, a `eleventy/` directory may contain legacy static site generator code for reference purposes. The current React implementation in the main directory should be used for all active development.
 
@@ -203,6 +210,9 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Crawl a website for content
+npm run crawl <domain>
 ```
 
 ## Key Development URLs

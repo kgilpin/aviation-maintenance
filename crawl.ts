@@ -1,13 +1,16 @@
-const scraper = require("website-scraper").default || require("website-scraper");
-const path = require("path");
+import scraper from "website-scraper";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const domainName = process.argv[2];
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const domainName: string | undefined = process.argv[2];
 if (!domainName) {
-  console.error("Usage: node crawl.js <domainName>");
+  console.error("Usage: npx tsx crawl.ts <domainName>");
   process.exit(1);
 }
 
-const options = {
+const options: scraper.ScrapingOptions = {
   urls: [`https://${domainName}/`],
   directory: path.join(__dirname, "crawl"),
   recursive: true,
@@ -20,10 +23,10 @@ const options = {
     { selector: "script", attr: "src" },
     { selector: "a", attr: "href" },
   ],
-  urlFilter: function (url) {
+  urlFilter: function (url: string): boolean {
     return url.includes(domainName);
   },
-  resourceFilter: function (resource) {
+  resourceFilter: function (resource: scraper.Resource): boolean {
     // Include all resources from the same domain
     return (
       resource.url.includes(domainName) ||
@@ -38,13 +41,13 @@ console.log(`Starting crawl of ${domainName}...`);
 console.log("Output directory:", options.directory);
 
 scraper(options)
-  .then((result) => {
+  .then((result: scraper.Resource[]) => {
     console.log("Crawl completed successfully!");
     console.log(`Crawled ${result.length} resources:`);
-    result.forEach((resource, index) => {
+    result.forEach((resource: scraper.Resource, index: number) => {
       console.log(`${index + 1}. ${resource.url} -> ${resource.filename}`);
     });
   })
-  .catch((err) => {
+  .catch((err: Error) => {
     console.error("Crawl failed:", err);
   });

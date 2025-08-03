@@ -4,10 +4,8 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { cn } from '@/utils/cn';
 import type { TestimonialsSection as TestimonialsSectionType } from '@/data/types';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// Import Swiper styles - using basic import without specific modules
+import 'swiper/swiper-bundle.css';
 
 interface TestimonialsSectionProps {
   testimonials: TestimonialsSectionType;

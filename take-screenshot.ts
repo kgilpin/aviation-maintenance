@@ -63,11 +63,11 @@ async function takeScreenshot(): Promise<void> {
 
     // Try multiple strategies for loading the page
     try {
-      await page.goto(url, { waitUntil: "networkidle", timeout: 3000 });
+      await page.goto(url, { waitUntil: "networkidle", timeout: 5000 });
     } catch (error) {
       console.log("⚠️  Network idle timeout, trying with domcontentloaded...");
       try {
-        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 3000 });
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 5000 });
       } catch (error2) {
         console.log("⚠️  DOM content loaded timeout, trying with load event...");
         await page.goto(url, { waitUntil: "load", timeout: 45000 });
@@ -77,20 +77,20 @@ async function takeScreenshot(): Promise<void> {
     // Wait for page to be fully rendered with fallbacks
     try {
       await page.waitForLoadState("domcontentloaded");
-      await page.waitForLoadState("networkidle", { timeout: 3000 });
+      await page.waitForLoadState("networkidle", { timeout: 5000 });
     } catch (error) {
       console.log("⚠️  Network idle not achieved, continuing with current state...");
     }
 
     // Wait for main content elements to appear
     try {
-      await page.waitForSelector('main, .main, [role="main"], .page-width', { timeout: 3000 });
+      await page.waitForSelector('main, .main, [role="main"], .page-width', { timeout: 5000 });
     } catch (e) {
       console.log("⚠️  Main content selector not found, continuing...");
     }
 
     // Additional wait for any dynamic content, animations, and loading
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(5000);
 
     // Progressive scrolling to trigger all lazy loading like a user would
     const scrollHeight = await page.evaluate(() => document.body.scrollHeight);

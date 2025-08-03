@@ -209,3 +209,81 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   children: React.ReactNode;
   className?: string;
 }
+
+// Team Member Interfaces
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  imageAlt: string;
+  shortBio: string;
+  fullBio?: string;
+  credentials?: string[];
+  achievements?: string[];
+  specialties?: string[];
+  yearsWithCompany?: number;
+  personalInterests?: string[];
+  currentAircraft?: string;
+  education?: string[];
+}
+
+export interface TeamSection {
+  heading: string;
+  subheading?: string;
+  description?: string;
+  members: TeamMember[];
+}
+
+// About Page Content Interfaces
+export interface AboutHeroContent {
+  primaryHeading: string;
+  secondaryHeading?: string;
+  description: string;
+  backgroundImage?: string;
+  callToAction?: {
+    text: string;
+    link: string;
+  };
+}
+
+export interface CompanyHistoryContent {
+  heading: string;
+  description: string[];
+  highlights: string[];
+  timeline?: {
+    year: number;
+    event: string;
+  }[];
+  image?: string;
+  imageAlt?: string;
+}
+
+export interface AboutPageData {
+  hero: AboutHeroContent;
+  companyHistory: CompanyHistoryContent;
+  team: TeamSection;
+  seoMeta: {
+    title: string;
+    description: string;
+    keywords: string[];
+    ogImage?: string;
+  };
+}
+
+// Enhanced Company Interface Extensions
+export interface Award {
+  title: string;
+  year: number;
+  organization: string;
+  recipient: string;
+  description?: string;
+}
+
+export interface Certification {
+  name: string;
+  organization: string;
+  holder: string;
+  year?: number;
+  description?: string;
+}

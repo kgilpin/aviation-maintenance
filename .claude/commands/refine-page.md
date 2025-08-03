@@ -20,6 +20,10 @@ Then take a screenshot of the live site using `node take-screenshot.js [live-sit
 
 Compare the screenshots to identify differences between the local implementation and the live site. Also, inspect the relevant page(s) from the crawl to look for dynamic elements that may not be captured in screenshots, such as animations, hover effects, or responsive design changes.
 
+## Faithful replication of text and other content
+
+When cloning a page, ensure that all text content is faithfully replicated from the crawled content. Minor adjustments may be made for formatting or structure in order to fit into the site architecture or best practices of the technology components in use, but the core content should remain unchanged.
+
 ## Build a TODO list
 
 Create a TODO list of items to address based on the comparison, in order to make the site match the live site. Each fixup item should contain a priority: high, medium, or low.

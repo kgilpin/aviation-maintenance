@@ -36,6 +36,10 @@ Ensure that components are reused throughout the site to maintain consistency.
 
 Components should be styled using Tailwind CSS v3.
 
+## Faithful replication of text and other content
+
+When cloning a page, ensure that all text content is faithfully replicated from the crawled content. Minor adjustments may be made for formatting or structure in order to fit into the site architecture or best practices of the technology components in use, but the core content should remain unchanged.
+
 ## Saving the plan
 
 Save the plan in the directory `plans/[page-name]/[timestamp]`. The plan should consist of multiple files that are sequenced in a way that allows the developer to follow the steps to clone the page.

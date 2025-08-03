@@ -4,9 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static website generator for aviation maintenance websites built with Eleventy (11ty), a simple static site generator. The project generates HTML from Markdown content and Nunjucks templates.
-
-The project is a clone of an existing aviation maintenance website, with the goal of replicating its structure and content while modernizing the codebase.
+This is a static website generator for websites built with Eleventy (11ty), a simple static site generator. The project generates HTML from Markdown content and Nunjucks templates.
 
 ## Development Commands
 
@@ -17,6 +15,8 @@ The project is a clone of an existing aviation maintenance website, with the goa
 ## Development Server
 
 While developing interactively with the developer, a hot-reloading local server is already setup and running. This allows for immediate feedback on changes made to the source files.
+
+The development server can be expected at `http://localhost:8080`.
 
 ## Architecture
 

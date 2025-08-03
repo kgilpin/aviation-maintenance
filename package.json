@@ -7,8 +7,8 @@
     "build:eleventy": "npx eleventy",
     "build": "npm run build:css:prod && npm run build:eleventy",
     "build:css:prod": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
-    "start": "npm run build:css & npx eleventy --serve",
-    "dev": "concurrently \"npm run build:css\" \"npx eleventy --serve\""
+    "start": "npm run build:css & npx eleventy --serve --port 8080",
+    "dev": "concurrently \"npm run build:css\" \"npx eleventy --serve --port 8080\""
   },
   "keywords": [],
   "author": "",

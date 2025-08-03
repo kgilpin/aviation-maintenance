@@ -9,9 +9,15 @@ This is a modern React + Vite application built with TypeScript, designed as a r
 ## Development Commands
 
 - **Development server**: `npm run dev` - Starts Vite dev server with hot module replacement
-- **Build**: `npm run build` - Builds optimized production version  
+- **Build**: `npm run build` - Builds optimized production version
 - **Preview**: `npm run preview` - Preview production build locally
 - **Crawl website**: `npm run crawl <domain>` - Crawl a website for content and assets using TypeScript crawler
+- **Screenshot utility**: `npm run screenshot -- <page_url> [--output <output_file>]` - Capture screenshots of pages
+
+Notes on screenshots:
+
+- Always use `npm run screenshot -- <page_url> [--output <output_file>]` instead of running the script directly.
+- By convention, save screenshots in the `screenshots/` directory, organized by `live/` for reference sites and `localhost/` for local development.
 
 ## Development Server
 
@@ -55,85 +61,40 @@ The React development server runs with hot module replacement for instant update
 └── postcss.config.js     # PostCSS configuration
 ```
 
-### Component Architecture
-
-**Layout Components**:
-- `Layout.tsx` - Main app wrapper with SEO, accessibility, and structure
-- `Header.tsx` - Site header with branding and navigation
-- `Footer.tsx` - Footer with contact info and social media
-- `Navigation.tsx` - Responsive navigation with mobile menu
-
-**UI Components**:
-- `Button.tsx` - Reusable button with variants and external link support
-- Branding components for organization identity
-- Contact components for phone, email, address display
-- Form components and interactive elements
-
-**Section Components**:
-- `HeroSection.tsx` - Hero banner with background image and overlay
-- Content sections for different page areas
-- Gallery and media display components
-- Call-to-action and feature sections
-
-**Page Components**:
-- Individual page components combining multiple sections
-- `App.tsx` - Root application with providers
-
-### Data Management
-
-**Custom Hooks Pattern**:
-```typescript
-// Example: useCompanyData.ts
-import { CompanyData } from '@/data/types';
-import companyData from '@/data/company.json';
-
-export const useCompanyData = (): CompanyData => {
-  return useMemo(() => companyData as CompanyData, []);
-};
-```
-
-**TypeScript Interfaces**: Comprehensive type definitions in `src/data/types.ts` for:
-- Organization information
-- Navigation structure  
-- Contact details
-- Home page content
-- Media files
-- SEO metadata
-
 ### Path Aliases
 
 Uses `@/` prefix for clean imports:
+
 ```typescript
-import { Button } from '@/components/ui/Button';
-import { usePageData } from '@/hooks/usePageData';
+import { Button } from "@/components/ui/Button";
+import { usePageData } from "@/hooks/usePageData";
 ```
 
 ## Additional Resources
 
 ### Planning and Documentation
+
 - `plans/` - Directory for planning tasks and project documentation
 - `screenshots/` - Directory for storing visual comparisons and testing
   - `live/` - Screenshots of live/reference sites
   - `localhost/` - Screenshots of local development
-- `take-screenshot.js` - Screenshot utility script (if available)
 
 ### Website Crawler
+
 - `crawl.ts` - TypeScript website crawler for downloading complete websites
 - `crawl/` - Output directory for crawled website content (auto-generated)
 - **Usage**: `npm run crawl <domain>` - Example: `npm run crawl yankeeaviation.com`
 - **Features**: Recursively crawls websites up to 2 levels deep, downloads HTML, CSS, JS, images, and other assets
 
-### Legacy Code Reference
-If present, a `eleventy/` directory may contain legacy static site generator code for reference purposes. The current React implementation in the main directory should be used for all active development.
-
 ### Media Files
+
 Static media files are stored in `public/images/` and served directly by Vite. Media metadata may be documented in data files for reference when determining usage throughout the site.
 
 ## Technical Architecture
 
 - **Framework**: React 19 with TypeScript
 - **Build Tool**: Vite 7 with HMR and optimized builds
-- **Styling**: Tailwind CSS with custom design tokens
+- **Styling**: Tailwind CSS 3 with custom design tokens
 - **Data Management**: TypeScript interfaces with JSON imports
 - **State Management**: Custom React hooks for data access
 - **Routing**: Single-page application (extensible with React Router)
@@ -143,6 +104,7 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 ## Development Workflow
 
 ### Standard Development Process
+
 1. **Start Development**: `npm run dev`
 2. **Component Development**: Create/modify components in `src/components/`
 3. **Data Updates**: Modify JSON files in `src/data/`
@@ -151,6 +113,7 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 6. **Hot Reload**: Instant updates with Vite HMR
 
 ### Adding New Features
+
 1. **Create Component**: Add to appropriate `src/components/` subdirectory
 2. **Define Types**: Update `src/data/types.ts` if needed
 3. **Create Hook**: Add custom hook in `src/hooks/` for data access
@@ -158,6 +121,7 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 5. **Test**: Verify functionality and responsive design
 
 ### Styling Guidelines
+
 - **Primary**: Use Tailwind CSS utility classes
 - **Custom Styles**: Add to `src/index.css` for global styles
 - **Component Styles**: Use Tailwind utilities within components
@@ -177,6 +141,7 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 ## Best Practices
 
 ### React Development
+
 - **Use TypeScript**: Leverage type safety for all components and data
 - **Custom Hooks**: Centralize data access logic in custom hooks
 - **Component Composition**: Build complex UIs from simple, reusable components
@@ -185,12 +150,14 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 - **Performance**: Implement lazy loading and optimize bundle size
 
 ### Data Management
+
 - **Single Source of Truth**: JSON files serve as the primary data source
 - **Type Definitions**: Maintain comprehensive TypeScript interfaces
 - **Hook Pattern**: Use custom hooks for consistent data access
 - **Validation**: Implement runtime validation for data integrity
 
 ### Styling
+
 - **Utility-First**: Prefer Tailwind utilities over custom CSS
 - **Responsive Design**: Test across all device sizes
 - **Design Tokens**: Use consistent colors, spacing, and typography
@@ -201,11 +168,12 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 # Important Development Reminders
 
 ## Quick Start Commands
+
 ```bash
 # Start development server
 npm run dev
 
-# Build for production  
+# Build for production
 npm run build
 
 # Preview production build
@@ -216,10 +184,12 @@ npm run crawl <domain>
 ```
 
 ## Key Development URLs
+
 - **Development Server**: http://localhost:5173/ (or next available port)
 - **Production Preview**: Available after running `npm run preview`
 
 ## Core Principles
+
 - **Type Safety**: Always maintain TypeScript interfaces when modifying data structures
 - **Component Architecture**: Follow the established pattern of layout/sections/ui organization
 - **Responsive Design**: Ensure all changes work across mobile, tablet, and desktop breakpoints

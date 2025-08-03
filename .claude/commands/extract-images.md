@@ -8,21 +8,23 @@ Run the command `/extract-images [page-name]` to extract images from a specific 
 
 ## Output
 
-The extracted images will be saved in the `public/images/[page-name]/` directory. Each image will be named based on its original filename, with a timestamp appended to ensure uniqueness.
+The extracted images will be saved in the `public/images/` directory. Each image will be named based on its original filename, with a timestamp appended to ensure uniqueness.
 
 ## Method
 
-For each HTML page in the site crawl, run the script `extract-images.js <html-file> [output-dir]`, with the HTML file name as an argument. This script will:
+### Run the `extract-images` script
 
-1. Load the specified page content.
-2. Parse the content to find all image tags.
-3. Download each image to the `public/images/[page-name]/` directory.
+For each HTML page in the site crawl, run `npm run extract-images <html-file> [output-dir]`, with the HTML file name as an argument.
+
+### Extract images from the crawl
+
+Inspect the site crawl and copy all images from the crawl to the `public/images/` directory.
 
 ## Metadata
 
 Create or update a data file src/data/media.json that documents the context and purpose of the media files used in the project. This file should include information about the how the media files are used within the site.
 
-Also create corresponding TypeScript interfaces in src/data/types.ts and a custom hook in src/hooks/useMediaData.ts for type-safe access to media information.
+Also create corresponding TypeScript interfaces in src/data/types.ts, and create or update a custom hook in src/hooks/useMediaData.ts for type-safe access to media information.
 
 **Example**
 

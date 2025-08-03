@@ -1,0 +1,25 @@
+{
+  "primary": [
+    {
+      "label": "Home",
+      "path": "/",
+      "isActive": true
+    },
+    {
+      "label": "About",
+      "path": "/about"
+    },
+    {
+      "label": "Services", 
+      "path": "/services"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact"
+    }
+  ],
+  "mobile": {
+    "enabled": true,
+    "breakpoint": "md"
+  }
+}

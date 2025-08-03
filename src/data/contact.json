@@ -1,0 +1,28 @@
+{
+  "phone": "(508) 746-5511",
+  "email": "yankeeaviation1@gmail.com",
+  "address": {
+    "street": "246 South Meadow Road",
+    "gate": "Gate 3",
+    "facility": "Plymouth Municipal Airport",
+    "city": "Plymouth",
+    "state": "MA",
+    "zipCode": "02360"
+  },
+  "hours": {
+    "monday": "8:00 AM - 4:30 PM",
+    "tuesday": "8:00 AM - 4:30 PM",
+    "wednesday": "8:00 AM - 4:30 PM",
+    "thursday": "8:00 AM - 4:30 PM",
+    "friday": "8:00 AM - 4:30 PM",
+    "saturday": "8:00 AM - 4:30 PM",
+    "sunday": "Closed"
+  },
+  "googleMaps": {
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2945.8691234567!2d-70.73089248430572!3d41.909002279219746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e4c0b9b7b8b8b9%3A0x7b8b8b8b8b8b8b8b!2sPlymouth%20Municipal%20Airport!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus",
+    "coordinates": {
+      "lat": 41.9090,
+      "lng": -70.7288
+    }
+  }
+}

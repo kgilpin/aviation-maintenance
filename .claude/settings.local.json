@@ -30,7 +30,9 @@
       "Bash(sed:*)",
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
-      "Bash(npm run crawl:*)"
+      "Bash(npm run crawl:*)",
+      "Bash(npm run extract-images:*)",
+      "Bash(npm run screenshot:*)"
     ],
     "deny": []
   }

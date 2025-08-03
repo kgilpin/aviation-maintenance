@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "primaryHeading": "We Help You Reach",
+    "secondaryHeading": "Greater Heights!",
+    "description": "Keeping Your Aircraft in Perfect Condition",
+    "callToAction": {
+      "text": "Learn More",
+      "link": "/about"
+    },
+    "backgroundImage": "/images/fmf_116440.jpg"
+  },
+  "quickLinks": [
+    {
+      "title": "ABOUT",
+      "image": "/images/hero-aircraft.jpg",
+      "imageAlt": "Aircraft in flight representing our expertise and experience",
+      "link": "/about"
+    },
+    {
+      "title": "SERVICES", 
+      "image": "/images/hero-workshop.jpg",
+      "imageAlt": "Aircraft maintenance workshop showing our professional facilities",
+      "link": "/services"
+    },
+    {
+      "title": "CONTACT",
+      "image": "/images/hero-equipment.jpg", 
+      "imageAlt": "Aviation equipment and tools for professional maintenance services",
+      "link": "/contact"
+    }
+  ],
+  "about": {
+    "heading": "Who We Are",
+    "description": [
+      "Yankee Aviation in Plymouth, Massachusetts is a full-service general aviation maintenance facility.",
+      "For more than 44 years, we have been meeting the needs of various clients.",
+      "Established in 1977, we are owned by Peter and Gail Conner.",
+      "Located off Route 3 in historic Plymouth, we are 45 minutes by car from Boston and Cape Cod."
+    ],
+    "highlights": [
+      "44+ years of experience",
+      "Family-owned and operated since 1977",
+      "Convenient location between Boston and Cape Cod",
+      "Full-service maintenance facility"
+    ],
+    "image": "/images/about.jpg",
+    "imageAlt": "Yankee Aviation facility at Plymouth Municipal Airport"
+  },
+  "services": {
+    "heading": "Our Services",
+    "description": "We offer comprehensive aircraft maintenance services to keep your aircraft in peak condition.",
+    "services": [
+      "General aviation maintenance",
+      "Special flight permits for US-registered aircraft",
+      "Recurrent standard airworthiness certificates",
+      "Preventive maintenance programs",
+      "Custom modifications and installations"
+    ],
+    "image": "/images/services.jpg",
+    "imageAlt": "Aircraft maintenance services at Yankee Aviation"
+  },
+  "testimonials": {
+    "heading": "See What Our Customers Are Saying About Us",
+    "testimonials": [
+      {
+        "name": "Bendrix Bailey",
+        "credentials": "MEL, SEL, SES, Glider, IFR Commercial 2,000+ hours",
+        "yearsAsCustomer": 10,
+        "quote": "I've been trusting my airplanes to Yankee Aviation for as long as I've been based in Plymouth; over 10 years. Peter Conner and his crew have saved me money and trouble by finding problems in the shop, before they become problems in the air. Yankee has also handled some tricky custom work on my Cessna 185, including P-Ponk strut reinforcements, folding rear jump seats and ski installation. Yankee has never turned me down when I needed quick-turn, unscheduled maintenance, and they've done it with no extra charges. My annuals are completed on schedule, and I don't find loose screws or other problems afterward, like I have elsewhere. Pete Conner and his Yankee Aviation crew will be doing my maintenance so long as we're both active in aviation. His is the only shop I'd trust to keep the airplanes that carry my wife and children, safely in the air.",
+        "highlights": [
+          "Over 10 years of trusted service",
+          "Preventive problem detection in shop vs. air",
+          "Custom work: P-Ponk strut reinforcements, folding jump seats, ski installation",
+          "Quick-turn unscheduled maintenance with no extra charges",
+          "Reliable annuals completed on schedule",
+          "Only shop trusted for family safety"
+        ]
+      },
+      {
+        "name": "Mark C Mannix",
+        "yearsAsCustomer": 20,
+        "quote": "I came to know Pete Conner and Yankee Aviation Services almost twenty years ago. He was recommended to me by Bob at Dorr Aviation to do a pre-buy inspection on a 172xp I was buying. He did a great job then and has serviced my airplanes since. Pete flies himself and is an FAA mechanic examiner. He knows the expense of operating an airplane. Allow me a story: I was returning from Montreal with my three sons when landing at HVN we experienced a landing gear problem in my Piper Saratoga. The emergency procedure is a gravity system and we were able to land safely. The FBO there told me that it was a power pack problem and would be $4500 to fix. I took the plane to Yankee Aviation and they replaced a $12 brush in the motor assembly. I would recommend Pete Conner and Yankee Aviation Services to anyone.",
+        "highlights": [
+          "Nearly 20 years of trusted service",
+          "Recommended by Dorr Aviation for pre-buy inspection",
+          "Pete is an FAA mechanic examiner who flies himself",
+          "Real story: $4500 FBO quote vs. $12 Yankee Aviation fix",
+          "Emergency landing gear problem solved economically",
+          "Recommends Pete Conner and Yankee Aviation to anyone"
+        ]
+      }
+    ]
+  },
+  "seoMeta": {
+    "title": "Aircraft Maintenance, Plymouth, MA",
+    "description": "For more than 43 years, Yankee Aviation in Plymouth, MA has been offering a wide range of aircraft maintenance services. You can count on us to issue special flight permits for US-registered aircraft, recurrent standard airworthiness certificates, and many more. Reach out to us today.",
+    "keywords": [
+      "aircraft maintenance",
+      "Plymouth MA",
+      "general aviation",
+      "airworthiness certificates",
+      "flight permits",
+      "aviation services"
+    ],
+    "ogImage": "/images/about.jpg"
+  }
+}

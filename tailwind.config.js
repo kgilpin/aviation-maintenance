@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1e40af',
-        'primary-dark': '#1e3a8a',
+        primary: {
+          DEFAULT: '#1e40af',
+          dark: '#1e3a8a',
+        },
       },
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'sans-serif'],

@@ -34,7 +34,7 @@ Ensure that components are reused throughout the site to maintain consistency.
 
 ## Component styling
 
-Components should be styled using Tailwind CSS.
+Components should be styled using Tailwind CSS v3.
 
 ## Saving the plan
 

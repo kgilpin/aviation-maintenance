@@ -16,8 +16,8 @@ Examples:
 
 Since MCP tools aren't available in the current Claude session, use the local Playwright script:
 
-1. **Modify the script** (`take-screenshot.js`) to accept a page path parameter
-2. **Run via Bash**: `node take-screenshot.js [page_path]`
+1. **Modify the script** (`take-screenshot.ts`) to accept a page path parameter
+2. **Run via Bash**: `node take-screenshot.ts [page_path] [--output <output_file>]`
 3. **Read and display** the generated screenshot file
 4. **Clean up** old screenshot files if needed
 
@@ -36,17 +36,10 @@ The universal screenshot script supports any website:
 
 ```bash
 # Local development (default: localhost:5173)
-node take-screenshot.js                                    # Home page
-node take-screenshot.js /about                             # About page
-node take-screenshot.js /contact                           # Contact page
-
-# Different local ports
-node take-screenshot.js http://localhost:3000              # Port 3000
-node take-screenshot.js http://localhost:5173 /services    # Port 5173 with path
+node take-screenshot.ts http://localhost:5173/services --output screenshot.png # Port 5173 with output file
 
 # External websites
-node take-screenshot.js https://eagleeastaviation.com      # Production site
-node take-screenshot.js https://example.com /pricing       # Any external site
+node take-screenshot.ts https://example.com/pricing --output screenshot.png        # Any external site
 ```
 
 ## Command Implementation
@@ -54,7 +47,7 @@ node take-screenshot.js https://example.com /pricing       # Any external site
 When `/screenshot [args...]` is used:
 
 1. **Parse arguments** - Extract base URL and path from arguments
-2. **Run script** - Execute `node take-screenshot.js [args...]`
+2. **Run script** - Execute `node take-screenshot.ts [args...]`
 3. **Capture output** - Show progress and filename
 4. **Display image** - Read and show the generated screenshot
 5. **Cleanup** - Optionally remove old screenshots

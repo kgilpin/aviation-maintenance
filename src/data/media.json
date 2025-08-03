@@ -1,0 +1,151 @@
+{
+  "media": {
+    "images": {
+      "logo": {
+        "path": "/images/cropped-Transparent-Logo-180x180.png",
+        "description": "Yankee Aviation Services logo with YAS airplane silhouette - 180x180 PNG format",
+        "usage": "Primary company logo used in header navigation with 'YANKEE AVIATION SERVICES' and 'EST 1977' text",
+        "components": ["Header.tsx", "CompanyBrand.tsx"],
+        "dimensions": "180x180 PNG with transparent background",
+        "context": "Features airplane silhouette with 'YAS' text, displayed alongside 'YANKEE AVIATION SERVICES' company name and 'EST 1977' establishment date in header",
+        "alternativeFormats": {
+          "png32": "/images/cropped-Transparent-Logo-32x32.png",
+          "png192": "/images/cropped-Transparent-Logo-192x192.png"
+        }
+      },
+      "heroBackground": {
+        "path": "/images/fmf_116440.jpg",
+        "description": "Beautiful sky and clouds background with dramatic lighting and sunbeams",
+        "usage": "Main background image for the homepage hero section, positioned at 85% horizontal to showcase the right side of the sky",
+        "components": ["HeroSection.tsx"],
+        "dimensions": "High resolution sky photograph",
+        "context": "Creates an inspiring, uplifting atmosphere that complements the 'WE HELP YOU REACH GREATER HEIGHTS' messaging. The dramatic sky with sunbeams breaking through clouds perfectly represents aviation and reaching new heights",
+        "cssProperties": "background-position: 85% 0%, background-size: cover, with radial gradient overlay"
+      },
+      "heroAircraft": {
+        "path": "/images/hero-aircraft.jpg",
+        "description": "Aircraft image used in hero carousel",
+        "usage": "Featured in the hero section image carousel to showcase aircraft served",
+        "components": ["HeroSection.tsx"],
+        "context": "Demonstrates the types of aircraft Yankee Aviation services"
+      },
+      "heroWorkshop": {
+        "path": "/images/hero-workshop.jpg",
+        "description": "Workshop/hangar interior image showing maintenance facilities",
+        "usage": "Featured in hero section carousel and mobile view to show facility capabilities",
+        "components": ["HeroSection.tsx"],
+        "context": "Shows the professional maintenance environment and equipment"
+      },
+      "heroEquipment": {
+        "path": "/images/hero-equipment.jpg",
+        "description": "Maintenance equipment and tools image",
+        "usage": "Featured in hero section carousel to highlight professional equipment",
+        "components": ["HeroSection.tsx"],
+        "context": "Demonstrates the quality and professionalism of maintenance tools and equipment"
+      },
+      "about": {
+        "path": "/images/about.jpg",
+        "description": "Yankee Aviation facility overview image",
+        "usage": "Used in the About section and as SEO meta image for the site",
+        "components": ["AboutSection.tsx"],
+        "dimensions": "640x500",
+        "context": "Provides visual context for the company's location and facilities at Plymouth Municipal Airport"
+      },
+      "services": {
+        "path": "/images/services.jpg",
+        "description": "Aircraft maintenance services illustration",
+        "usage": "Featured in the Services section to represent maintenance capabilities",
+        "components": ["ServicesSection.tsx"],
+        "dimensions": "640x500",
+        "context": "Visual representation of the comprehensive aircraft maintenance services offered"
+      },
+      "contact": {
+        "path": "/images/Contact_Img.jpg",
+        "description": "Contact section image for customer outreach",
+        "usage": "Used in contact-related sections to encourage customer communication",
+        "components": ["ContactSection.tsx"],
+        "dimensions": "640x500",
+        "context": "Creates a welcoming visual for customers to reach out for services"
+      },
+      "whatWeDo": {
+        "path": "/images/what-we-do-aircraft.jpg",
+        "description": "Aircraft image showcasing the types of planes serviced",
+        "usage": "Featured in the What We Do section to illustrate service capabilities",
+        "components": ["WhatWeDoSection.tsx"],
+        "context": "Demonstrates the variety and quality of aircraft that Yankee Aviation maintains"
+      }
+    },
+    "extractedImages": {
+      "homePageImages": {
+        "heroBackground": {
+          "path": "/images/fmf_116440.jpg",
+          "description": "Dramatic sky and clouds hero background with sunbeams",
+          "usage": "Primary hero section background image",
+          "source": "yankeeaviation.com homepage hero section",
+          "context": "The inspiring sky background that supports the 'WE HELP YOU REACH GREATER HEIGHTS' messaging"
+        }
+      },
+      "contactPageImages": {
+        "spinner": {
+          "path": "/images/spinner.gif",
+          "description": "Loading spinner for contact forms",
+          "usage": "UI element for form submission feedback",
+          "source": "yankeeaviation.com contact page",
+          "context": "User experience enhancement for contact forms"
+        }
+      },
+      "servicesPageImages": {
+        "aircraftMaintenance": {
+          "path": "/images/20200531_191924_resized-scaled.jpg",
+          "description": "Aircraft maintenance work in progress",
+          "usage": "Showcases actual maintenance work and capabilities",
+          "source": "yankeeaviation.com services page",
+          "context": "Real-world example of Yankee Aviation's maintenance services"
+        }
+      },
+      "aboutPageImages": {
+        "peteAtDesk": {
+          "path": "/images/20201021_122112_resized-Pete-at-his-desk-10-21-20.jpg",
+          "description": "Pete Conner at his desk in the office",
+          "usage": "Personal touch showing the owner and company leadership",
+          "source": "yankeeaviation.com about page",
+          "context": "Humanizes the business and shows the personal connection customers have with ownership"
+        }
+      },
+      "favicon": {
+        "icon32": {
+          "path": "/images/cropped-Transparent-Logo-32x32.png",
+          "description": "32x32 favicon for browser tabs",
+          "usage": "Browser favicon and bookmark icon",
+          "source": "yankeeaviation.com favicon assets",
+          "dimensions": "32x32",
+          "context": "Site identification in browser interfaces"
+        },
+        "icon180": {
+          "path": "/images/cropped-Transparent-Logo-180x180.png",
+          "description": "180x180 Apple touch icon",
+          "usage": "iOS home screen icon when site is added as web app",
+          "source": "yankeeaviation.com favicon assets",
+          "dimensions": "180x180",
+          "context": "Mobile device home screen representation"
+        },
+        "icon192": {
+          "path": "/images/cropped-Transparent-Logo-192x192.png",
+          "description": "192x192 Android icon",
+          "usage": "Android home screen icon and PWA icon",
+          "source": "yankeeaviation.com favicon assets",
+          "dimensions": "192x192",
+          "context": "Android device and progressive web app branding"
+        }
+      }
+    },
+    "assets": {
+      "reactLogo": {
+        "path": "/src/assets/react.svg",
+        "description": "Default React logo SVG",
+        "usage": "Development asset, not currently used in production components",
+        "context": "Standard React/Vite template asset for development reference"
+      }
+    }
+  }
+}

@@ -10,15 +10,19 @@ Run the command `/refine-page [page-name]` to start the refinement process for a
 
 Run the system command `date -Iseconds` to obtain the current date and time. This will be used to timestamp the plan.
 
-## Comparing the page to the live site
+## Take screenshots of the local and live sites
 
 Take a screenshot of the local page using `node take-screenshot.js http://localhost:5173/$ARGUMENTS --output screenshots/localhost/[page-name]-[timestamp].png`.
 
-Also, take a screenshot of the live site using `node take-screenshot.js [live-site-url]/$ARGUMENTS --output screenshots/live/[page-name]-[timestamp].png`. Do NOT use the crawl for this! It's essential to use a screenshot of the live site to ensure that the cloned page matches the current design and content. Store the screenshot in the `screenshots/live` directory with a descriptive filename based on the page path.
+Then take a screenshot of the live site using `node take-screenshot.js [live-site-url]/$ARGUMENTS --output screenshots/live/[page-name]-[timestamp].png`.
+
+## Compare the local and live sites
+
+Compare the screenshots to identify differences between the local implementation and the live site. Also, inspect the relevant page(s) from the crawl to look for dynamic elements that may not be captured in screenshots, such as animations, hover effects, or responsive design changes.
+
+## Build a TODO list
 
 Create a TODO list of items to address based on the comparison, in order to make the site match the live site. Each fixup item should contain a priority: high, medium, or low.
-
-Run the system command `date -Iseconds` to obtain the current date and time. This will be used to timestamp the plan.
 
 Save the plan to `plans/[page-name]-fixup/[timestamp]`.
 

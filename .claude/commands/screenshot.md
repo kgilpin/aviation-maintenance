@@ -5,6 +5,7 @@ Take a screenshot of a page running on localhost:8081.
 Usage: `/screenshot [page_path]`
 
 Examples:
+
 - `/screenshot` - Screenshot the home page (/)
 - `/screenshot /about` - Screenshot the about page
 - `/screenshot /contact` - Screenshot the contact page
@@ -12,6 +13,7 @@ Examples:
 ## Implementation
 
 ### Current Approach: Node.js Script
+
 Since MCP tools aren't available in the current Claude session, use the local Playwright script:
 
 1. **Modify the script** (`take-screenshot.js`) to accept a page path parameter
@@ -20,6 +22,7 @@ Since MCP tools aren't available in the current Claude session, use the local Pl
 4. **Clean up** old screenshot files if needed
 
 ### Future MCP Integration
+
 When MCP server is properly connected:
 
 1. Use the `mcp__puppeteer__screenshot` tool to capture screenshots
@@ -39,7 +42,7 @@ node take-screenshot.js /contact                           # Contact page
 
 # Different local ports
 node take-screenshot.js http://localhost:3000              # Port 3000
-node take-screenshot.js http://localhost:8080 /services    # Port 8080 with path
+node take-screenshot.js http://localhost:8081 /services    # Port 8081 with path
 
 # External websites
 node take-screenshot.js https://eagleeastaviation.com      # Production site
@@ -51,7 +54,7 @@ node take-screenshot.js https://example.com /pricing       # Any external site
 When `/screenshot [args...]` is used:
 
 1. **Parse arguments** - Extract base URL and path from arguments
-2. **Run script** - Execute `node take-screenshot.js [args...]`  
+2. **Run script** - Execute `node take-screenshot.js [args...]`
 3. **Capture output** - Show progress and filename
 4. **Display image** - Read and show the generated screenshot
 5. **Cleanup** - Optionally remove old screenshots
@@ -59,8 +62,9 @@ When `/screenshot [args...]` is used:
 ## Benefits
 
 The screenshot functionality helps with:
+
 - **Visual testing** of the aviation maintenance website
-- **Responsive design** verification 
+- **Responsive design** verification
 - **Layout checking** and component placement
 - **Comparison** against the original crawled site design
 - **Documentation** of development progress

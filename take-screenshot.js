@@ -17,8 +17,8 @@ async function takeScreenshot() {
   try {
     // Parse command line arguments
     const args = process.argv.slice(2);
-    let baseUrl = "http://localhost:8081";
-    let pagePath = "";
+    let url = "http://localhost:8081";
+    let outputPath = null;
 
     // Check for help
     if (args.includes("--help") || args.includes("-h")) {
@@ -26,23 +26,24 @@ async function takeScreenshot() {
       return;
     }
 
-    // Parse arguments: base-url [path]
+    // Parse --output flag
+    const outputIndex = args.indexOf("--output");
+    if (outputIndex !== -1 && outputIndex + 1 < args.length) {
+      outputPath = args[outputIndex + 1];
+      // Remove --output and its value from args
+      args.splice(outputIndex, 2);
+    }
+
+    // First remaining argument should be the URL
     if (args.length >= 1) {
-      if (args[0].startsWith("http://") || args[0].startsWith("https://")) {
-        baseUrl = args[0];
-        pagePath = args[1] || "";
-      } else {
-        // First arg is path, use default base URL
-        pagePath = args[0];
-      }
+      url = args[0];
     }
 
-    // Ensure path starts with / if provided
-    if (pagePath && !pagePath.startsWith("/")) {
-      pagePath = "/" + pagePath;
+    // Ensure URL is valid
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      // Assume localhost if no protocol provided
+      url = "http://localhost:8081" + (url.startsWith("/") ? url : "/" + url);
     }
-
-    const url = baseUrl + pagePath;
 
     console.log(`📸 Taking screenshot of ${url}`);
 
@@ -96,11 +97,25 @@ async function takeScreenshot() {
     // Final wait to ensure everything is rendered
     await page.waitForTimeout(2000);
 
-    // Generate descriptive filename
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const domain = new URL(baseUrl).hostname.replace(/\./g, "-");
-    const pathPart = pagePath ? pagePath.replace(/\//g, "-") : "home";
-    const filename = `screenshot-${domain}${pathPart}-${timestamp}.png`;
+    // Generate filename - use custom output path or generate descriptive filename
+    let filename;
+    if (outputPath) {
+      // Ensure directory exists
+      const path = require("path");
+      const fs = require("fs");
+      const dir = path.dirname(outputPath);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      filename = outputPath;
+    } else {
+      // Generate descriptive filename
+      const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+      const urlObj = new URL(url);
+      const domain = urlObj.hostname.replace(/\./g, "-");
+      const pathPart = urlObj.pathname === "/" ? "home" : urlObj.pathname.replace(/\//g, "-");
+      filename = `screenshot-${domain}${pathPart}-${timestamp}.png`;
+    }
 
     await page.screenshot({
       path: filename,
@@ -135,21 +150,23 @@ function showHelp() {
 📸 Universal Screenshot Tool
 
 Usage: 
-  node take-screenshot.js [base-url] [path]
-  node take-screenshot.js [path]             # Uses localhost:8081 as base
+  node take-screenshot.js [url] [--output filename]
 
 Arguments:
-  base-url    Full base URL (http://localhost:8081, https://example.com, etc.)
-  path        Page path (/about, /contact, etc.)
+  url         Full URL to screenshot (defaults to http://localhost:8081 if not provided)
+              Can be a full URL or just a path (will use localhost:8081 as base)
+  --output    Custom output filename/path (optional)
 
 Examples:
-  node take-screenshot.js                                    # localhost:8081 home
-  node take-screenshot.js /about                             # localhost:8081/about
-  node take-screenshot.js http://localhost:3000              # Different local port
-  node take-screenshot.js https://example.com /pricing       # External site
-  node take-screenshot.js https://eagleeastaviation.com      # Production site
+  node take-screenshot.js                                                    # localhost:8081 home
+  node take-screenshot.js /about                                             # localhost:8081/about
+  node take-screenshot.js /about --output screenshots/about.png              # Custom filename
+  node take-screenshot.js http://localhost:3000/contact                      # Different local port
+  node take-screenshot.js https://eagleeastaviation.com/pages/services       # External site
+  node take-screenshot.js https://eagleeastaviation.com --output live.png    # Production site
 
-Screenshot files are saved as: screenshot-[domain]-[path]-[timestamp].png
+Without --output: screenshot-[domain]-[path]-[timestamp].png
+With --output: Uses your specified filename/path
 `);
 }
 

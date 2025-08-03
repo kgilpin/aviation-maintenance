@@ -1,14 +1,15 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<!-- Page Title Section -->
-<section class="py-8 sm:py-12">
-  <div class="section-container">
-    <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-6">
-      {{ fboServices.page.title }}
-    </h1>
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-lg text-gray-600">
+<!-- Hero Image Section -->
+<section class="relative h-[50vh] md:h-[60vh] bg-cover bg-center bg-no-repeat" style="background-image: url('/images/2903624970649221139_v=1740498989&width=3840.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  <div class="relative z-10 flex items-center justify-center h-full">
+    <div class="text-center text-white px-4 max-w-5xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        {{ fboServices.page.title }}
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
         {{ fboServices.page.description }}
       </p>
     </div>
@@ -19,25 +20,25 @@
 <div class="bg-white">
   {% for section in fboServices.sections %}
   <!-- {{ section.title }} Section -->
-  <section class="py-16{% if section.background != 'white' %} bg-{{ section.background }}{% endif %}">
+  <section class="py-16 lg:py-20{% if section.background != 'white' %} bg-{{ section.background }}{% endif %}">
     <div class="section-container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {% if section.layout == 'image-left' %}
         <div class="order-2 lg:order-1">
           <img 
             src="{{ section.image.src }}" 
             alt="{{ section.image.alt }}" 
-            class="discovery-flight-image"
+            class="{% if section.image.isCircular %}w-56 h-56 object-cover rounded-full mx-auto shadow-lg{% else %}w-full h-80 object-cover rounded-lg shadow-lg{% endif %}"
           >
         </div>
         <div class="order-1 lg:order-2">
         {% else %}
         <div class="order-1 lg:order-1">
         {% endif %}
-          <h2 class="section-title mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
             {{ section.title }}
           </h2>
-          <div class="prose prose-lg max-w-none">
+          <div class="prose prose-lg max-w-none text-gray-600">
             {% for paragraph in section.content %}
             <p>{{ paragraph | safe }}</p>
             {% endfor %}
@@ -60,7 +61,7 @@
           <img 
             src="{{ section.image.src }}" 
             alt="{{ section.image.alt }}" 
-            class="discovery-flight-image"
+            class="w-full h-80 object-cover rounded-lg shadow-lg"
           >
         </div>
         {% endif %}
@@ -68,5 +69,39 @@
     </div>
   </section>
   {% endfor %}
+  
+  <!-- Meet The Crew Section -->
+  {% if fboServices.meetTheCrew.showInstructors %}
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="section-container">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 leading-tight">
+        {{ fboServices.meetTheCrew.title }}
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        {% for instructor in instructors.instructors %}
+        <div class="text-center bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mb-6">
+            <img 
+              src="/images/{{ instructor.image }}" 
+              alt="{{ instructor.name }}" 
+              class="w-48 h-48 object-cover rounded-lg mx-auto shadow-md"
+            >
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            {{ instructor.name }}
+          </h3>
+          <p class="text-eagle-green font-medium text-sm uppercase tracking-wide mb-3">
+            {{ instructor.title }}
+          </p>
+          <div class="text-sm text-gray-600 leading-relaxed">
+            {{ instructor.description | replace("**", "") | replace("\n\n", "</p><p class='mt-2'>") | safe }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
 </div>
 {% endblock %}

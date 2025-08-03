@@ -250,7 +250,7 @@
 
   /* Footer */
   .footer {
-    @apply bg-slate-800 text-slate-400 py-8;
+    @apply bg-eagle-green text-white py-8;
   }
   
   .footer-content {
@@ -262,7 +262,7 @@
   }
   
   .footer-copyright a {
-    @apply text-slate-400 no-underline transition-colors duration-300 hover:text-white;
+    @apply text-white no-underline transition-colors duration-300 hover:text-eagle-green-light;
   }
 
   /* Flight Training Page Specific Styles */

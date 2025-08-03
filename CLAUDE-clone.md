@@ -24,14 +24,27 @@ While developing interactively with the developer, a hot-reloading local server 
 
 - `crawl/` - Contains crawled content from the original site
 - `src/` - Source files
+  - `_data/` - Data files used across the site
+    - `_data/media.json` - Media file metadata. Consult this file when determining how to use media files in the site.
+    - `_data/navigation.json` - Navigation structure.
+    - `_data/contact.json` - Contact information
+    - `_data/company.json` - Company information
+    - ... other data files as needed
   - `_includes/` - Template files
     - `layouts/` - Page layouts (base.html, home.html)
     - `partials/` - Reusable components (header.html)
   - `css/` - Stylesheets
-  - `images/` - Static assets (logo.png)
-  - `index.md` - Homepage content
+    - `input.css` - Main stylesheet, using Tailwind CSS
+  - `images/` - Static assets
+  - `js/` - JavaScript files (if any)
+  - Markdown and HTML files for content
 - `dist/` - Generated output (created by Eleventy)
 - `.eleventy.js` - Eleventy configuration
+- `plans/` - Directory for planning tasks
+- `screenshots/` - Directory for storing screenshots of pages
+  - `live/` - Screenshots of the live site
+  - `localhost/` - Screenshots of the local site
+- `take-screenshot.js` - Script for taking screenshots of pages. Usage: `node take-screenshot.js [url] (--output [filename])`
 
 ### Template System
 
@@ -39,6 +52,11 @@ While developing interactively with the developer, a hot-reloading local server 
 - Layouts extend base templates using `{% extends %}`
 - Partials included with `{% include %}`
 - Content files use front matter to specify layout and data
+
+### CSS
+
+- Uses Tailwind CSS for utility-first styling
+- Custom styles can be added in `src/css/input.css`
 
 ### Build Process
 
@@ -68,33 +86,15 @@ When duplicating text from the crawled site, ensure that you maintain the same w
 
 Externalize all text into JSON data files in the `src/_data/` directory.
 
-# Site Purpose
+## Taking screenshots
 
-Create a professional aviation maintenance website while using modern static site architecture.
+You can take a screenshot of the local site or the live site using the `take-screenshot.js` script. This is useful for visual testing and ensuring the site matches the original design.
 
-## Target Audience
+Usage:
 
-- Aircraft owners needing maintenance services
-- Aviation professionals seeking FAA-certified maintenance
-- Customers looking for reliable, experienced aviation services
-
-## Key Messaging Themes
-
-1. **Experience & Credibility** - 44+ years in business, FAA-designated representative
-2. **Regulatory Compliance** - Focus on FAA certifications and proper documentation
-3. **Location Advantage** - Plymouth, MA location between Boston and Cape Cod
-4. **Customer Relationships** - Long-term customer testimonials highlighting trust and reliability
-5. **Aircraft Maintenance Services** - Emphasizing comprehensive, professional maintenance
-
-## Section Implementation Order
-
-1. **Hero Section** - Primary brand messaging and CTA
-2. **Navigation Cards** - Visual site navigation
-3. **Company Overview** - Credibility and positioning
-4. **About Us** - Background and location advantages
-5. **Services Detail** - Specific FAA services offered
-6. **Testimonials** - Customer validation and social proof
-7. **Footer Contact** - Contact information and location map
+```bash
+node take-screenshot.js [url] (--output [filename])
+```
 
 ## Technical Architecture
 
@@ -102,16 +102,8 @@ Create a professional aviation maintenance website while using modern static sit
 - **Templating**: Nunjucks
 - **Data Management**: JSON files in `src/_data/`
 - **Content**: Markdown with front matter
-- **Styling**: CSS with responsive design
+- **Styling**: CSS using Tailwind CSS, with responsive design
 - **Images**: Optimized web formats in `src/images/`
-
-## Data Structure Requirements
-
-- Contact information centralized in `contact.json`
-- Company information in `company.json`
-- Services data in `services.json`
-- Testimonials in `testimonials.json`
-- Navigation structure in `navigation.json`
 
 ## Design Principles
 

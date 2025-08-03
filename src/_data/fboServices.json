@@ -16,7 +16,8 @@
       ],
       "image": {
         "src": "/images/Titan_Fuel_v=1740585614&width=1500.jpg",
-        "alt": "Titan Fuel partnership at Eagle East Aviation"
+        "alt": "Titan Fuel partnership at Eagle East Aviation",
+        "isCircular": true
       }
     },
     {
@@ -24,7 +25,7 @@
       "title": "Fueling & Oil Services",
       "order": 2,
       "layout": "image-right",
-      "background": "slate-50",
+      "background": "white",
       "content": [
         "Keep your aircraft ready for takeoff with Eagle East Aviation's top-quality fueling services. We offer <strong>JET A</strong> and <strong>100LL</strong> aviation fuel to meet the needs of both turbine and piston-engine aircraft.",
         "Our reliable and efficient fueling ensures optimal performance for every flight. Additionally, we provide a selection of high-quality aviation oils to keep your engine running smoothly. Trust our team for safe, professional, and timely service."
@@ -72,7 +73,7 @@
       "title": "Lounge & Concierge",
       "order": 4, 
       "layout": "image-right",
-      "background": "slate-50",
+      "background": "white",
       "content": [
         "Relax in our comfortable <strong>Lounge & Concierge</strong> area with <strong>free Wi-Fi</strong> and snacks. Our friendly staff is always eager to assist, and we offer a <strong>company car</strong> for pilots and <strong>rental car</strong> arrangements for both pilots and passengers. Enjoy convenience and comfort during your visit."
       ],
@@ -81,5 +82,10 @@
         "alt": "Eagle East Aviation pilot lounge and concierge area"
       }
     }
-  ]
+  ],
+  "meetTheCrew": {
+    "title": "Meet The Crew",
+    "description": "Our experienced team is here to provide professional aviation services and support.",
+    "showInstructors": true
+  }
 }

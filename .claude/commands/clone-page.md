@@ -2,13 +2,17 @@
 
 Create a step-by-step plan to clone a page from the crawled content into the site structure.
 
+## Capture the current date + time
+
+Run the system command `date -Ins` to obtain the current date and time. This will be used to timestamp the plan.
+
 ## Resources to use
 
 Analyze the crawl in order to create this plan.
 
 ## Saving the plan
 
-Save the plan in plans/[page-name].
+Save the plan in plans/[page-name]/[timestamp].
 
 ## Extract data files from the plan.
 
@@ -25,17 +29,3 @@ Once the plan is created, implement it by creating a new Markdown file in the `s
 Verify that the page URL matches the page URL in the crawl.
 
 If necessary, move the Markdown file to the correct location within the `src` tree to match the URL.
-
-## Comparing the page to the live site
-
-Take a screenshot of the page using the `/screenshot` command to compare it against the live site.
-
-Also, take a screenshot of the live site using the `/screenshot` command with the live site URL.
-
-Create a TODO list of items to address based on the comparison, in order to make the site match the live site.
-
-You have to use either a screenshot of the live site or the local site, or the crawl. Don't fetch the live site, because the fetch is already available in the crawl.
-
-## Fix the site by addressing the TODO items
-
-Iterate through TODO items, updating the site as needed to match the live site.

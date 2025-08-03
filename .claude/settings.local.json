@@ -27,7 +27,9 @@
       "Bash(mv:*)",
       "Bash(chmod:*)",
       "Bash(npm start)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }

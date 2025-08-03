@@ -1,0 +1,18 @@
+{
+  "name": "Falcon Air Inc.",
+  "tagline": "A Leading Fixed Base Operator",
+  "location": "Lawrence Municipal Airport, North Andover, Massachusetts",
+  "phone": "978-689-4492",
+  "experience_years": "40+",
+  "description": "Falcon Air, Inc. strives to be the most innovative, efficient and knowledgeable FBO possible. Both the president and chief mechanic have over 40 years of industry related experience and continue to educate themselves on new techniques.",
+  "services": {
+    "primary": ["FBO Services", "Aircraft Maintenance", "Fuel Services"],
+    "specialties": ["Annual Inspections", "Expert Maintenance Service"]
+  },
+  "values": [
+    "Most innovative FBO possible",
+    "Efficient operations", 
+    "Knowledgeable expertise",
+    "Continuous education and improvement"
+  ]
+}

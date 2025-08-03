@@ -1,6 +1,6 @@
-Create a data file src/\_data/media.json that documents the context and purpose of the media files used in the project. This file should include information about the how the media files are used within the site.
+Create a data file src/data/media.json that documents the context and purpose of the media files used in the project. This file should include information about the how the media files are used within the site.
 
-Enumerate media files by listing everything in src/images and src/media.
+Enumerate media files by listing everything in public/images and src/assets.
 
 For each media file, find references to the media file in the crawl. Use these references to document the context and purpose of the media item in the media.json file.
 

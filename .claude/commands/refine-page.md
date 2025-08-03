@@ -12,9 +12,9 @@ Run the system command `date -Iseconds` to obtain the current date and time. Thi
 
 ## Comparing the page to the live site
 
-Take a screenshot of the local page using `node take-screenshot.js http://localhost:80801/$ARGUMENTS --output screenshots/localhost/[page-name]-[timestamp].png`.
+Take a screenshot of the local page using `node take-screenshot.js http://localhost:5173/$ARGUMENTS --output screenshots/localhost/[page-name]-[timestamp].png`.
 
-Also, take a screenshot of the live site using `node take-screenshot.js [live-site-url]/$ARGUMENTS --output screenshots/live/[page-name][timestamp].png`. Do NOT use the crawl for this! It's essential to use a screenshot of the live site to ensure that the cloned page matches the current design and content. Store the screenshot in the `screenshots/live` directory with a descriptive filename based on the page path.
+Also, take a screenshot of the live site using `node take-screenshot.js [live-site-url]/$ARGUMENTS --output screenshots/live/[page-name]-[timestamp].png`. Do NOT use the crawl for this! It's essential to use a screenshot of the live site to ensure that the cloned page matches the current design and content. Store the screenshot in the `screenshots/live` directory with a descriptive filename based on the page path.
 
 Create a TODO list of items to address based on the comparison, in order to make the site match the live site. Each fixup item should contain a priority: high, medium, or low.
 

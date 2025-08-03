@@ -1,0 +1,31 @@
+{
+  "phone": {
+    "display": "(978) 689-4492",
+    "tel": "978-689-4492",
+    "international": "+1-978-689-4492"
+  },
+  "location": {
+    "name": "Lawrence Municipal Airport", 
+    "address": "North Andover, Massachusetts",
+    "airport_code": "LWM",
+    "coordinates": {
+      "latitude": 42.717222,
+      "longitude": -71.123333
+    }
+  },
+  "business_hours": {
+    "general": "Contact for current hours",
+    "emergency": "24/7 emergency services available"
+  },
+  "services_available": [
+    "Fixed Base Operator (FBO) Services",
+    "Aircraft Maintenance", 
+    "Fuel Services",
+    "Hangar Services"
+  ],
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "linkedin": ""
+  }
+}

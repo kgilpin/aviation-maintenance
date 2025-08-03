@@ -6,9 +6,9 @@ Argument: `[page-name]`
 
 Implement a plan for creating a page, by reading the plan and following it.
 
-Create new page components, data files, HTML files and Markdown files as necessary in the `src/` directory.
+Create new page components, data files, and TypeScript files as necessary in the `src/` directory.
 
-Ensure that `.eleventy.js` is updated as needed to include the new page or assets in the site build.
+Update React routing and component imports as needed to include the new page in the application build.
 
 ## Check the page URL
 

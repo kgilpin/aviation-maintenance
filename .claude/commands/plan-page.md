@@ -10,23 +10,25 @@ Run the system command `date -Iseconds` to obtain the current date and time. Thi
 
 Analyze the crawl in order to create this plan.
 
-Inspect the available components, data files, and templates in the project to determine how to structure the new page. These can be found in the `src/` directory, including:
+Inspect the available components, data files, and hooks in the project to determine how to structure the new page. These can be found in the `src/` directory, including:
 
-- Data files in `src/_data/`
-- Template files in `src/_includes/`
-- Layout files in `src/_layouts/`
+- Data files in `src/data/`
+- Component files in `src/components/`
+- Custom hooks in `src/hooks/`
+- Page components in `src/pages/`
 
 ## Use of reusable components
 
-Page cloning should leverage reusable components and templates defined in the `_includes/` directory. This ensures consistency across pages and reduces duplication of code.
+Page cloning should leverage reusable components defined in the `src/components/` directory. This ensures consistency across pages and reduces duplication of code.
 
 Some examples of reusable components include:
 
-- Header and footer templates
-- Navigation menus
-- Common sections like contact information or company details
+- Layout components (Header, Footer, Navigation)
+- UI components (Button, cards, forms)
+- Section components (Hero, content sections)
+- Custom hooks for data access
 
-Ensure that these components are created when cloning a page, and that they are used in the Markdown file for the page.
+Ensure that these components are created when cloning a page, and that they are used in the React page component.
 
 Ensure that components are reused throughout the site to maintain consistency.
 
@@ -46,6 +48,6 @@ Create a file `overview.md` in the plan directory that describes the overall pla
 
 ## Extract data files from the plan.
 
-Analyze the plan to determine if any additional data files should be refactored out of the pages and into the `_data` directory instead. Good candidates for data file refactoring include any content that is repeated across multiple pages, or content items that are uniform in structure and are displayed in a list.
+Analyze the plan to determine if any additional data files should be refactored out of the pages and into the `src/data/` directory instead. Good candidates for data file refactoring include any content that is repeated across multiple pages, or content items that are uniform in structure and are displayed in a list.
 
-Use existing data files in the `_data` directory when they already exist and match the purpose of the page.
+Use existing data files in the `src/data/` directory when they already exist and match the purpose of the page. Create corresponding TypeScript interfaces in `src/data/types.ts` and custom hooks in `src/hooks/` for type-safe data access.

@@ -8,7 +8,7 @@ Run the command `/refine-page [page-name]` to start the refinement process for a
 
 ## Capture the current date + time
 
-Run the system command `date -Ins` to obtain the current date and time. This will be used to timestamp the plan.
+Run the system command `date -Iseconds` to obtain the current date and time. This will be used to timestamp the plan.
 
 ## Comparing the page to the live site
 
@@ -18,7 +18,7 @@ Also, take a screenshot of the live site using `node take-screenshot.js [live-si
 
 Create a TODO list of items to address based on the comparison, in order to make the site match the live site. Each fixup item should contain a priority: high, medium, or low.
 
-Run the system command `date -Ins` to obtain the current date and time. This will be used to timestamp the plan.
+Run the system command `date -Iseconds` to obtain the current date and time. This will be used to timestamp the plan.
 
 Save the plan to `plans/[page-name]-fixup/[timestamp]`.
 

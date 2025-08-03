@@ -1,0 +1,111 @@
+/* CTA Button Component */
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  min-height: 44px; /* Touch target size */
+  gap: 0.5rem;
+}
+
+.cta-button:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Primary style (default) */
+.cta-button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.cta-button--primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary style */
+.cta-button--secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.cta-button--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button--secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Size variants */
+.cta-button--large {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  min-height: 52px;
+}
+
+.cta-button--small {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  min-height: 36px;
+}
+
+/* Button text and icon */
+.cta-button-text {
+  font-weight: inherit;
+}
+
+.cta-button-icon {
+  font-size: 0.875em;
+  opacity: 0.8;
+}
+
+/* Disabled state */
+.cta-button:disabled,
+.cta-button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .cta-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+  
+  .cta-button--large {
+    padding: 16px 24px;
+    font-size: 1.125rem;
+  }
+  
+  .cta-button--small {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+}

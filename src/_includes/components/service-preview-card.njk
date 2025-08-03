@@ -1,0 +1,42 @@
+{#
+Service Preview Card Component
+
+Display service information with optional image and CTA.
+
+Props:
+- heading: Service section heading
+- description: Service description text
+- image: Service image URL (optional)
+- services: Array of service items (optional)
+- cta: Call-to-action object (optional)
+
+Usage:
+#}
+
+<article class="service-preview-card">
+  {% if image %}
+    <div class="service-image">
+      <img src="{{ image }}" 
+           alt="{{ heading }} service illustration" 
+           loading="lazy">
+    </div>
+  {% endif %}
+  
+  <div class="service-content">
+    <h3 class="service-heading">{{ heading }}</h3>
+    <p class="service-description">{{ description }}</p>
+    
+    {% if services and services.length > 0 %}
+      <ul class="service-list">
+      {% for service in services %}
+        <li class="service-item">{{ service }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    
+    {% if cta and cta.text and cta.url %}
+      <div class="service-cta">
+      </div>
+    {% endif %}
+  </div>
+</article>

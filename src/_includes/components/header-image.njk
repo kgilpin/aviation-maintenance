@@ -1,0 +1,19 @@
+{#
+Header Image Component
+
+Display header decoration images.
+
+Props:
+- src: Image source URL
+- alt: Alt text for accessibility
+- class: Additional CSS classes (optional)
+
+Usage:
+#}
+
+<div class="header-image{% if class %} {{ class }}{% endif %}">
+  <img src="{{ src }}" 
+       alt="{{ alt }}"
+       class="header-image-img"
+       loading="lazy">
+</div>

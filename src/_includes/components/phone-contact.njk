@@ -1,0 +1,21 @@
+{#
+Phone Contact Component
+
+Displays clickable phone number with multiple style variants.
+
+Props:
+- contact.phone.display: Phone number formatted for display
+- contact.phone.tel: Phone number for tel: links
+- style: Style variant ("navigation", "contact", "large", default: "default")
+- class: Additional CSS classes (optional)
+
+Usage:
+#}
+
+<div class="phone-contact phone-contact--{{ style | default('default')}}{% if class %} {{ class }}{% endif %}">
+  <a href="tel:{{ contact.phone.tel }}" 
+     class="phone-link"
+     aria-label="Call {{ contact.phone.display }}">
+    <span class="phone-number">{{ contact.phone.display }}</span>
+  </a>
+</div>

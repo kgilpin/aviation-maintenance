@@ -1,0 +1,119 @@
+/* Main Navigation Component */
+
+.main-navigation {
+  background-color: var(--color-nav-bg);
+  border-bottom: 1px solid var(--color-nav-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--color-nav-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  color: var(--color-nav-text-hover);
+  background-color: var(--color-nav-hover-bg);
+}
+
+.nav-link--active {
+  color: var(--color-nav-active);
+  background-color: var(--color-nav-active-bg);
+  font-weight: 600;
+}
+
+.nav-contact {
+  margin-left: 2rem;
+}
+
+/* Mobile menu toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-toggle-bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-nav-text);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .nav-container {
+    flex-wrap: wrap;
+  }
+  
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--color-nav-mobile-bg);
+    border-top: 1px solid var(--color-nav-border);
+    margin-top: 1rem;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid var(--color-nav-border);
+  }
+  
+  .nav-link {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .nav-contact {
+    margin: 1rem 0;
+    text-align: center;
+  }
+}

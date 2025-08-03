@@ -1,0 +1,72 @@
+/* Phone Contact Component */
+
+.phone-contact {
+  display: inline-block;
+}
+
+.phone-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+  color: var(--color-primary);
+}
+
+.phone-number {
+  font-weight: 600;
+}
+
+/* Navigation variant */
+.phone-contact--navigation {
+  font-size: 1rem;
+}
+
+.phone-contact--navigation .phone-link {
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--color-nav-phone-bg);
+}
+
+.phone-contact--navigation .phone-link:hover {
+  background-color: var(--color-nav-phone-hover);
+}
+
+/* Contact page variant */
+.phone-contact--contact {
+  font-size: 1.25rem;
+}
+
+.phone-contact--contact .phone-number {
+  color: var(--color-text-primary);
+}
+
+/* Large display variant */
+.phone-contact--large {
+  font-size: 1.5rem;
+}
+
+.phone-contact--large .phone-number {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Default variant */
+.phone-contact--default .phone-number {
+  color: var(--color-text-primary);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .phone-contact--navigation {
+    font-size: 0.9rem;
+  }
+  
+  .phone-contact--large {
+    font-size: 1.25rem;
+  }
+}

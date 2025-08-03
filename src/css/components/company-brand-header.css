@@ -1,0 +1,33 @@
+/* Company Brand Header Component */
+
+.company-brand-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.company-name {
+  font-family: var(--font-script, Georgia, serif);
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: var(--color-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.company-location {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .company-name {
+    font-size: 2rem;
+  }
+  
+  .company-location {
+    font-size: 0.9rem;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import leaderImage from '@/assets/images/20200531_191924_resized-scaled.jpg';
 
 export const LeaderSection: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ export const LeaderSection: React.FC = () => {
           {/* Right Column - Image */}
           <div className="relative">
             <img
-              src="/images/20200531_191924_resized-scaled.jpg"
+              src={leaderImage}
               alt="Aircraft maintenance work showing professional technicians servicing aircraft engines and components"
               className="w-full h-96 object-cover rounded-lg shadow-lg"
               loading="lazy"

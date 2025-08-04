@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigationData } from '@/hooks/useNavigationData';
 import { Navigation } from './Navigation';
+import logo from '@/assets/images/cropped-Transparent-Logo-180x180.png';
 
 export const Header: React.FC = () => {
   const navigationData = useNavigationData();
@@ -15,7 +16,7 @@ export const Header: React.FC = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/images/cropped-Transparent-Logo-180x180.png" 
+                src={logo} 
                 alt="YAS Yankee Aviation Services Logo"
                 className="h-12 w-12"
                 width={180}

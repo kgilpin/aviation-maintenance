@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
 import { useCompanyData } from '@/hooks/useCompanyData';
+import logo from '@/assets/images/Transparent-Logo.png';
 
 interface CompanyBrandProps {
   size?: 'sm' | 'md' | 'lg';
@@ -30,7 +31,7 @@ export const CompanyBrand: React.FC<CompanyBrandProps> = ({
   return (
     <div className={cn('flex items-center space-x-3', className)}>
       <img
-        src="/images/Transparent-Logo.png"
+        src={logo}
         alt={companyData.name}
         className={cn('w-auto', logoSizes[size])}
         width={123}

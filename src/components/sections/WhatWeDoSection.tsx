@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
+import aircraftImage from '@/assets/images/what-we-do-aircraft.jpg';
 
 interface WhatWeDoSectionProps {
   className?: string;
@@ -24,7 +25,7 @@ export const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
           <div className="order-2 lg:order-1">
             <div className="relative">
               <img
-                src="/images/what-we-do-aircraft.jpg"
+                src={aircraftImage}
                 alt="Aircraft maintenance services"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
                 loading="lazy"

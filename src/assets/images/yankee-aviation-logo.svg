@@ -1,0 +1,22 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized Aircraft Logo -->
+  <g transform="translate(40,40)">
+    <!-- Main fuselage -->
+    <ellipse cx="0" cy="0" rx="25" ry="4" fill="#2563eb" transform="rotate(-10)"/>
+    
+    <!-- Wings -->
+    <ellipse cx="-2" cy="0" rx="20" ry="2" fill="#2563eb" transform="rotate(15)"/>
+    <ellipse cx="-2" cy="0" rx="20" ry="2" fill="#2563eb" transform="rotate(-15)"/>
+    
+    <!-- Tail -->
+    <path d="M 15 -2 L 22 -8 L 24 -6 L 18 2 Z" fill="#2563eb"/>
+    <path d="M 15 2 L 22 8 L 24 6 L 18 -2 Z" fill="#2563eb"/>
+    
+    <!-- Nose -->
+    <circle cx="-20" cy="0" r="2" fill="#1e40af"/>
+    
+    <!-- Propeller -->
+    <line x1="-22" y1="-3" x2="-22" y2="3" stroke="#1e40af" stroke-width="1"/>
+    <line x1="-25" y1="0" x2="-19" y2="0" stroke="#1e40af" stroke-width="1"/>
+  </g>
+</svg>

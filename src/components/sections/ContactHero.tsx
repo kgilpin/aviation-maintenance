@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
+import contactHeroBg from '@/assets/images/contact-hero-bg.jpg';
 
 interface ContactHeroProps {
   className?: string;
@@ -15,7 +16,7 @@ export const ContactHero: React.FC<ContactHeroProps> = ({
     )}>
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/contact-hero-bg.jpg)' }}
+        style={{ backgroundImage: `url(${contactHeroBg})` }}
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-blue-600/40" />

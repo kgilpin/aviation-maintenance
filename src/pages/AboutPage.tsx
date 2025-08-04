@@ -7,6 +7,7 @@ import { ContactSection } from '@/components/sections/ContactSection';
 import { useAboutData } from '@/hooks/useAboutData';
 import { useTeamData } from '@/hooks/useTeamData';
 import { useContactData } from '@/hooks/useContactData';
+import cloudBackground from '@/assets/images/cloud-background.jpg';
 
 export const AboutPage: React.FC = () => {
   const { 
@@ -76,7 +77,7 @@ export const AboutPage: React.FC = () => {
       {/* Page Content */}
       <PageHero 
         title="ABOUT"
-        backgroundImage="/images/cloud-background.jpg"
+        backgroundImage={cloudBackground}
       />
       
       {/* Team Member Biographical Sections */}

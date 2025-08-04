@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
 import { Button } from '@/components/ui/Button';
+import { resolveImagePath } from '@/utils/imageMap';
 import type { HeroContent } from '@/data/types';
 
 interface HeroSectionProps {
@@ -24,7 +25,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {hero.backgroundImage && (
           <div className="absolute inset-0">
             <img
-              src={hero.backgroundImage}
+              src={resolveImagePath(hero.backgroundImage)}
               alt="Sky background"
               className="w-full h-full object-cover"
               loading="eager"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
+import { resolveImagePath } from '@/utils/imageMap';
 
 interface PageHeroProps {
   title: string;
@@ -28,7 +29,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
       {backgroundImage && (
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{ backgroundImage: `url(${resolveImagePath(backgroundImage)})` }}
         />
       )}
       <div className={cn('absolute inset-0', backgroundOverlay)} />

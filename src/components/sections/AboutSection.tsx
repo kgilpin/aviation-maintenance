@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
 import type { AboutContent, Company } from '@/data/types';
+import aboutImage from '@/assets/images/about.jpg';
 
 interface AboutSectionProps {
   about: AboutContent;
@@ -18,7 +19,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     heading: "WHO WE ARE",
     description: [company.description],
     highlights: company.specialties,
-    image: "/images/about.jpg",
+    image: aboutImage,
     imageAlt: "Yankee Aviation team and facility"
   };
 

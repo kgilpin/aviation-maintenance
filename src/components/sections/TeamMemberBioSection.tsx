@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { cn } from '@/utils/cn';
+import { resolveImagePath } from '@/utils/imageMap';
 import type { TeamMember } from '@/data/types';
 
 interface TeamMemberBioSectionProps {
@@ -30,7 +31,7 @@ export const TeamMemberBioSection: React.FC<TeamMemberBioSectionProps> = ({
             imagePosition === 'right' && 'lg:col-start-2'
           )}>
             <img
-              src={member.image}
+              src={resolveImagePath(member.image)}
               alt={member.imageAlt}
               className="w-full h-64 lg:h-80 object-cover rounded-lg shadow-lg"
               loading="lazy"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { resolveImagePath } from '@/utils/imageMap';
 import type { QuickLink } from '@/data/types';
 
 interface QuickLinksSectionProps {
@@ -20,7 +21,7 @@ export const QuickLinksSection: React.FC<QuickLinksSectionProps> = ({ quickLinks
             {/* Background Image */}
             <div className="relative h-48 md:h-64 lg:h-72">
               <img
-                src={link.image}
+                src={resolveImagePath(link.image)}
                 alt={link.imageAlt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"

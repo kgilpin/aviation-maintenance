@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
 import { useCompanyData } from '@/hooks/useCompanyData';
-import logo from '@/assets/images/Transparent-Logo.png';
+import logo from '@/assets/images/cropped-Transparent-Logo-180x180.png';
 
 interface CompanyBrandProps {
   size?: 'sm' | 'md' | 'lg';

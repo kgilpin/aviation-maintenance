@@ -33,13 +33,13 @@ export const ContactPage: React.FC = () => {
         <meta property="og:description" content="Led by Peter and Gail Conner, Yankee Aviation in Plymouth, MA is a full-service general aviation maintenance facility." />
         <meta property="og:url" content="https://yankeeaviation.com/contact" />
         <meta property="og:site_name" content="Yankee Aviation" />
-        <meta property="og:image" content="https://yankeeaviation.com/images/contact-hero-bg.jpg" />
+        <meta property="og:image" content="https://yankeeaviation.com/contact-hero-bg.jpg" />
         
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact - Yankee Aviation" />
         <meta name="twitter:description" content="Get in touch with our experienced aircraft maintenance team in Plymouth, MA." />
-        <meta name="twitter:image" content="https://yankeeaviation.com/images/contact-hero-bg.jpg" />
+        <meta name="twitter:image" content="https://yankeeaviation.com/contact-hero-bg.jpg" />
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://yankeeaviation.com/contact" />

@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "title": "Services",
+    "backgroundImage": "/images/cloud-background.jpg"
+  },
+  "servicesContent": {
+    "heading": "A Wide Range of Cost-Effective Aircraft Maintenance Services",
+    "subheading": "Since 1977, we have been providing assistance with aviation maintenance for our clients. Our specialty services include:",
+    "description": "",
+    "services": [
+      {
+        "id": "annual-inspection",
+        "title": "Annual inspection of single-engine and multi-engine aircraft, including experimental aircraft",
+        "description": "",
+        "icon": "checkmark",
+        "featured": true
+      },
+      {
+        "id": "engine-overhaul",
+        "title": "Engine overhaul",
+        "description": "",
+        "icon": "checkmark",
+        "featured": true
+      },
+      {
+        "id": "aircraft-ferrying",
+        "title": "Aircraft ferrying service for out-of-town and out-of-state customers",
+        "description": "",
+        "icon": "checkmark",
+        "featured": true
+      },
+      {
+        "id": "experimental-certification",
+        "title": "Certification of \"experimental\" amateur-built aircrafts",
+        "description": "",
+        "icon": "checkmark",
+        "featured": true
+      }
+    ],
+    "image": "/images/20200531_191924_resized-scaled.jpg",
+    "imageAlt": "Aircraft maintenance work being performed at Yankee Aviation facility"
+  },
+  "callToAction": {
+    "heading": "Why Choose Us",
+    "description": "We take pride in having a team of dedicated professionals who are experts in aviation maintenance. You can trust that we're here to offer efficient assistance and unparalleled customer service.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/contact",
+    "backgroundImage": "/images/pexels-daniel-torobekov-5262805-scaled.jpg",
+    "imageAlt": "Professional aviation maintenance team at work"
+  },
+  "seoMeta": {
+    "title": "Services - Yankee Aviation",
+    "description": "Comprehensive aircraft maintenance services including annual inspections, engine overhauls, aircraft ferrying, and experimental aircraft certification. Serving New England since 1977.",
+    "keywords": [
+      "aircraft maintenance",
+      "annual inspection", 
+      "engine overhaul",
+      "aircraft ferrying",
+      "experimental aircraft certification",
+      "Plymouth MA aviation services",
+      "FAA certified maintenance",
+      "general aviation services"
+    ],
+    "ogImage": "/images/services.jpg"
+  }
+}

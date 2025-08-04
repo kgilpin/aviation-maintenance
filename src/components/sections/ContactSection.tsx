@@ -18,10 +18,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body">
             Contact us today to discuss your aircraft maintenance needs. We're here to help keep you flying safely.
           </p>
         </div>

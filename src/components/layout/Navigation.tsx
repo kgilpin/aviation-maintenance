@@ -28,7 +28,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               onClick={onItemClick}
               className={cn(
                 "text-gray-700 hover:text-primary transition-colors duration-200",
-                "font-medium text-sm uppercase tracking-wide",
+                "font-medium text-base uppercase tracking-wide font-heading",
                 mobile ? "block py-2 px-4 rounded-md hover:bg-gray-50" : "",
                 item.isActive && "text-primary border-b-2 border-primary"
               )}

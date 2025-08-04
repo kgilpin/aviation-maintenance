@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Layout } from '@/components/layout/Layout';
-import { SimpleAboutHero } from '@/components/sections/SimpleAboutHero';
+import { PageHero } from '@/components/sections/PageHero';
 import { TeamMemberBioSection } from '@/components/sections/TeamMemberBioSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { useAboutData } from '@/hooks/useAboutData';
@@ -74,7 +74,10 @@ export const AboutPage: React.FC = () => {
       </Helmet>
 
       {/* Page Content */}
-      <SimpleAboutHero />
+      <PageHero 
+        title="ABOUT"
+        backgroundImage="/images/cloud-background.jpg"
+      />
       
       {/* Team Member Biographical Sections */}
       {displayedMembers.map((member, index) => (

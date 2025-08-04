@@ -287,3 +287,48 @@ export interface Certification {
   year?: number;
   description?: string;
 }
+
+// Services Content Interfaces
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+  featured?: boolean;
+}
+
+export interface ServicesListSection {
+  heading: string;
+  subheading?: string;
+  description: string;
+  services: Service[];
+  image?: string;
+  imageAlt?: string;
+}
+
+export interface ServicesHeroContent {
+  title: string;
+  backgroundImage?: string;
+  subtitle?: string;
+}
+
+export interface CallToActionSection {
+  heading: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  backgroundImage?: string;
+  imageAlt?: string;
+}
+
+export interface ServicesPageData {
+  hero: ServicesHeroContent;
+  servicesContent: ServicesListSection;
+  callToAction: CallToActionSection;
+  seoMeta: {
+    title: string;
+    description: string;
+    keywords: string[];
+    ogImage?: string;
+  };
+}

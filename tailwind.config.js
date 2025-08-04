@@ -10,10 +10,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['system-ui', '-apple-system', 'sans-serif'],
-        'company': ['Kalam', 'script', 'cursive'], // Script font for company name
-        'aviation': ['Open Sans Condensed', 'sans-serif'], // Aviation industry font
-        'script': ['Kalam', 'script', 'cursive'], // Alternative script font
+        sans: ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+        'heading': ['Rajdhani', 'sans-serif'], // For headings and titles
+        'body': ['Roboto', 'system-ui', '-apple-system', 'sans-serif'], // For body text
       },
       backgroundImage: {
         'gradient-falcon': 'linear-gradient(135deg, #4a90e2 0%, #357abd 100%)',

@@ -43,16 +43,16 @@ export const TeamMemberBioSection: React.FC<TeamMemberBioSectionProps> = ({
             imagePosition === 'right' && 'lg:col-start-1'
           )}>
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-blue-600 uppercase tracking-wide mb-2">
+              <h2 className="text-3xl lg:text-4xl font-bold text-blue-600 uppercase tracking-wide mb-2 font-heading">
                 {member.name}
               </h2>
               
-              <h3 className="text-base font-medium text-gray-700 mb-6">
+              <h3 className="text-base font-medium text-gray-700 mb-6 font-body">
                 {member.role}
               </h3>
             </div>
 
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 leading-relaxed font-body">
               {/* Render shortBio with proper line breaks */}
               {member.shortBio.split('\n').map((paragraph, index) => (
                 paragraph.trim() && (
@@ -77,7 +77,7 @@ export const TeamMemberBioSection: React.FC<TeamMemberBioSectionProps> = ({
               <div className="mt-6">
                 <button 
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors font-body"
                 >
                   {isExpanded ? 'Read Less' : 'Read More'}
                 </button>

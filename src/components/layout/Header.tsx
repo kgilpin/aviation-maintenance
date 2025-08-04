@@ -22,10 +22,10 @@ export const Header: React.FC = () => {
                 height={180}
               />
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-blue-900 leading-tight">
+                <span className="text-lg font-bold text-blue-900 leading-tight font-heading">
                   YANKEE AVIATION SERVICES
                 </span>
-                <span className="text-sm text-gray-600 leading-tight">
+                <span className="text-sm text-gray-600 leading-tight font-body">
                   EST 1977
                 </span>
               </div>

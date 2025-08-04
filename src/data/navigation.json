@@ -2,8 +2,7 @@
   "primary": [
     {
       "label": "Home",
-      "path": "/",
-      "isActive": true
+      "path": "/"
     },
     {
       "label": "About",

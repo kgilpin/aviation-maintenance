@@ -32,7 +32,8 @@
       "Bash(npm run build:*)",
       "Bash(npm run crawl:*)",
       "Bash(npm run extract-images:*)",
-      "Bash(npm run screenshot:*)"
+      "Bash(npm run screenshot:*)",
+      "Bash(pkill:*)"
     ],
     "deny": []
   }

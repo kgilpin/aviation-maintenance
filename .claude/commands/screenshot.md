@@ -1,6 +1,6 @@
 # Screenshot Command
 
-Take a screenshot of a page running on localhost:5173 (Vite dev server).
+Take a screenshot of a page running on localhost:8080 (Vite dev server).
 
 Usage: `/screenshot [page_path]`
 
@@ -26,7 +26,7 @@ Since MCP tools aren't available in the current Claude session, use the local Pl
 When MCP server is properly connected:
 
 1. Use the `mcp__puppeteer__screenshot` tool to capture screenshots
-2. Set URL to `http://localhost:5173{page_path}` where page_path defaults to "/"
+2. Set URL to `http://localhost:8080{page_path}` where page_path defaults to "/"
 3. Use viewport settings: 1920x1080 desktop view
 4. Take full-page screenshots
 
@@ -35,8 +35,8 @@ When MCP server is properly connected:
 The universal screenshot script supports any website:
 
 ```bash
-# Local development (default: localhost:5173)
-node take-screenshot.ts http://localhost:5173/services --output screenshot.png # Port 5173 with output file
+# Local development (default: localhost:8080)
+node take-screenshot.ts http://localhost:8080/services --output screenshot.png # Port 8080 with output file
 
 # External websites
 node take-screenshot.ts https://example.com/pricing --output screenshot.png        # Any external site

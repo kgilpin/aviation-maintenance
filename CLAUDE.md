@@ -23,7 +23,7 @@ Notes on screenshots:
 
 The React development server runs with hot module replacement for instant updates:
 
-**URL**: `http://localhost:5173/` (or next available port)
+**URL**: `http://localhost:8080/`
 
 ## Architecture
 
@@ -48,12 +48,15 @@ The React development server runs with hot module replacement for instant update
 │   ├── pages/             # Page components
 │   │   └── [Page].tsx     # Individual page components
 │   ├── utils/             # Utility functions
-│   │   └── cn.ts         # className utility with clsx
+│   │   ├── cn.ts          # className utility with clsx
+│   │   └── imageMap.ts    # Image path resolution utility
 │   ├── App.tsx           # Root application component
 │   ├── main.tsx          # Application entry point
 │   └── index.css         # Global styles with Tailwind CSS
+├── src/
+│   ├── assets/
+│   │   └── images/         # Image assets imported via ES modules
 ├── public/
-│   └── images/           # Static image assets
 ├── package.json          # Dependencies and scripts
 ├── vite.config.ts        # Vite configuration with path aliases
 ├── tailwind.config.js    # Tailwind CSS configuration
@@ -88,18 +91,23 @@ import { usePageData } from "@/hooks/usePageData";
 
 ### Media Files
 
-Static media files are stored in `public/images/` and served directly by Vite. Media metadata may be documented in data files for reference when determining usage throughout the site.
+Image assets are stored in `src/assets/images/` and imported as ES modules for optimal bundling and performance. The `src/utils/imageMap.ts` utility resolves JSON data paths to imported assets. This architecture ensures:
+
+- **Type Safety**: All images are imported and validated at build time
+- **Optimization**: Vite automatically optimizes and fingerprints image assets
+- **Git Storage**: Images are stored as regular git files (not LFS) in `src/assets/`
+- **Path Resolution**: JSON data files can reference `/images/` paths which get resolved to imported assets
 
 ## Technical Architecture
 
-- **Framework**: React 19 with TypeScript
-- **Build Tool**: Vite 7 with HMR and optimized builds
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite 5 with HMR and optimized builds
 - **Styling**: Tailwind CSS 3 with custom design tokens
 - **Data Management**: TypeScript interfaces with JSON imports
 - **State Management**: Custom React hooks for data access
 - **Routing**: Single-page application (extensible with React Router)
 - **SEO**: React Helmet Async for meta tag management
-- **Images**: Static assets with lazy loading support
+- **Images**: ES module imports with Vite asset optimization and lazy loading support
 
 ## Development Workflow
 
@@ -156,6 +164,14 @@ Static media files are stored in `public/images/` and served directly by Vite. M
 - **Hook Pattern**: Use custom hooks for consistent data access
 - **Validation**: Implement runtime validation for data integrity
 
+### Image Asset Management
+
+- **Import Strategy**: All images are imported as ES modules from `src/assets/images/`
+- **Path Resolution**: Use `resolveImagePath()` from `src/utils/imageMap.ts` to resolve JSON paths
+- **Git Storage**: Images stored as regular git files (excluded from LFS via `.gitattributes`)
+- **Build Optimization**: Vite automatically optimizes, compresses, and fingerprints image assets
+- **Component Usage**: Components either import images directly or use `resolveImagePath()` for JSON data
+
 ### Styling
 
 - **Utility-First**: Prefer Tailwind utilities over custom CSS
@@ -185,7 +201,7 @@ npm run crawl <domain>
 
 ## Key Development URLs
 
-- **Development Server**: http://localhost:5173/ (or next available port)
+- **Development Server**: http://localhost:8080/
 - **Production Preview**: Available after running `npm run preview`
 
 ## Core Principles

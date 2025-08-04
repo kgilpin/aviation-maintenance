@@ -31,7 +31,7 @@ async function takeScreenshot(): Promise<void> {
   try {
     // Parse command line arguments
     const args = process.argv.slice(2);
-    let url = "http://localhost:5173";
+    let url = "http://localhost:8080";
     let outputPath: string | null = null;
 
     // Check for help
@@ -56,7 +56,7 @@ async function takeScreenshot(): Promise<void> {
     // Ensure URL is valid
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
       // Assume localhost if no protocol provided
-      url = "http://localhost:5173" + (url.startsWith("/") ? url : "/" + url);
+      url = "http://localhost:8080" + (url.startsWith("/") ? url : "/" + url);
     }
 
     console.log(`📸 Taking screenshot of ${url}`);
@@ -185,13 +185,13 @@ Usage:
   tsx take-screenshot.ts [url] [--output filename]
 
 Arguments:
-  url         Full URL to screenshot (defaults to http://localhost:5173 if not provided)
-              Can be a full URL or just a path (will use localhost:5173 as base)
+  url         Full URL to screenshot (defaults to http://localhost:8080 if not provided)
+              Can be a full URL or just a path (will use localhost:8080 as base)
   --output    Custom output filename/path (optional)
 
 Examples:
-  tsx take-screenshot.ts                                                    # localhost:5173 home
-  tsx take-screenshot.ts /about                                             # localhost:5173/about
+  tsx take-screenshot.ts                                                    # localhost:8080 home
+  tsx take-screenshot.ts /about                                             # localhost:8080/about
   tsx take-screenshot.ts /about --output screenshots/about.png              # Custom filename
   tsx take-screenshot.ts http://localhost:3000/contact                      # Different local port
   tsx take-screenshot.ts https://example.com/pages/services                 # External site

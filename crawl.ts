@@ -10,8 +10,20 @@ if (!domainName) {
   process.exit(1);
 }
 
+// Parse the domain name to handle protocols
+let baseUrl: string;
+let hostname: string;
+
+if (domainName.startsWith('http://') || domainName.startsWith('https://')) {
+  baseUrl = domainName.endsWith('/') ? domainName : `${domainName}/`;
+  hostname = new URL(domainName).hostname;
+} else {
+  baseUrl = `https://${domainName}/`;
+  hostname = domainName;
+}
+
 const options: scraper.ScrapingOptions = {
-  urls: [`https://${domainName}/`],
+  urls: [baseUrl],
   directory: path.join(__dirname, "crawl"),
   recursive: true,
   maxRecursiveDepth: 2,
@@ -24,12 +36,12 @@ const options: scraper.ScrapingOptions = {
     { selector: "a", attr: "href" },
   ],
   urlFilter: function (url: string): boolean {
-    return url.includes(domainName);
+    return url.includes(hostname);
   },
   resourceFilter: function (resource: scraper.Resource): boolean {
     // Include all resources from the same domain
     return (
-      resource.url.includes(domainName) ||
+      resource.url.includes(hostname) ||
       resource.url.startsWith("/") ||
       resource.url.startsWith("./") ||
       resource.url.startsWith("../")

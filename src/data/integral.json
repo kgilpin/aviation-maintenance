@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "INTEGRAL - Aura Aero",
+    "description": "The latest generation of side by side two-seater aircraft, for training with an aerobatic capacity. INTEGRAL R certified EASA CS23, FAA certification currently in progress.",
+    "keywords": ["INTEGRAL", "aircraft", "training", "aerobatic", "EASA", "FAA", "aviation", "side by side", "two-seater", "Aura Aero"]
+  },
+  "hero": {
+    "video": "/videos/INTEGRAL-WEB-1.mp4",
+    "videoPoster": "/images/integral/integral-hero-poster.jpg",
+    "headline": "The latest generation of side by side two-seater aircraft, for training with an aerobatic capacity",
+    "subheadline": "",
+    "certification": "INTEGRAL R certified EASA CS23, FAA certification currently in progress"
+  },
+  "contact": {
+    "icon": "/images/icons/picto-contact.svg",
+    "message": "Do you have questions about our products?",
+    "link": "/en/contact-us"
+  },
+  "navigation": [
+    { "id": "video", "label": "Integral", "target": "#video" },
+    { "id": "integral", "label": "INTEGRAL R", "target": "#integral" },
+    { "id": "characteristics", "label": "Technical specifications", "target": "#characteristics" },
+    { "id": "testimonials", "label": "Testimonies", "target": "#testimonials" }
+  ],
+  "availability": "Now available",
+  "legalDisclaimer": "The information contained in this document is indicative and subject to change without notice. It cannot be considered as a commitment from AURA AERO. The certification process may lead to modifications of the aircraft specifications."
+}

@@ -1,0 +1,24 @@
+{
+  "testimonials": [
+    {
+      "id": "midi-pyrenees-voltige",
+      "company": "Midi-Pyrénées Voltige",
+      "logo": "/images/testimonials/midi-pyrenees-voltige.jpg",
+      "quote": "Outstanding performance and reliability for aerobatic training.",
+      "author": {
+        "name": "Jean-François Babi",
+        "title": "President"
+      }
+    },
+    {
+      "id": "chateauroux-villers",
+      "company": "Châteauroux-Villers flying club",
+      "logo": "/images/testimonials/aero-club-chateauroux.jpg",
+      "quote": "Perfect aircraft for advanced flight training programs.",
+      "author": {
+        "name": "Bruno Barraud",
+        "title": "President"
+      }
+    }
+  ]
+}

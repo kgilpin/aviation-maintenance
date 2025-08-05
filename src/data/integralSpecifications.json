@@ -1,0 +1,43 @@
+{
+  "specifications": [
+    {
+      "category": "Dimensions",
+      "items": [
+        { "label": "Length", "value": "7,26 m", "unit": "(23,82 ft)" },
+        { "label": "Wingspan", "value": "8,78 m", "unit": "(28,80 ft)" },
+        { "label": "Height", "value": "2,48 m", "unit": "(8,13 ft)" }
+      ]
+    },
+    {
+      "category": "Propulsion",
+      "items": [
+        { "label": "Engine", "value": "Lycoming AEIO-390/A3B6", "unit": "(210 hp @ 2 700 rpm)" },
+        { "label": "Propeller", "value": "MT Propeller MTV-15-B-C/C193-25", "unit": "(constant speed - 2 blades)" }
+      ]
+    },
+    {
+      "category": "Weight & Load",
+      "items": [
+        { "label": "MTOW", "value": "1 005 kg", "unit": "(2 216 lbs)" },
+        { "label": "Load Factor", "value": "Multiple categories with G-force ratings" }
+      ]
+    },
+    {
+      "category": "Performance",
+      "items": [
+        { "label": "Cruising Speed", "value": "278 km/h", "unit": "(150 kt)" },
+        { "label": "Maneuvering Speed", "value": "300 km/h", "unit": "(162 kt)" },
+        { "label": "Stall Speed", "value": "111 km/h", "unit": "(60 kt)" },
+        { "label": "Approach Speed", "value": "145 km/h", "unit": "(78 kt)" }
+      ]
+    },
+    {
+      "category": "Range & Capacity",
+      "items": [
+        { "label": "Range", "value": "980 km", "unit": "(530 NM)" },
+        { "label": "Fuel Capacity", "value": "159 L", "unit": "(42 gal US)" },
+        { "label": "Luggage Capacity", "value": "30 kg", "unit": "(66 lbs)" }
+      ]
+    }
+  ]
+}

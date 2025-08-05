@@ -1,0 +1,71 @@
+{
+  "models": [
+    {
+      "id": "integral-r",
+      "name": "INTEGRAL R",
+      "logo": "/images/integral/logos/integral-r-logo.png",
+      "description": "Certified aerobatic training aircraft",
+      "status": "certified",
+      "certification": {
+        "easa": true,
+        "faa": false,
+        "details": "EASA CS23 certified, FAA certification in progress"
+      },
+      "images": {
+        "hero": "/images/integral/integral-r-hero.jpg",
+        "viewer360": [
+          "/images/integral/360/IntegralRX2_001.png",
+          "/images/integral/360/IntegralRX2_005.png",
+          "/images/integral/360/IntegralRX2_010.png",
+          "/images/integral/360/IntegralRX2_015.png",
+          "/images/integral/360/IntegralRX2_020.png",
+          "/images/integral/360/IntegralRX2_025.png",
+          "/images/integral/360/IntegralRX2_030.png",
+          "/images/integral/360/IntegralRX2_035.png",
+          "/images/integral/360/IntegralRX2_040.png",
+          "/images/integral/360/IntegralRX2_045.png",
+          "/images/integral/360/IntegralRX2_050.png",
+          "/images/integral/360/IntegralRX2_055.png",
+          "/images/integral/360/IntegralRX2_060.png",
+          "/images/integral/360/IntegralRX2_065.png",
+          "/images/integral/360/IntegralRX2_070.png"
+        ],
+        "thumbnail": "/images/integral/integral-r-thumb.jpg"
+      }
+    },
+    {
+      "id": "integral-s",
+      "name": "INTEGRAL S",
+      "logo": "/images/integral/logos/integral-s-logo.png",
+      "description": "Sport aircraft variant",
+      "status": "in-progress",
+      "certification": {
+        "easa": false,
+        "faa": false,
+        "details": "Development in progress"
+      },
+      "images": {
+        "hero": "/images/integral/integral-s-hero.jpg",
+        "viewer360": [],
+        "thumbnail": "/images/integral/integral-s-thumb.jpg"
+      }
+    },
+    {
+      "id": "integral-e",
+      "name": "INTEGRAL E",
+      "logo": "/images/integral/logos/integral-e-1.png",
+      "description": "Electric variant",
+      "status": "development",
+      "certification": {
+        "easa": false,
+        "faa": false,
+        "details": "Concept development phase"
+      },
+      "images": {
+        "hero": "/images/integral/integral-e-hero.jpg",
+        "viewer360": [],
+        "thumbnail": "/images/integral/integral-e-thumb.jpg"
+      }
+    }
+  ]
+}

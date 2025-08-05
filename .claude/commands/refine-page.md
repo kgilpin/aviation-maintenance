@@ -34,6 +34,11 @@ Save the plan to `plans/[page-name]-fixup/[timestamp]`.
 
 Iterate through TODO items, updating the site as needed to match the live site.
 
-## Iterate on site fixes
+## Debugging
 
-Repeat the fixup process until the site matches the live site. The site is considered matching when only low priority items remain.
+Several tools besides the screenshot tool are available for debugging. These include:
+
+- Browser console output: `npm run browser-console -- <args>`
+- Network monitor / asset errors: `npm run network-monitor -- <args>`
+
+You can also run `npm run build` to ensure that the site builds cleanly.

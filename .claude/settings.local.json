@@ -36,7 +36,8 @@
       "Bash(pkill:*)",
       "Bash(git check-attr:*)",
       "Bash(npm run browser-console:*)",
-      "Bash(npm run network-monitor:*)"
+      "Bash(npm run network-monitor:*)",
+      "Bash(npm run extract-media:*)"
     ],
     "deny": []
   }

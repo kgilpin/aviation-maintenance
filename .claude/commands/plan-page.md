@@ -1,6 +1,10 @@
 # Cloning a page
 
-Create a step-by-step plan to clone a page from the crawled content into the site structure.
+Create architectural-level plan to clone a page from the crawled content into the site structure.
+
+The purpose of this plan is site architecture, components, and strategy.
+
+DO NOT emit code details int he plan. The plan will be an input to a subsquent step, "/create-page", that will fill in the details.
 
 ## Capture the current date + time
 
@@ -16,6 +20,7 @@ Inspect the available components, data files, and hooks in the project to determ
 - Component files in `src/components/`
 - Custom hooks in `src/hooks/`
 - Page components in `src/pages/`
+- Media in `src/assets/` and catalogued in `src/data/media.json`
 
 ## Do not output specific code, data or text
 
@@ -38,26 +43,14 @@ Ensure that these components are created when cloning a page, and that they are 
 
 Ensure that components are reused throughout the site to maintain consistency.
 
-## Component styling
-
-Components should be styled using Tailwind CSS v3.
-
-## Faithful replication of text and other content
-
-When cloning a page, ensure that all text content is faithfully replicated from the crawled content. Minor adjustments may be made for formatting or structure in order to fit into the site architecture or best practices of the technology components in use, but the core content should remain unchanged.
-
 ## Saving the plan
 
-Save the plan in the directory `plans/[page-name]/[timestamp]`. The plan should consist of multiple files that are sequenced in a way that allows the developer to follow the steps to clone the page.
+Save the plan in the file `plans/[timestamp]-[page-name]`. The steps of the plan should be sequenced in a way that allows the developer to follow the steps to clone the page.
 
-Each component should be described in its own file, with a clear description of what it does and how it should be used. When an existing component is being reused, it does not need its own file, but should be referenced in the plan.
+Each component should include a clear description of what it does and how it should be used. When an existing component is being reused, it does not need its own specification, but should be referenced in the plan.
 
-The plan should also include any necessary data files that need to be created or updated.
+The plan should also include a description of data files that need to be created or updated.
 
-Create a file `overview.md` in the plan directory that describes the overall plan for cloning the page.
-
-## Extract data files from the plan.
-
-Analyze the plan to determine if any additional data files should be refactored out of the pages and into the `src/data/` directory instead. Good candidates for data file refactoring include any content that is repeated across multiple pages, or content items that are uniform in structure and are displayed in a list.
+## Use of data files
 
 Use existing data files in the `src/data/` directory when they already exist and match the purpose of the page. Create corresponding TypeScript interfaces in `src/data/types.ts` and custom hooks in `src/hooks/` for type-safe data access.

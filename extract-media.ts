@@ -8,20 +8,21 @@ import http from 'http';
 import { URL } from 'url';
 
 /**
- * Extract images from Wix site HTML files
+ * Extract media files from Wix site HTML files
  * 
- * Usage: tsx extract-images.ts <htmlFile> [outputDir]
+ * Usage: tsx extract-media.ts <htmlFile> [outputDir]
  * 
  * Features:
- * - Extracts images from various Wix image patterns
- * - Downloads images to specified directory
- * - Handles both linked and embedded images
- * - Generates a manifest of extracted images
+ * - Extracts all media types (images, videos, audio) from various Wix patterns
+ * - Downloads media files to specified directory
+ * - Handles both linked and embedded media
+ * - Generates a manifest of extracted media files
  */
 
-interface ImageDownloadResult {
+interface MediaDownloadResult {
   url: string;
   filename: string;
+  type: 'image' | 'video' | 'audio' | 'document';
   status: 'downloaded' | 'exists';
 }
 
@@ -30,33 +31,39 @@ interface ExtractorError {
   error: string;
 }
 
-interface ImageManifest {
+interface MediaManifest {
   sourceFile: string;
   extractionDate: string;
-  totalImages: number;
-  downloadedImages: number;
+  totalMedia: number;
+  downloadedMedia: number;
   failedDownloads: number;
-  images: ImageDownloadResult[];
+  mediaByType: {
+    images: number;
+    videos: number;
+    audio: number;
+    documents: number;
+  };
+  media: MediaDownloadResult[];
   errors: ExtractorError[];
 }
 
-class WixImageExtractor {
+class WixMediaExtractor {
   private htmlFile: string;
   private outputDir: string;
-  private images: Set<string>;
-  private downloadedImages: ImageDownloadResult[];
+  private mediaUrls: Set<string>;
+  private downloadedMedia: MediaDownloadResult[];
   private errors: ExtractorError[];
 
-  constructor(htmlFile: string, outputDir: string = './extracted-images') {
+  constructor(htmlFile: string, outputDir: string = './extracted-media') {
     this.htmlFile = htmlFile;
     this.outputDir = outputDir;
-    this.images = new Set();
-    this.downloadedImages = [];
+    this.mediaUrls = new Set();
+    this.downloadedMedia = [];
     this.errors = [];
   }
 
   async extract(): Promise<void> {
-    console.log(`Extracting images from: ${this.htmlFile}`);
+    console.log(`Extracting media from: ${this.htmlFile}`);
     
     // Create output directory
     if (!fs.existsSync(this.outputDir)) {
@@ -67,19 +74,22 @@ class WixImageExtractor {
     const html = fs.readFileSync(this.htmlFile, 'utf8');
     const $ = cheerio.load(html);
 
-    // Extract images using various patterns
+    // Extract media using various patterns
     this.extractFromStandardImgTags($);
+    this.extractFromVideoTags($);
+    this.extractFromAudioTags($);
     this.extractFromWixStaticUrls($, html);
     this.extractFromDataSrcAttributes($);
     this.extractFromStyleBackgrounds($, html);
-    this.extractFromScriptData($, html);
+    this.extractFromScriptData($);
     this.extractFromFavicons($);
+    this.extractFromLinkTags($);
 
-    console.log(`Found ${this.images.size} unique images`);
+    console.log(`Found ${this.mediaUrls.size} unique media files`);
 
-    // Download images
-    if (this.images.size > 0) {
-      await this.downloadImages();
+    // Download media
+    if (this.mediaUrls.size > 0) {
+      await this.downloadMedia();
       this.generateManifest();
     }
 
@@ -91,25 +101,67 @@ class WixImageExtractor {
       const src = $(elem).attr('src');
       const dataSrc = $(elem).attr('data-src');
       
-      if (src) this.addImage(src);
-      if (dataSrc) this.addImage(dataSrc);
+      if (src) this.addMedia(src);
+      if (dataSrc) this.addMedia(dataSrc);
+    });
+  }
+
+  private extractFromVideoTags($: cheerio.CheerioAPI): void {
+    $('video').each((_, elem) => {
+      const src = $(elem).attr('src');
+      const poster = $(elem).attr('poster');
+      
+      if (src) this.addMedia(src);
+      if (poster) this.addMedia(poster);
+      
+      // Extract from source tags within video
+      $(elem).find('source').each((_, sourceElem) => {
+        const sourceSrc = $(sourceElem).attr('src');
+        if (sourceSrc) this.addMedia(sourceSrc);
+      });
+    });
+  }
+
+  private extractFromAudioTags($: cheerio.CheerioAPI): void {
+    $('audio').each((_, elem) => {
+      const src = $(elem).attr('src');
+      
+      if (src) this.addMedia(src);
+      
+      // Extract from source tags within audio
+      $(elem).find('source').each((_, sourceElem) => {
+        const sourceSrc = $(sourceElem).attr('src');
+        if (sourceSrc) this.addMedia(sourceSrc);
+      });
+    });
+  }
+
+  private extractFromLinkTags($: cheerio.CheerioAPI): void {
+    // Extract stylesheets, documents, and other linked resources
+    $('link[href]').each((_, elem) => {
+      const href = $(elem).attr('href');
+      const rel = $(elem).attr('rel');
+      
+      if (href && this.isMediaUrl(href) && rel !== 'stylesheet') {
+        this.addMedia(href);
+      }
     });
   }
 
   private extractFromWixStaticUrls(_: cheerio.CheerioAPI, html: string): void {
-    // Extract all Wix static URLs from the HTML content
-    const wixUrlRegex = /https?:\/\/static\.wixstatic\.com\/[^"'\s)>]+\.(jpg|jpeg|png|gif|webp|svg|ico)/gi;
+    // Extract all Wix static URLs from the HTML content (images, videos, audio)
+    const wixUrlRegex = /https?:\/\/static\.wixstatic\.com\/[^"'\s)>]+\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm|avi|mov|mp3|wav|ogg|pdf|doc|docx)/gi;
     const matches = html.match(wixUrlRegex) || [];
     
-    matches.forEach(url => this.addImage(url));
+    matches.forEach(url => this.addMedia(url));
   }
 
   private extractFromDataSrcAttributes($: cheerio.CheerioAPI): void {
     // Look for elements with data-src attributes
     $('[data-src]').each((_, elem) => {
       const dataSrc = $(elem).attr('data-src');
-      if (dataSrc && this.isImageUrl(dataSrc)) {
-        this.addImage(dataSrc);
+      if (dataSrc && this.isMediaUrl(dataSrc)) {
+        this.addMedia(dataSrc);
       }
     });
   }
@@ -121,8 +173,8 @@ class WixImageExtractor {
     
     while ((match = bgImageRegex.exec(html)) !== null) {
       const url = match[1];
-      if (this.isImageUrl(url)) {
-        this.addImage(url);
+      if (this.isMediaUrl(url)) {
+        this.addMedia(url);
       }
     }
 
@@ -131,26 +183,26 @@ class WixImageExtractor {
       const style = $(elem).attr('style');
       if (style) {
         const bgMatch = style.match(/background-image\s*:\s*url\(['"]?([^'")\s]+)['"]?\)/i);
-        if (bgMatch && this.isImageUrl(bgMatch[1])) {
-          this.addImage(bgMatch[1]);
+        if (bgMatch && this.isMediaUrl(bgMatch[1])) {
+          this.addMedia(bgMatch[1]);
         }
       }
     });
   }
 
-  private extractFromScriptData($: cheerio.CheerioAPI, _: string): void {
+  private extractFromScriptData($: cheerio.CheerioAPI): void {
     // Extract images from JSON data in script tags (common in Wix sites)
     $('script[type="application/json"], script:not([src])').each((_, elem) => {
       const content = $(elem).html();
       if (content) {
-        // Look for image URLs in JSON data
-        const imageUrlRegex = /["']https?:\/\/[^"'\s]*\.(jpg|jpeg|png|gif|webp|svg|ico)[^"'\s]*["']/gi;
-        const matches = content.match(imageUrlRegex) || [];
+        // Look for media URLs in JSON data
+        const mediaUrlRegex = /["']https?:\/\/[^"'\s]*\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm|avi|mov|mp3|wav|ogg|pdf|doc|docx)[^"'\s]*["']/gi;
+        const matches = content.match(mediaUrlRegex) || [];
         
         matches.forEach(match => {
           // Remove quotes
           const url = match.replace(/^["']|["']$/g, '');
-          this.addImage(url);
+          this.addMedia(url);
         });
       }
     });
@@ -160,13 +212,13 @@ class WixImageExtractor {
     // Extract favicon and app icons
     $('link[rel*="icon"], link[rel="apple-touch-icon"]').each((_, elem) => {
       const href = $(elem).attr('href');
-      if (href && this.isImageUrl(href)) {
-        this.addImage(href);
+      if (href && this.isMediaUrl(href)) {
+        this.addMedia(href);
       }
     });
   }
 
-  private addImage(url: string): void {
+  private addMedia(url: string): void {
     if (!url || url.startsWith('data:')) return; // Skip data URLs
     
     try {
@@ -181,44 +233,73 @@ class WixImageExtractor {
       // Validate URL
       new URL(url);
       
-      // Only add image URLs
-      if (this.isImageUrl(url)) {
-        this.images.add(url);
+      // Only add media URLs
+      if (this.isMediaUrl(url)) {
+        this.mediaUrls.add(url);
       }
     } catch {
       // Invalid URL, skip
     }
   }
 
-  private isImageUrl(url: string): boolean {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.ico', '.bmp', '.tiff'];
+  private isMediaUrl(url: string): boolean {
+    const mediaExtensions = {
+      image: ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.ico', '.bmp', '.tiff'],
+      video: ['.mp4', '.webm', '.avi', '.mov', '.wmv', '.flv', '.mkv'],
+      audio: ['.mp3', '.wav', '.ogg', '.aac', '.flac', '.wma'],
+      document: ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx']
+    };
+    
     const lowerUrl = url.toLowerCase();
+    const allExtensions = Object.values(mediaExtensions).flat();
     
     // Check file extension
-    if (imageExtensions.some(ext => lowerUrl.includes(ext))) {
+    if (allExtensions.some(ext => lowerUrl.includes(ext))) {
       return true;
     }
 
-    // Check for Wix image patterns
+    // Check for Wix media patterns
     if (lowerUrl.includes('static.wixstatic.com') && 
-        (lowerUrl.includes('/media/') || lowerUrl.includes('/image/') || lowerUrl.includes('fill'))) {
+        (lowerUrl.includes('/media/') || lowerUrl.includes('/image/') || lowerUrl.includes('fill') || lowerUrl.includes('/video/'))) {
       return true;
     }
 
     return false;
   }
 
-  private async downloadImages(): Promise<void> {
-    console.log(`Downloading ${this.images.size} images...`);
+  private getMediaType(url: string): 'image' | 'video' | 'audio' | 'document' {
+    const lowerUrl = url.toLowerCase();
     
-    const promises = Array.from(this.images).map(url => this.downloadImage(url));
+    if (['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.ico', '.bmp', '.tiff'].some(ext => lowerUrl.includes(ext))) {
+      return 'image';
+    }
+    
+    if (['.mp4', '.webm', '.avi', '.mov', '.wmv', '.flv', '.mkv'].some(ext => lowerUrl.includes(ext))) {
+      return 'video';
+    }
+    
+    if (['.mp3', '.wav', '.ogg', '.aac', '.flac', '.wma'].some(ext => lowerUrl.includes(ext))) {
+      return 'audio';
+    }
+    
+    if (['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx'].some(ext => lowerUrl.includes(ext))) {
+      return 'document';
+    }
+    
+    return 'image'; // default fallback
+  }
+
+  private async downloadMedia(): Promise<void> {
+    console.log(`Downloading ${this.mediaUrls.size} media files...`);
+    
+    const promises = Array.from(this.mediaUrls).map(url => this.downloadMediaFile(url));
     await Promise.allSettled(promises);
     
-    console.log(`Successfully downloaded: ${this.downloadedImages.length}`);
+    console.log(`Successfully downloaded: ${this.downloadedMedia.length}`);
     console.log(`Failed downloads: ${this.errors.length}`);
   }
 
-  private async downloadImage(url: string): Promise<void> {
+  private async downloadMediaFile(url: string): Promise<void> {
     try {
       const urlObj = new URL(url);
       const filename = this.generateFilename(url);
@@ -226,7 +307,7 @@ class WixImageExtractor {
 
       // Skip if file already exists
       if (fs.existsSync(filepath)) {
-        this.downloadedImages.push({ url, filename, status: 'exists' });
+        this.downloadedMedia.push({ url, filename, type: this.getMediaType(url), status: 'exists' });
         return;
       }
 
@@ -240,7 +321,7 @@ class WixImageExtractor {
             
             file.on('finish', () => {
               file.close();
-              this.downloadedImages.push({ url, filename, status: 'downloaded' });
+              this.downloadedMedia.push({ url, filename, type: this.getMediaType(url), status: 'downloaded' });
               resolve();
             });
 
@@ -322,17 +403,25 @@ class WixImageExtractor {
   }
 
   private generateManifest(): void {
-    const manifest: ImageManifest = {
+    const mediaByType = {
+      images: this.downloadedMedia.filter(m => m.type === 'image').length,
+      videos: this.downloadedMedia.filter(m => m.type === 'video').length,
+      audio: this.downloadedMedia.filter(m => m.type === 'audio').length,
+      documents: this.downloadedMedia.filter(m => m.type === 'document').length
+    };
+
+    const manifest: MediaManifest = {
       sourceFile: this.htmlFile,
       extractionDate: new Date().toISOString(),
-      totalImages: this.images.size,
-      downloadedImages: this.downloadedImages.length,
+      totalMedia: this.mediaUrls.size,
+      downloadedMedia: this.downloadedMedia.length,
       failedDownloads: this.errors.length,
-      images: this.downloadedImages,
+      mediaByType,
+      media: this.downloadedMedia,
       errors: this.errors
     };
 
-    const manifestPath = path.join(this.outputDir, 'image-manifest.json');
+    const manifestPath = path.join(this.outputDir, 'media-manifest.json');
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
     console.log(`Manifest written to: ${manifestPath}`);
   }
@@ -341,8 +430,20 @@ class WixImageExtractor {
     console.log('\n=== EXTRACTION SUMMARY ===');
     console.log(`Source file: ${this.htmlFile}`);
     console.log(`Output directory: ${this.outputDir}`);
-    console.log(`Total images found: ${this.images.size}`);
-    console.log(`Successfully downloaded: ${this.downloadedImages.length}`);
+    console.log(`Total media found: ${this.mediaUrls.size}`);
+    console.log(`Successfully downloaded: ${this.downloadedMedia.length}`);
+    
+    const mediaByType = {
+      images: this.downloadedMedia.filter(m => m.type === 'image').length,
+      videos: this.downloadedMedia.filter(m => m.type === 'video').length,
+      audio: this.downloadedMedia.filter(m => m.type === 'audio').length,
+      documents: this.downloadedMedia.filter(m => m.type === 'document').length
+    };
+    
+    console.log(`  - Images: ${mediaByType.images}`);
+    console.log(`  - Videos: ${mediaByType.videos}`);
+    console.log(`  - Audio: ${mediaByType.audio}`);
+    console.log(`  - Documents: ${mediaByType.documents}`);
     console.log(`Failed downloads: ${this.errors.length}`);
     
     if (this.errors.length > 0) {
@@ -359,18 +460,18 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   
   if (args.length === 0) {
-    console.log('Usage: tsx extract-images.ts <htmlFile> [outputDir]');
+    console.log('Usage: tsx extract-media.ts <htmlFile> [outputDir]');
     console.log('');
-    console.log('Extract images from Wix site HTML files');
+    console.log('Extract media files from Wix site HTML files');
     console.log('');
     console.log('Options:');
     console.log('  htmlFile   Path to the HTML file to process');
-    console.log('  outputDir  Directory to save extracted images (default: ./extracted-images)');
+    console.log('  outputDir  Directory to save extracted media (default: ./extracted-media)');
     process.exit(1);
   }
 
   const htmlFile = args[0];
-  const outputDir = args[1] || './extracted-images';
+  const outputDir = args[1] || './extracted-media';
 
   if (!fs.existsSync(htmlFile)) {
     console.error(`Error: File not found: ${htmlFile}`);
@@ -378,7 +479,7 @@ async function main(): Promise<void> {
   }
 
   try {
-    const extractor = new WixImageExtractor(htmlFile, outputDir);
+    const extractor = new WixMediaExtractor(htmlFile, outputDir);
     await extractor.extract();
   } catch (error) {
     console.error('Extraction failed:', error);
@@ -391,4 +492,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-export default WixImageExtractor;
+export default WixMediaExtractor;

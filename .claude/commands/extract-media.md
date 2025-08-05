@@ -2,29 +2,22 @@
 
 Some site pages may contain media files (images, videos, audio, documents) that need to be extracted and saved for later use. This command provides a way to extract all media from a specific page.
 
-## Usage
+## Media extraction command
 
-Run the command `/extract-media [page-name]` to extract media from a specific page.
+Run the command `/extract-media [page-name] crawl/media/[page-name]` to extract media from a specific page.
 
 ## Output
 
-The extracted media files will be saved in the `src/assets/` directory, organized by type. Each file will be named based on its original filename, with a timestamp appended to ensure uniqueness.
-
-## Method
-
-### Find and copy media
-
-Inspect the site crawl and copy all media files from the crawl to the `src/assets/` directory. Media should be organized logically within subdirectories:
+Analyze and consolidate the extracted media into `src/assets/`, organized by type. For example:
 
 - `src/assets/images/` - Images (jpg, png, gif, svg, etc.)
 - `src/assets/videos/` - Video files (mp4, webm, avi, etc.)
 - `src/assets/audio/` - Audio files (mp3, wav, ogg, etc.)
 - `src/assets/documents/` - Documents (pdf, doc, etc.)
 
-### No cleanup or removal
+## No cleanup or removal
 
-Don't perform a cleanup or removal step in which you attempt to combine or remove content. Just leave all the
-extracted media in place.
+Don't perform a cleanup or removal step in which you attempt to combine or remove content. Retain all the extracted media, and just organize it.
 
 ## Metadata
 

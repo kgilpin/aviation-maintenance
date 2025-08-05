@@ -1,0 +1,1 @@
+Commit changes to the site framework files (everything that's not part of the site itself, e.g. src/ or assets/). Use separate commits if needed and generate good commit messages. Use semantic release compatible commit names.

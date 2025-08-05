@@ -1,0 +1,1 @@
+Commit changes to the site files (everything that's part of the site itself, e.g. src/ or assets/, rather than framework files such as claude commands and helper scripts). Use separate commits if needed and generate good commit messages. Use semantic release compatible commit names.

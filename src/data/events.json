@@ -1,0 +1,57 @@
+{
+  "upcomingEvents": [
+    {
+      "id": "1",
+      "title": "Monday Night Scramble",
+      "description": "Weekly scramble tournament for golfers of all skill levels",
+      "date": "2025-08-11",
+      "time": "6:00 PM",
+      "type": "weekly",
+      "url": "/weekly-events-/monday-night-scramble"
+    },
+    {
+      "id": "2", 
+      "title": "Tuesday Senior League",
+      "description": "Senior league play for experienced golfers",
+      "date": "2025-08-12",
+      "time": "9:00 AM",
+      "type": "weekly",
+      "url": "/weekly-events-/tuesday-senior-league"
+    },
+    {
+      "id": "3",
+      "title": "Wednesday Men's League",
+      "description": "Men's league competition every Wednesday",
+      "date": "2025-08-13", 
+      "time": "5:30 PM",
+      "type": "weekly",
+      "url": "/weekly-events-/wednesday-men-s-league"
+    },
+    {
+      "id": "4",
+      "title": "Thursday Ladies League",
+      "description": "Ladies league for female golfers",
+      "date": "2025-08-14",
+      "time": "9:00 AM", 
+      "type": "weekly",
+      "url": "https://springmeadows.golfleague.net/",
+      "external": true
+    }
+  ],
+  "featuredEvents": [
+    {
+      "id": "5",
+      "title": "Group Outings Available",
+      "description": "Book your corporate or group outing at Spring Meadows",
+      "type": "ongoing",
+      "url": "/weekly-events-/group-outings"
+    },
+    {
+      "id": "6", 
+      "title": "Member & Club Events",
+      "description": "Exclusive events for Spring Meadows members",
+      "type": "ongoing",
+      "url": "/weekly-events-/member---club-events"
+    }
+  ]
+}

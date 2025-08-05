@@ -34,7 +34,9 @@
       "Bash(npm run extract-images:*)",
       "Bash(npm run screenshot:*)",
       "Bash(pkill:*)",
-      "Bash(git check-attr:*)"
+      "Bash(git check-attr:*)",
+      "Bash(npm run browser-console:*)",
+      "Bash(npm run network-monitor:*)"
     ],
     "deny": []
   }

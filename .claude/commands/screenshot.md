@@ -12,23 +12,9 @@ Examples:
 
 ## Implementation
 
-### Current Approach: Node.js Script
-
-Since MCP tools aren't available in the current Claude session, use the local Playwright script:
-
-1. **Modify the script** (`take-screenshot.ts`) to accept a page path parameter
-2. **Run via Bash**: `node take-screenshot.ts [page_path] [--output <output_file>]`
-3. **Read and display** the generated screenshot file
-4. **Clean up** old screenshot files if needed
-
-### Future MCP Integration
-
-When MCP server is properly connected:
-
-1. Use the `mcp__puppeteer__screenshot` tool to capture screenshots
-2. Set URL to `http://localhost:8080{page_path}` where page_path defaults to "/"
-3. Use viewport settings: 1920x1080 desktop view
-4. Take full-page screenshots
+1. **Run via NPM**: `npm run take-screenshot -- [page_path] [--output <output_file>]`
+2. **Read and display** the generated screenshot file
+3. **Clean up** old screenshot files if needed
 
 ## Script Usage
 
@@ -36,10 +22,10 @@ The universal screenshot script supports any website:
 
 ```bash
 # Local development (default: localhost:8080)
-node take-screenshot.ts http://localhost:8080/services --output screenshot.png # Port 8080 with output file
+npm run take-screenshot -- http://localhost:8080/services --output screenshot.png # Port 8080 with output file
 
 # External websites
-node take-screenshot.ts https://example.com/pricing --output screenshot.png        # Any external site
+npm run take-screenshot -- https://example.com/pricing --output screenshot.png        # Any external site
 ```
 
 ## Command Implementation
@@ -47,7 +33,7 @@ node take-screenshot.ts https://example.com/pricing --output screenshot.png     
 When `/screenshot [args...]` is used:
 
 1. **Parse arguments** - Extract base URL and path from arguments
-2. **Run script** - Execute `node take-screenshot.ts [args...]`
+2. **Run script** - Execute `npm run take-screenshot -- [args...]`
 3. **Capture output** - Show progress and filename
 4. **Display image** - Read and show the generated screenshot
 5. **Cleanup** - Optionally remove old screenshots
@@ -66,4 +52,4 @@ The screenshot functionality helps with:
 
 - Handle server not running (ECONNREFUSED)
 - Provide clear error messages
-- Suggest starting dev server with `npm run dev`
+- Suggest checking the build using `npm run build`

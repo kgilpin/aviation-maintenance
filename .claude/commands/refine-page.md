@@ -12,9 +12,9 @@ Run the system command `date -Iseconds` to obtain the current date and time. Thi
 
 ## Take screenshots of the local and live sites
 
-Take a screenshot of the local page using `node take-screenshot.js http://localhost:8080/$ARGUMENTS --output screenshots/localhost/[page-name]-[timestamp].png`.
+Take a screenshot of the local page using `npm run take-screenshot -- http://localhost:8080/$ARGUMENTS --output screenshots/localhost/[page-name]-[timestamp].png`.
 
-Then take a screenshot of the live site using `node take-screenshot.js [live-site-url]/$ARGUMENTS --output screenshots/live/[page-name]-[timestamp].png`.
+Then take a screenshot of the live site using `npm run take-screenshot -- [live-site-url]/$ARGUMENTS --output screenshots/live/[page-name]-[timestamp].png`.
 
 ## Compare the local and live sites
 

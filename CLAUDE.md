@@ -13,11 +13,21 @@ This is a modern React + Vite application built with TypeScript, designed as a r
 - **Preview**: `npm run preview` - Preview production build locally
 - **Crawl website**: `npm run crawl <domain>` - Crawl a website for content and assets using TypeScript crawler
 - **Screenshot utility**: `npm run screenshot -- <page_url> [--output <output_file>]` - Capture screenshots of pages
+- **Extract media**: `npm run extract-media -- <html_file> [output_dir]` - Extract all media files from HTML pages
+- **Browser console**: `npm run browser-console -- <url> [--timeout <ms>] [--no-network-idle]` - Capture console messages from web pages
+- **Network monitor**: `npm run network-monitor -- <url> [--timeout <ms>] [--slow-threshold <ms>]` - Monitor network requests and identify failures
 
 Notes on screenshots:
 
 - Always use `npm run screenshot -- <page_url> [--output <output_file>]` instead of running the script directly.
 - By convention, save screenshots in the `screenshots/` directory, organized by `live/` for reference sites and `localhost/` for local development.
+
+Notes on network monitoring:
+
+- The network monitor is essential for detecting missing media files, broken API endpoints, and performance issues
+- Use `npm run network-monitor -- <url>` to identify failed requests for images, videos, fonts, and other resources
+- Configure `--slow-threshold` to flag requests that may impact user experience (default: 3000ms)
+- Particularly useful for validating that all extracted media files load correctly after deployment
 
 ## Development Server
 
@@ -30,6 +40,23 @@ Do not try and run your own development server; just use the server that's alrea
 ## Debugging site errors
 
 Use `npm run build` to debug site errors, such as import errors or problems with types.
+
+### Debugging workflow
+
+1. **Build errors**: `npm run build` to identify TypeScript and import issues
+2. **Console issues**: `npm run browser-console -- http://localhost:8080` to check for JavaScript errors and warnings
+3. **Network problems**: `npm run network-monitor -- http://localhost:8080` to find failed requests, missing media files, and performance issues
+4. **Visual validation**: `npm run screenshot -- http://localhost:8080` to capture and compare visual output
+
+The network monitor is particularly valuable for ensuring all media assets extracted with `extract-media` are accessible and load correctly.
+
+## Faithfully reproduce the original site
+
+Strive to use the same text, styles and media from the original site.
+
+Don't fall back on attempts to generate text, styles and media that you can't find. You should find it in the crawl.
+
+If the site contains a reference to media at a certain URL, and you don't have that media in your crawl, fetch it by accessing the live website.
 
 ## Architecture
 
@@ -63,6 +90,7 @@ Use `npm run build` to debug site errors, such as import errors or problems with
 │   ├── assets/
 │   │   └── images/         # Image assets imported via ES modules
 ├── public/
+├── claude-log            # A log directory of Claude code actions
 ├── package.json          # Dependencies and scripts
 ├── vite.config.ts        # Vite configuration with path aliases
 ├── tailwind.config.js    # Tailwind CSS configuration
@@ -78,6 +106,14 @@ Uses `@/` prefix for clean imports:
 import { Button } from "@/components/ui/Button";
 import { usePageData } from "@/hooks/usePageData";
 ```
+
+## Logging
+
+You should maintain a log directorie called `claude-log/`, located in the project directory.
+
+In this log you should record the actions that you've taken, decisions that you made, things that you tried, and whether you were successful or had to try something else.
+
+Each time you perform an action or get a result, create a file `claude-log/[timestamp-in-seconds]-[action-name].md`. Record what you did and what the result was; whether you were successful or had to try something else.
 
 ## Additional Resources
 

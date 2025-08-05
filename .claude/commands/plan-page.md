@@ -17,6 +17,12 @@ Inspect the available components, data files, and hooks in the project to determ
 - Custom hooks in `src/hooks/`
 - Page components in `src/pages/`
 
+## Do not output specific code, data or text
+
+The plan should be kept at a high level.
+
+Describe the work to be done at an architecture level, and provide pointers to specific files, lines, and snippets in the crawl from which the final data and text can be obtained.
+
 ## Use of reusable components
 
 Page cloning should leverage reusable components defined in the `src/components/` directory. This ensures consistency across pages and reduces duplication of code.

@@ -56,7 +56,7 @@ When `/screenshot [args...]` is used:
 
 The screenshot functionality helps with:
 
-- **Visual testing** of the aviation maintenance website
+- **Visual testing** of the website
 - **Responsive design** verification
 - **Layout checking** and component placement
 - **Comparison** against the original crawled site design

@@ -25,6 +25,12 @@ The React development server runs with hot module replacement for instant update
 
 **URL**: `http://localhost:8080/`
 
+Do not try and run your own development server; just use the server that's already running on port 8080.
+
+## Debugging site errors
+
+Use `npm run build` to debug site errors, such as import errors or problems with types.
+
 ## Architecture
 
 ### Directory Structure
@@ -178,6 +184,16 @@ Image assets are stored in `src/assets/images/` and imported as ES modules for o
 - **Responsive Design**: Test across all device sizes
 - **Design Tokens**: Use consistent colors, spacing, and typography
 - **Performance**: Minimize custom CSS and leverage Tailwind's optimization
+
+### Typescript
+
+Be sure that types are imported as types, or errors like this one will result:
+
+```typescript
+src/utils/validation.ts:1:34 - error TS1484: 'ValidationRules' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+
+1 import { FormValues, FormErrors, ValidationRules } from '@/data/types';
+```
 
 ---
 

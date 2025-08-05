@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "crawl": "tsx crawl.ts",
     "screenshot": "tsx take-screenshot.ts",
-    "extract-images": "tsx extract-images.ts"
+    "extract-media": "tsx extract-media.ts"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.35",

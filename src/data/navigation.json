@@ -1,0 +1,132 @@
+{
+  "main": [
+    {
+      "id": "home",
+      "label": "Home",
+      "href": "/",
+      "isActive": false
+    },
+    {
+      "id": "aircraft",
+      "label": "Aircraft", 
+      "href": "/aircraft",
+      "isActive": false,
+      "children": [
+        {
+          "id": "integral",
+          "label": "INTEGRAL",
+          "href": "/aircraft/integral",
+          "children": [
+            {
+              "id": "integral-r",
+              "label": "INTEGRAL-R",
+              "href": "/aircraft/integral-r",
+              "description": "Aerobatic aircraft"
+            },
+            {
+              "id": "integral-s", 
+              "label": "INTEGRAL-S",
+              "href": "/aircraft/integral-s",
+              "description": "Training aircraft"
+            },
+            {
+              "id": "integral-e",
+              "label": "INTEGRAL-E", 
+              "href": "/aircraft/integral-e",
+              "description": "Electric aircraft"
+            }
+          ]
+        },
+        {
+          "id": "era",
+          "label": "ERA",
+          "href": "/aircraft/era",
+          "description": "Electric Regional Aircraft"
+        }
+      ]
+    },
+    {
+      "id": "media",
+      "label": "Media",
+      "href": "/media",
+      "isActive": false,
+      "children": [
+        {
+          "id": "news",
+          "label": "News",
+          "href": "/media/news"
+        },
+        {
+          "id": "press",
+          "label": "Press Articles", 
+          "href": "/media/press"
+        },
+        {
+          "id": "videos",
+          "label": "Videos",
+          "href": "/media/videos"
+        }
+      ]
+    },
+    {
+      "id": "sustainability",
+      "label": "Eco-Responsibility",
+      "href": "/eco-responsibility",
+      "isActive": false
+    },
+    {
+      "id": "careers",
+      "label": "Join Us",
+      "href": "/join-us", 
+      "isActive": false
+    },
+    {
+      "id": "contact",
+      "label": "Contact Us",
+      "href": "/contact-us",
+      "isActive": false
+    }
+  ],
+  "footer": [
+    {
+      "id": "privacy",
+      "label": "Privacy Policy",
+      "href": "/privacy-policy"
+    },
+    {
+      "id": "legal",
+      "label": "Legal Mentions", 
+      "href": "/legal-mentions"
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "label": "English",
+      "flag": "🇺🇸",
+      "isDefault": true
+    },
+    {
+      "code": "fr", 
+      "label": "Français",
+      "flag": "🇫🇷",
+      "isDefault": false
+    }
+  ],
+  "mobile": {
+    "breakpoint": "md",
+    "hamburgerLabel": "Menu",
+    "closeLabel": "Close"
+  },
+  "breadcrumbs": {
+    "separator": "/",
+    "homeLabel": "Home",
+    "showOnPages": ["contact-us", "aircraft", "media", "eco-responsibility", "join-us"],
+    "customLabels": {
+      "contact-us": "Contact Us",
+      "aircraft": "Aircraft",
+      "eco-responsibility": "Eco-Responsibility", 
+      "join-us": "Careers"
+    }
+  }
+}

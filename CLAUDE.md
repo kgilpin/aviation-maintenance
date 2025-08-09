@@ -209,10 +209,41 @@ Image assets are stored in `src/assets/images/` and imported as ES modules for o
 ### Image Asset Management
 
 - **Import Strategy**: All images are imported as ES modules from `src/assets/images/`
-- **Path Resolution**: Use `resolveImagePath()` from `src/utils/imageMap.ts` to resolve JSON paths
+- **Path Resolution**: Use `resolveImagePath()` from `src/utils/imageResolver.ts` to resolve JSON paths
 - **Git Storage**: Images stored as regular git files (excluded from LFS via `.gitattributes`)
 - **Build Optimization**: Vite automatically optimizes, compresses, and fingerprints image assets
 - **Component Usage**: Components either import images directly or use `resolveImagePath()` for JSON data
+
+#### Image Resolution Best Practices
+
+**Direct Imports (Preferred for Known Images)**
+```typescript
+// For images that are known at build time, use direct imports
+import cmpImage from '@/assets/images/cmp.png';
+
+// In component:
+<img src={cmpImage} alt="Description" />
+```
+
+**Dynamic Path Resolution (For JSON-driven Content)**
+```typescript
+// For images referenced in JSON data files
+import { resolveImagePath } from '@/utils/imageResolver';
+
+// In component with JSON data:
+const imageSrc = resolveImagePath(data.image); // "/images/photo.jpg" -> resolved path
+<img src={imageSrc} alt={data.alt} />
+```
+
+**When to Use Each Approach:**
+- **Direct imports**: Static images, logos, certificates, or any image that's always needed
+- **Path resolution**: Dynamic content from JSON, optional images, or content-driven galleries
+
+**Benefits of Direct Imports:**
+- **Type Safety**: Build-time validation ensures image exists
+- **Optimization**: Vite applies automatic compression and format conversion
+- **Performance**: Enables proper bundling and lazy loading
+- **Cache Busting**: Automatic filename hashing for optimal caching
 
 ### Styling
 

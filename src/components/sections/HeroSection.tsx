@@ -1,6 +1,7 @@
 import React from 'react';
 import { VideoPlayer } from '@/components/ui/VideoPlayer';
 import { useHomepageData } from '@/hooks/useHomepageData';
+import { resolveImageUrl } from '@/utils/imageResolver';
 
 export const HeroSection: React.FC = () => {
   const { data: homepage } = useHomepageData();
@@ -14,7 +15,7 @@ export const HeroSection: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <VideoPlayer
           src={hero.video.src}
-          poster={hero.video.poster}
+          poster={resolveImageUrl(hero.video.poster, 'hero')}
           autoplay={hero.video.autoplay}
           loop={hero.video.loop}
           muted={hero.video.muted}

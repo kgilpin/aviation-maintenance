@@ -1,0 +1,36 @@
+{
+  "provider": "local",
+  "providers": {
+    "local": {
+      "baseUrl": "/src/assets/images/",
+      "enabled": true
+    },
+    "cloudflare": {
+      "baseUrl": "https://imagedelivery.net/YOUR_ACCOUNT_HASH/",
+      "enabled": false,
+      "variants": {
+        "thumbnail": "/w=300,h=200,fit=cover",
+        "medium": "/w=652,h=auto",
+        "large": "/w=1200,h=auto",
+        "hero": "/w=1920,h=1080,fit=cover"
+      }
+    }
+  },
+  "mappings": {
+    "/src/assets/images/jeISKRfrRlebD4MqsPdo_Spring_Meadows_FINAL__282_29.v2.0000000-1920w.jpg": {
+      "cloudflareId": "hero-video-poster",
+      "variant": "hero",
+      "alt": "Spring Meadows Golf Course aerial view"
+    },
+    "/src/assets/images/course-photo-12-652w.jpg": {
+      "cloudflareId": "course-overview",
+      "variant": "medium", 
+      "alt": "Spring Meadows Golf Course layout"
+    },
+    "/src/assets/images/Web-Banner--281-29-652w.png": {
+      "cloudflareId": "app-banner",
+      "variant": "medium",
+      "alt": "Spring Meadows mobile app banner"
+    }
+  }
+}

@@ -137,3 +137,27 @@ export interface Testimonial {
 export interface TestimonialsData {
   testimonials: Testimonial[];
 }
+
+// Image configuration for URL rewriting
+export interface ImageMapping {
+  cloudflareId: string;
+  variant: string;
+  alt: string;
+}
+
+export interface ImageProvider {
+  baseUrl: string;
+  enabled: boolean;
+  variants?: Record<string, string>;
+}
+
+export interface ImageConfig {
+  provider: 'local' | 'cloudflare';
+  providers: {
+    local: ImageProvider;
+    cloudflare: ImageProvider & {
+      variants: Record<string, string>;
+    };
+  };
+  mappings: Record<string, ImageMapping>;
+}

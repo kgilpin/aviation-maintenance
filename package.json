@@ -13,13 +13,16 @@
     "screenshot": "tsx take-screenshot.ts",
     "extract-media": "tsx extract-media.ts",
     "browser-console": "tsx browser-console.ts",
-    "network-monitor": "tsx network-monitor.ts"
+    "network-monitor": "tsx network-monitor.ts",
+    "cloudflare-sync": "tsx scripts/cloudflare-sync.ts"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.35",
     "cheerio": "^1.1.2",
     "clsx": "^2.1.1",
+    "form-data": "^4.0.1",
     "lovable-tagger": "^1.1.7",
+    "node-fetch": "^3.3.2",
     "playwright": "^1.54.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,7 +34,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
+    "@types/form-data": "^4.0.4",
     "@types/node": "^24.1.0",
+    "@types/node-fetch": "^2.6.11",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/website-scraper": "^1.2.10",

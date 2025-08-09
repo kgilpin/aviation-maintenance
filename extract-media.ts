@@ -54,7 +54,7 @@ class MediaExtractor {
   private downloadedMedia: MediaDownloadResult[];
   private errors: ExtractorError[];
 
-  constructor(htmlFile: string, outputDir: string = "./crawl/extracted-media") {
+  constructor(htmlFile: string, outputDir: string = "./crawl/media") {
     this.htmlFile = htmlFile;
     this.outputDir = outputDir;
     this.mediaUrls = new Set();
@@ -478,12 +478,12 @@ async function main(): Promise<void> {
     console.log("Options:");
     console.log("  htmlFile   Path to the HTML file to process");
     console.log("  htmlDir    Directory containing HTML files to process");
-    console.log("  outputDir  Directory to save extracted media (default: ./crawl/extracted-media)");
+    console.log("  outputDir  Directory to save extracted media (default: ./crawl/media)");
     process.exit(1);
   }
 
   const htmlFileOrDir = args[0];
-  const outputDir = args[1] || "./crawl/extracted-media";
+  const outputDir = args[1] || "./crawl/media";
 
   if (!htmlFileOrDir.startsWith("crawl")) {
     console.error(`Error: File path must start with "crawl": ${htmlFileOrDir}`);

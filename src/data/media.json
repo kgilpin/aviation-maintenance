@@ -1,77 +1,96 @@
 {
   "media": {
     "images": {
-      "logo": {
-        "path": "/assets/images/Copy_of_SpringMeadowsLogo-240w.png",
-        "description": "Spring Meadows Golf Course logo, company branding element.",
-        "usage": "Displayed in the header and throughout the site for brand recognition.",
+      "waylandLogo": {
+        "path": "/assets/images/WRGLogo2GrnSmall.gif",
+        "description": "Wayland Rod and Gun Club logo in green color scheme.",
+        "usage": "Main club branding element used throughout the Wayland Rod and Gun Club site.",
+        "type": "image",
+        "format": "gif",
+        "source": "http://waylandgc.org/images/WRGLogo2GrnSmall.gif"
+      },
+      "newIndicator": {
+        "path": "/assets/images/new.gif",
+        "description": "Animated 'new' indicator icon for highlighting recent content or updates.",
+        "usage": "Used to draw attention to new announcements or recently updated content.",
+        "type": "image",
+        "format": "gif",
+        "source": "http://waylandgc.org/images/new.gif"
+      },
+      "cmpBadge": {
+        "path": "/assets/images/cmp.png",
+        "description": "CMP (Civilian Marksmanship Program) badge or certification logo.",
+        "usage": "Displayed to show the club's affiliation with the Civilian Marksmanship Program.",
         "type": "image",
         "format": "png",
-        "source": "https://lirp.cdn-website.com/47ac4053/dms3rep/multi/opt/Copy+of+SpringMeadowsLogo-240w.png"
+        "source": "http://waylandgc.org/cmp.png"
       },
-      "coursePhoto": {
-        "path": "/assets/images/course-photo-12-652w.jpg",
-        "description": "Golf course photograph showing the scenic landscape and playing area.",
-        "usage": "Featured prominently on the homepage to showcase the course's beauty.",
+      "clubClothing1": {
+        "path": "/assets/images/IMG_4468.jpg",
+        "description": "Club clothing merchandise photo - item 1.",
+        "usage": "Product display for club merchandise and clothing sales.",
         "type": "image",
         "format": "jpg",
-        "source": "https://lirp.cdn-website.com/e2cb90fe/dms3rep/multi/opt/course-photo-12-652w.jpg"
+        "source": "http://waylandgc.org/ClubClothing/IMG_4468.jpg"
       },
-      "webBanner586": {
-        "path": "/assets/images/Web-Banner--281-29-586w.png",
-        "description": "Web banner image for promotional content (586px width).",
-        "usage": "Used in responsive design for medium-sized viewports.",
-        "type": "image",
-        "format": "png",
-        "source": "https://lirp.cdn-website.com/e2cb90fe/dms3rep/multi/opt/Web-Banner--281-29-586w.png"
-      },
-      "webBanner652": {
-        "path": "/assets/images/Web-Banner--281-29-652w.png",
-        "description": "Web banner image for promotional content (652px width).",
-        "usage": "Used in responsive design for larger viewports.",
-        "type": "image",
-        "format": "png",
-        "source": "https://lirp.cdn-website.com/e2cb90fe/dms3rep/multi/opt/Web-Banner--281-29-652w.png"
-      },
-      "videoThumbnail": {
-        "path": "/assets/images/jeISKRfrRlebD4MqsPdo_Spring_Meadows_FINAL__282_29.v2.0000000-1920w.jpg",
-        "description": "Video thumbnail/poster image for the Spring Meadows promotional video.",
-        "usage": "Displayed as a video preview before the promotional video plays.",
+      "clubClothing2": {
+        "path": "/assets/images/IMG_4470.jpg",
+        "description": "Club clothing merchandise photo - item 2.",
+        "usage": "Product display for club merchandise and clothing sales.",
         "type": "image",
         "format": "jpg",
-        "source": "https://lirp.cdn-website.com/e2cb90fe/dms3rep/multi/opt/jeISKRfrRlebD4MqsPdo_Spring+Meadows+FINAL+%282%29.v2.0000000-1920w.jpg"
+        "source": "http://waylandgc.org/ClubClothing/IMG_4470.jpg"
       },
-      "topographicMap": {
-        "path": "/assets/images/topographic-map__281_29-1920w.png",
-        "description": "Topographic map image showing the golf course layout and terrain.",
-        "usage": "Used to display course layout and help players understand the terrain.",
+      "clubClothing3": {
+        "path": "/assets/images/IMG_4471.jpg",
+        "description": "Club clothing merchandise photo - item 3.",
+        "usage": "Product display for club merchandise and clothing sales.",
         "type": "image",
-        "format": "png",
-        "source": "https://lirp.cdn-website.com/e2cb90fe/dms3rep/multi/opt/topographic-map+%281%29-1920w.png"
-      }
-    },
-    "videos": {
-      "promoVideo": {
-        "path": "/assets/videos/jeISKRfrRlebD4MqsPdo_Spring_Meadows_FINAL__282_29-v.mp4",
-        "description": "Promotional video showcasing Spring Meadows Golf Course features and amenities.",
-        "usage": "Featured on the homepage to engage visitors and showcase the course experience.",
-        "type": "video",
-        "format": "mp4",
-        "source": "https://vid.cdn-website.com/e2cb90fe/videos/jeISKRfrRlebD4MqsPdo_Spring+Meadows+FINAL+%282%29-v.mp4"
-      }
-    },
-    "favicons": {
-      "favicon": {
-        "path": "/assets/images/site_favicon_16_1740778711578.ico",
-        "description": "Website favicon icon displayed in browser tabs and bookmarks.",
-        "usage": "Standard favicon for browser identification and branding.",
+        "format": "jpg",
+        "source": "http://waylandgc.org/ClubClothing/IMG_4471.jpg"
+      },
+      "clubClothing4": {
+        "path": "/assets/images/IMG_4472.jpg",
+        "description": "Club clothing merchandise photo - item 4.",
+        "usage": "Product display for club merchandise and clothing sales.",
         "type": "image",
-        "format": "ico",
-        "size": "16x16",
-        "source": "https://irp.cdn-website.com/47ac4053/site_favicon_16_1740778711578.ico"
+        "format": "jpg",
+        "source": "http://waylandgc.org/ClubClothing/IMG_4472.jpg"
+      },
+      "clubClothing5": {
+        "path": "/assets/images/IMG_4473.jpg",
+        "description": "Club clothing merchandise photo - item 5.",
+        "usage": "Product display for club merchandise and clothing sales.",
+        "type": "image",
+        "format": "jpg",
+        "source": "http://waylandgc.org/ClubClothing/IMG_4473.jpg"
+      },
+      "clubClothing6": {
+        "path": "/assets/images/IMG_4474.jpg",
+        "description": "Club clothing merchandise photo - item 6.",
+        "usage": "Product display for club merchandise and clothing sales.",
+        "type": "image",
+        "format": "jpg",
+        "source": "http://waylandgc.org/ClubClothing/IMG_4474.jpg"
       }
     },
-    "audio": {},
-    "documents": {}
+    "documents": {
+      "rangeRules2022": {
+        "path": "/assets/documents/RangeRules-20220414.pdf",
+        "description": "Wayland Rod and Gun Club range safety rules and regulations from April 2022.",
+        "usage": "Official document outlining safety protocols and rules for range use.",
+        "type": "document",
+        "format": "pdf",
+        "source": "http://waylandgc.org/pdf/RangeRules-20220414.pdf"
+      },
+      "archeryRangeRules2023": {
+        "path": "/assets/documents/ArcheryRangeRules-20230221.pdf",
+        "description": "Wayland Rod and Gun Club archery range rules and regulations from February 2023.",
+        "usage": "Official document outlining safety protocols and rules specific to archery range use.",
+        "type": "document",
+        "format": "pdf",
+        "source": "http://waylandgc.org/pdf/ArcheryRangeRules-20230221.pdf"
+      }
+    }
   }
 }

@@ -47,14 +47,14 @@ interface MediaManifest {
   errors: ExtractorError[];
 }
 
-class WixMediaExtractor {
+class MediaExtractor {
   private htmlFile: string;
   private outputDir: string;
   private mediaUrls: Set<string>;
   private downloadedMedia: MediaDownloadResult[];
   private errors: ExtractorError[];
 
-  constructor(htmlFile: string, outputDir: string = "./extracted-media") {
+  constructor(htmlFile: string, outputDir: string = "./crawl/extracted-media") {
     this.htmlFile = htmlFile;
     this.outputDir = outputDir;
     this.mediaUrls = new Set();
@@ -471,36 +471,105 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
 
   if (args.length === 0) {
-    console.log("Usage: tsx extract-media.ts <htmlFile> [outputDir]");
+    console.log("Usage: tsx extract-media.ts <htmlFile|htmlDir> [outputDir]");
     console.log("");
-    console.log("Extract media files from Wix site HTML files");
+    console.log("Extract media files from HTML files");
     console.log("");
     console.log("Options:");
     console.log("  htmlFile   Path to the HTML file to process");
-    console.log("  outputDir  Directory to save extracted media (default: ./extracted-media)");
+    console.log("  htmlDir    Directory containing HTML files to process");
+    console.log("  outputDir  Directory to save extracted media (default: ./crawl/extracted-media)");
     process.exit(1);
   }
 
-  const htmlFile = args[0];
-  const outputDir = args[1] || "./extracted-media";
+  const htmlFileOrDir = args[0];
+  const outputDir = args[1] || "./crawl/extracted-media";
 
-  if (!htmlFile.startsWith("crawl")) {
-    console.error(`Error: File path must start with "crawl": ${htmlFile}`);
+  if (!htmlFileOrDir.startsWith("crawl")) {
+    console.error(`Error: File path must start with "crawl": ${htmlFileOrDir}`);
     process.exit(1);
   }
 
-  if (!fs.existsSync(htmlFile)) {
-    console.error(`Error: File not found: ${htmlFile}`);
+  if (!fs.existsSync(htmlFileOrDir)) {
+    console.error(`Error: File or directory not found: ${htmlFileOrDir}`);
     process.exit(1);
   }
 
   try {
-    const extractor = new WixMediaExtractor(htmlFile, outputDir);
-    await extractor.extract();
+    const stat = fs.statSync(htmlFileOrDir);
+
+    if (stat.isDirectory()) {
+      // Process all HTML files in the directory
+      await processDirectory(htmlFileOrDir, outputDir);
+    } else if (stat.isFile()) {
+      // Process single file
+      const extractor = new MediaExtractor(htmlFileOrDir, outputDir);
+      await extractor.extract();
+    } else {
+      console.error(`Error: ${htmlFileOrDir} is neither a file nor a directory`);
+      process.exit(1);
+    }
   } catch (error) {
     console.error("Extraction failed:", error);
     process.exit(1);
   }
+}
+
+async function processDirectory(dirPath: string, outputDir: string): Promise<void> {
+  console.log(`Processing directory: ${dirPath}`);
+
+  // Find all HTML files recursively
+  const htmlFiles = findHtmlFiles(dirPath);
+
+  if (htmlFiles.length === 0) {
+    console.log("No HTML files found in directory");
+    return;
+  }
+
+  console.log(`Found ${htmlFiles.length} HTML files to process`);
+
+  // Process each HTML file
+  for (let i = 0; i < htmlFiles.length; i++) {
+    const htmlFile = htmlFiles[i];
+    const relativePath = path.relative(dirPath, htmlFile);
+
+    console.log(`\n[${i + 1}/${htmlFiles.length}] Processing: ${relativePath}`);
+
+    try {
+      // Create subdirectory for each HTML file to avoid filename conflicts
+      const fileBasename = path.basename(htmlFile, path.extname(htmlFile));
+      const fileOutputDir = path.join(outputDir, fileBasename);
+
+      const extractor = new MediaExtractor(htmlFile, fileOutputDir);
+      await extractor.extract();
+    } catch (error) {
+      console.error(`Failed to process ${relativePath}:`, error);
+    }
+  }
+
+  console.log(`\nCompleted processing ${htmlFiles.length} HTML files`);
+}
+
+function findHtmlFiles(dirPath: string): string[] {
+  const htmlFiles: string[] = [];
+
+  function scanDirectory(currentPath: string): void {
+    const items = fs.readdirSync(currentPath);
+
+    for (const item of items) {
+      const itemPath = path.join(currentPath, item);
+      const stat = fs.statSync(itemPath);
+
+      if (stat.isDirectory()) {
+        scanDirectory(itemPath);
+      } else if (stat.isFile() && item.toLowerCase().endsWith(".html")) {
+        htmlFiles.push(itemPath);
+      }
+    }
+  }
+
+  scanDirectory(dirPath);
+  return htmlFiles;
 }
 
 // Only run if this script is executed directly
@@ -508,4 +577,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-export default WixMediaExtractor;
+export default MediaExtractor;

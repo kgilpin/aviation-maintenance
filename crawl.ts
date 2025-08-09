@@ -34,6 +34,8 @@ const options: scraper.ScrapingOptions = {
     { selector: 'link[rel="stylesheet"]', attr: "href" },
     { selector: "script", attr: "src" },
     { selector: "a", attr: "href" },
+    { selector: "frame", attr: "src" },
+    { selector: "iframe", attr: "src" },
   ],
   urlFilter: function (url: string): boolean {
     return url.includes(hostname);

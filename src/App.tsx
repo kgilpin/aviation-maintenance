@@ -1,6 +1,6 @@
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Homepage } from './pages/Homepage';
+import { Index } from './pages/Index';
 import './index.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Index />} />
         </Routes>
       </Router>
     </HelmetProvider>

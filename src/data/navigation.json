@@ -1,0 +1,92 @@
+{
+  "mainNavigation": [
+    {
+      "label": "Home",
+      "href": "general2.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Facilities",
+      "href": "facilities.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Location",
+      "href": "menulocation.html"
+    },
+    {
+      "label": "Membership",
+      "href": "membership.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Meetings",
+      "href": "meetings.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Range Rules",
+      "href": "pdf/RangeRules-20220414.pdf",
+      "target": "blank",
+      "external": true
+    },
+    {
+      "label": "Archery Range Rules",
+      "href": "pdf/ArcheryRangeRules-20230221.pdf",
+      "target": "blank",
+      "external": true
+    },
+    {
+      "label": "The Rod",
+      "href": "TheRod.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "The Bow",
+      "href": "TheBow.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "The Gun",
+      "href": "TheGun.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Club History",
+      "href": "history.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Outdoor Organizations & Activity Links",
+      "href": "links.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Civilian Marksmanship Program",
+      "href": "cmp.html",
+      "target": "view_frame",
+      "newIndicator": true
+    },
+    {
+      "label": "Club Clothing",
+      "href": "ClubClothing/clubclothing.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Contact Us",
+      "href": "contact.html",
+      "target": "view_frame"
+    },
+    {
+      "label": "Click for Sunrise/Sunset Times",
+      "href": "http://time.unitarium.com/sunrise/5042",
+      "target": "_blank",
+      "external": true
+    },
+    {
+      "label": "Previous Events!",
+      "href": "PreviousEvents.html",
+      "target": "view_frame"
+    }
+  ]
+}

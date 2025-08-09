@@ -161,3 +161,60 @@ export interface ImageConfig {
   };
   mappings: Record<string, ImageMapping>;
 }
+
+// Club information
+export interface ClubData {
+  name: string;
+  address: string;
+  phone: string;
+  logo: string;
+}
+
+// Navigation items with specific features for the gun club site
+export interface WaylandNavigationItem {
+  label: string;
+  href: string;
+  target?: string;
+  external?: boolean;
+  newIndicator?: boolean;
+}
+
+export interface WaylandNavigationData {
+  mainNavigation: WaylandNavigationItem[];
+}
+
+// Homepage content specific to Wayland Rod & Gun Club
+export interface WaylandHomepageData {
+  hero: {
+    title: string;
+    description: string;
+    mission: string;
+  };
+  membershipCallout: {
+    title: string;
+    description: string;
+    meetingInfo: string;
+  };
+  clubClothing: {
+    title: string;
+    description: string;
+  };
+  news: {
+    title: string;
+    articles: Array<{
+      title: string;
+      url: string;
+    }>;
+  };
+}
+
+// Events calendar
+export interface WaylandEvent {
+  date: string;
+  time: string;
+  title: string;
+}
+
+export interface WaylandEventsData {
+  events: WaylandEvent[];
+}

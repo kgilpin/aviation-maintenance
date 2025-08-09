@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "WAYLAND ROD & GUN CLUB",
+    "description": "The Wayland Rod & Gun Club is located on 15 acres of land in the south-western corner of Wayland. The club was incorporated in 1930 and formally bought this homestead in 1940, with both indoor and outdoor ranges. Massachusetts State Police certified Basic Firearms Safety courses are periodically offered at the club. The club holds annual target shooting events that are open to the general public.",
+    "mission": "The mission of the Wayland Rod & Gun Club is to support conservation and preservation of the environment, open space, and wild habitat. In addition, we endeavor to promote and provide education in the sports of hunting, fishing, archery, and shooting. We cooperate and assist in the enforcement of fish and game laws or any other laws that may favorably affect any of the items listed previously. We encourage and promote more cordial relations between sportsmen and landowners or other activities put forth and approved by the membership.\n\nThe house, grounds, and facilities of the Wayland Rod & Gun Club are available for use by any municipal, civic, fraternal or charitable organization associated with the Town of Wayland upon written request and then approved by and subject to any conditions set forth by the WRGC Board of Governors. For safety reasons, this privilege does not include use of the firing ranges unless associated with a WRGC function or otherwise sanctioned by the Board of Governors."
+  },
+  "membershipCallout": {
+    "title": "BECOME A MEMBER!",
+    "description": "The Wayland Rod & Gun Club is currently welcoming Membership applications.",
+    "meetingInfo": "Bring a legibly filled out application form, application fee, and come to the next General Meeting at 7 pm for an interview"
+  },
+  "clubClothing": {
+    "title": "!! NEW !! Club Logo Clothing - See Order Form in Left Menu Bar !! NEW !!",
+    "description": "Drop off order form with funds in Club Foyer Mailbox"
+  },
+  "news": {
+    "title": "Information about HD.4420",
+    "articles": [
+      {
+        "title": "GOAL's Resource Page For HD.4420 - The Lawful Citizens Imprisonment Act",
+        "url": "https://goal.org/gunban"
+      },
+      {
+        "title": "Goal Article -- Mariano Statement",
+        "url": "https://goal.org/MarianoStatement"
+      },
+      {
+        "title": "Politico Article -- \"Mariano backs off gun bill until fall\"",
+        "url": "https://www.politico.com/newsletters/massachusetts-playbook/2023/07/25/mariano-backs-off-gun-bill-until-fall-00107953"
+      }
+    ]
+  }
+}

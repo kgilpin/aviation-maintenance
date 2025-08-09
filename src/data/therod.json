@@ -1,0 +1,68 @@
+{
+  "title": "The Rod",
+  "subtitle": "Spare the Rod and Spoil the Child in All of US",
+  "backgroundImage": "./graphics/water_bk.jpg",
+  "leadRegulation": {
+    "effectiveDate": "Effective January 1, 2012",
+    "title": "New Law Prohibiting Certain Lead Jigs and Sinkers in Fresh Water",
+    "content": [
+      "The Division of Fisheries and Wildlife (DFW) reminds all freshwater anglers that as of January 1, 2012, the use of any lead fishing sinkers and lead jigs weighing less than 1 ounce is now prohibited in all inland waters (freshwater) of the Commonwealth.",
+      "In terms of this regulation, \"lead sinker\" or \"lead weight\" is defined as any sinker or weight made from lead that weighs less than 1 ounce.",
+      "A \"lead jig\" is defined as any lead-weighted hook weighing less than 1 ounce."
+    ],
+    "links": [
+      {
+        "label": "More Information",
+        "href": "http://www.mass.gov/eea/agencies/dfg/dfw/hunting-fishing-wildlife-watching/fishing/loons-lead-sinkers-and-jigs.html",
+        "external": true
+      },
+      {
+        "label": "eRegulations",
+        "href": "http://www.eregulations.com/massachusetts/hf2012/lead-sinkers-and-loons-in-massachusetts/",
+        "external": true
+      },
+      {
+        "label": "Flyer for posting",
+        "href": "http://www.mass.gov/eea/docs/dfg/dfw/recreation/licensing-fish/loons-lead-sinker-flyer.pdf",
+        "external": true
+      }
+    ]
+  },
+  "fishingShows": {
+    "title": "Massachusetts Fishing Shows",
+    "links": [
+      {
+        "label": "Massachusetts Fishing Shows",
+        "href": "http://www.huntingfishingandoutdoorshows.com/massachusetts-expos/",
+        "external": true
+      },
+      {
+        "label": "New England Fishing",
+        "href": "http://www.newenglandfishing.net/",
+        "external": true
+      },
+      {
+        "label": "The growing sport of Carp Fishing",
+        "href": "http://www.carp-usa.info/index.html",
+        "external": true
+      }
+    ]
+  },
+  "memberPresentation": {
+    "introduction": "Are you a Club member and would like to:",
+    "prompts": [
+      "arrange a group fishing trip for club members?",
+      "enthrall the General Meeting with a memorable fishing trip (up to approx. 30 minutes)?",
+      "tell us about a memorable place you went fishing?",
+      "or an unusual fish you have gone after.",
+      "teach us a different fishing technique such as European Carp fishing?",
+      "teach the non-anglers about gear, fishing techniques, use of guides!",
+      "Or just spin an interesting fish story!"
+    ],
+    "contact": "** Contact the Executive Board to make arrangements! **"
+  },
+  "seo": {
+    "title": "The Rod - Wayland Rod & Gun Club Fishing Information",
+    "description": "Fishing information, regulations, and resources for members of Wayland Rod & Gun Club, including Massachusetts lead sinker laws and local fishing shows."
+  }
+}

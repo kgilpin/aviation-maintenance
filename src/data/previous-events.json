@@ -1,0 +1,29 @@
+{
+  "title": "Previous Events!",
+  "description": "A look back at past club activities and special events hosted by the Wayland Rod & Gun Club.",
+  "events": [
+    {
+      "id": "santa-ride-2010",
+      "title": "Santa Ride 2010",
+      "date": "December 2010",
+      "year": 2010,
+      "description": "Annual Santa Ride event with photo gallery documenting the festivities and community participation.",
+      "image": {
+        "src": "images/SantaRide2010/DSC_2921.JPG",
+        "alt": "Santa Ride 2010 Pictures",
+        "width": 138,
+        "height": 85
+      },
+      "link": {
+        "href": "SantaRide2010.html",
+        "label": "View 2010 Santa Ride Pictures",
+        "external": false
+      },
+      "status": "unavailable"
+    }
+  ],
+  "seo": {
+    "title": "Previous Events - Wayland Rod & Gun Club",
+    "description": "Browse past events and activities from the Wayland Rod & Gun Club including the annual Santa Ride and other community activities."
+  }
+}

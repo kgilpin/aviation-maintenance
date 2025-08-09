@@ -1,0 +1,75 @@
+{
+  "title": "Club Clothing",
+  "description": [
+    "Choose from the Club Clothing below (Print Legibly):",
+    "Fill out an order form, enclose a check and put in the clubhouse foyer mailbox or mail to the club address.",
+    "Larger sizes available, write on form."
+  ],
+  "orderFormLink": {
+    "label": "Club Clothing Order Form",
+    "href": "ClubClothing/clothingorderform.pdf",
+    "external": true
+  },
+  "items": [
+    {
+      "id": "baseball-hats",
+      "name": "Baseball Hats",
+      "image": "/assets/images/IMG_4468.jpg",
+      "alt": "Club Hats",
+      "dimensions": {
+        "width": 200,
+        "height": 150
+      }
+    },
+    {
+      "id": "fleece-jacket",
+      "name": "Fleece ZipUp",
+      "image": "/assets/images/IMG_4470.jpg",
+      "alt": "Fleece Jacket",
+      "dimensions": {
+        "width": 150,
+        "height": 186
+      }
+    },
+    {
+      "id": "polo",
+      "name": "Polo",
+      "image": "/assets/images/IMG_4471.jpg",
+      "alt": "Polo Shirt",
+      "dimensions": {
+        "width": 150,
+        "height": 196
+      }
+    },
+    {
+      "id": "sweatshirt",
+      "name": "Sweatshirt",
+      "image": "/assets/images/IMG_4472.jpg",
+      "alt": "Sweatshirt",
+      "dimensions": {
+        "width": 150,
+        "height": 195
+      }
+    },
+    {
+      "id": "long-sleeve",
+      "name": "Long Sleeve Shirt",
+      "image": "/assets/images/IMG_4473.jpg",
+      "alt": "Long Sleeve Shirt",
+      "dimensions": {
+        "width": 150,
+        "height": 197
+      }
+    },
+    {
+      "id": "t-shirt",
+      "name": "T-shirt",
+      "image": "/assets/images/IMG_4474.jpg",
+      "alt": "T-shirt",
+      "dimensions": {
+        "width": 150,
+        "height": 189
+      }
+    }
+  ]
+}

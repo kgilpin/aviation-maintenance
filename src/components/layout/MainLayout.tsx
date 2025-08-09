@@ -4,9 +4,10 @@ import { Sidebar } from './Sidebar';
 
 interface MainLayoutProps {
   children: React.ReactNode;
+  customBgColor?: string;
 }
 
-export function MainLayout({ children }: MainLayoutProps) {
+export function MainLayout({ children, customBgColor }: MainLayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -17,8 +18,12 @@ export function MainLayout({ children }: MainLayoutProps) {
     setIsMobileMenuOpen(false);
   };
 
+  const bgStyle = customBgColor 
+    ? { backgroundColor: customBgColor }
+    : {};
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={bgStyle}>
       {/* Mobile Header */}
       <Header onMenuToggle={toggleMobileMenu} isMenuOpen={isMobileMenuOpen} />
       

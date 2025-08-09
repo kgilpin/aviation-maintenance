@@ -1,0 +1,80 @@
+{
+  "title": "The Bow",
+  "subtitle": "Better Archery Through Excessive and Aggressive Spending",
+  "rangeInfo": {
+    "announcement": "It has finally happened -- Archery Range has been cleared and is available for use",
+    "sections": [
+      {
+        "title": "LOCATION",
+        "content": [
+          "Park at Clubhouse and walk down path towards the ballfields. Small path on right is marked for Archery."
+        ]
+      },
+      {
+        "title": "OPENING",
+        "content": [
+          "Available sunrise to sunup",
+          "Log in with the Range Logbook",
+          "No range officer, however practice sensible safety practices",
+          "Table set at 60 feet",
+          "Crossbows are allowed, but it is up to the shooter to bring and use a suitable target."
+        ]
+      },
+      {
+        "title": "RESTRICTIONS",
+        "content": [
+          "No broad heads or judo points"
+        ]
+      },
+      {
+        "title": "CLOSING",
+        "content": [
+          "Clean range",
+          "Sign out in log book",
+          "Make suggestions for improvement or send email to become member of archery range committee"
+        ]
+      }
+    ]
+  },
+  "newEnglandInfo": {
+    "title": "New England Archery Info",
+    "presentationPrompts": [
+      "captivate a General Meeting with a memorable bow competition or bow hunting expedition?",
+      "tell us about a memorable place you went bow hunting?",
+      "tell us about an unusual game you have gone after with a bow.",
+      "teach us about the techniques in the use of a bow and the necessary equipment?",
+      "tell us about the history of the bow, an archer in history, or the impact of the bow on history!"
+    ],
+    "links": [
+      {
+        "label": "Archery Talk Forums",
+        "href": "http://www.archerytalk.com/vb/archive/index.php?s=1c31898817999efb3c5de0488191b973",
+        "external": true
+      },
+      {
+        "label": "NESFAA - New England Section Field Archery Association",
+        "href": "http://nearchery.org/",
+        "external": true
+      },
+      {
+        "label": "State Archery Association of Massachusetts",
+        "href": "http://www.massarchery.org/",
+        "external": true
+      },
+      {
+        "label": "MA Dep of Fish & Wildlife Archery Laws",
+        "href": "http://www.mass.gov/eea/agencies/dfg/dfw/laws-regulations/plain-lang-sum/hunting-with-archery.html",
+        "external": true
+      },
+      {
+        "label": "MA General Laws - Bows & Arrows for Hunting",
+        "href": "http://www.malegislature.gov/Laws/GeneralLaws/PartI/TitleXIX/Chapter131/Section69",
+        "external": true
+      }
+    ]
+  },
+  "seo": {
+    "title": "The Bow - Wayland Rod & Gun Club Archery Range",
+    "description": "Information about the archery range at Wayland Rod & Gun Club, including range rules, location, hours, and New England archery resources."
+  }
+}

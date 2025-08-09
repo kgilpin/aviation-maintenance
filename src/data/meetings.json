@@ -1,0 +1,85 @@
+{
+  "title": "Meetings",
+  "description": {
+    "boardMeetings": "The Board of Directors of the Wayland Rod & Gun Club meets on the second Tuesday of each month, starting at 7:00 PM.",
+    "generalMeetings": "General membership meetings are held each month on the third Tuesday, starting at 7:30 PM."
+  },
+  "schedule": [
+    {
+      "boardMeeting": "Tuesday, September 10, 2024",
+      "generalMeeting": "Tuesday, September 17, 2024"
+    },
+    {
+      "boardMeeting": "Tuesday, October 8, 2024",
+      "generalMeeting": "Tuesday, October 15, 2024"
+    },
+    {
+      "boardMeeting": "Tuesday, November 12, 2024",
+      "generalMeeting": "Tuesday, November 19, 2024"
+    },
+    {
+      "boardMeeting": "Tuesday, December 10, 2024",
+      "generalMeeting": "Tuesday, December 17, 2024"
+    },
+    {
+      "boardMeeting": "",
+      "generalMeeting": ""
+    },
+    {
+      "boardMeeting": "Tuesday, January 14, 2025",
+      "generalMeeting": "Tuesday, January 21, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, February 11, 2025",
+      "generalMeeting": "Tuesday, February 18, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, March 10, 2025",
+      "generalMeeting": "Tuesday, March 17, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, April 14, 2025",
+      "generalMeeting": "Tuesday, April 21, 2025 (Annual Meeting & Election of Officers for Next the Year)"
+    },
+    {
+      "boardMeeting": "Tuesday, May 12, 2025",
+      "generalMeeting": "Tuesday, May 19, 2025  (new officers assume positions)"
+    },
+    {
+      "boardMeeting": "Tuesday, June 9, 2025",
+      "generalMeeting": "Tuesday, June 16, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, July 14, 2025",
+      "generalMeeting": "Tuesday, July 21, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, August 11, 2025",
+      "generalMeeting": "Tuesday, August 18, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, September 8, 2025",
+      "generalMeeting": "Tuesday, September 15, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, October 13, 2025",
+      "generalMeeting": "Tuesday, October 20, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, November 10, 2025",
+      "generalMeeting": "Tuesday, November 17, 2025"
+    },
+    {
+      "boardMeeting": "Tuesday, December 8, 2025",
+      "generalMeeting": "Tuesday, December 15, 2025"
+    },
+    {
+      "boardMeeting": "",
+      "generalMeeting": ""
+    },
+    {
+      "boardMeeting": "Tuesday, January 12, 2026",
+      "generalMeeting": "Tuesday, January 19, 2026"
+    }
+  ]
+}

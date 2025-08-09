@@ -2,27 +2,23 @@
   "mainNavigation": [
     {
       "label": "Home",
-      "href": "general2.html",
-      "target": "view_frame"
+      "href": "general2.html"
     },
     {
       "label": "Facilities",
-      "href": "facilities.html",
-      "target": "view_frame"
+      "href": "facilities.html"
     },
     {
       "label": "Location",
-      "href": "menulocation.html"
+      "href": "location.html"
     },
     {
       "label": "Membership",
-      "href": "membership.html",
-      "target": "view_frame"
+      "href": "membership.html"
     },
     {
       "label": "Meetings",
-      "href": "meetings.html",
-      "target": "view_frame"
+      "href": "meetings.html"
     },
     {
       "label": "Range Rules",
@@ -38,44 +34,36 @@
     },
     {
       "label": "The Rod",
-      "href": "TheRod.html",
-      "target": "view_frame"
+      "href": "TheRod.html"
     },
     {
       "label": "The Bow",
-      "href": "TheBow.html",
-      "target": "view_frame"
+      "href": "TheBow.html"
     },
     {
       "label": "The Gun",
-      "href": "TheGun.html",
-      "target": "view_frame"
+      "href": "TheGun.html"
     },
     {
       "label": "Club History",
-      "href": "history.html",
-      "target": "view_frame"
+      "href": "history.html"
     },
     {
       "label": "Outdoor Organizations & Activity Links",
-      "href": "links.html",
-      "target": "view_frame"
+      "href": "links.html"
     },
     {
       "label": "Civilian Marksmanship Program",
       "href": "cmp.html",
-      "target": "view_frame",
       "newIndicator": true
     },
     {
       "label": "Club Clothing",
-      "href": "ClubClothing/clubclothing.html",
-      "target": "view_frame"
+      "href": "ClubClothing/clubclothing.html"
     },
     {
       "label": "Contact Us",
-      "href": "contact.html",
-      "target": "view_frame"
+      "href": "contact.html"
     },
     {
       "label": "Click for Sunrise/Sunset Times",
@@ -85,8 +73,7 @@
     },
     {
       "label": "Previous Events!",
-      "href": "PreviousEvents.html",
-      "target": "view_frame"
+      "href": "PreviousEvents.html"
     }
   ]
 }

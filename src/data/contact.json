@@ -1,0 +1,28 @@
+{
+  "title": "Wayland Rod & Gun Club Contact Information",
+  "mailingAddress": {
+    "name": "Wayland Rod & Gun Club, Inc.",
+    "street": "4 Meadow View Road",
+    "city": "Wayland",
+    "state": "MA",
+    "zipCode": "01778"
+  },
+  "phone": {
+    "number": "508-877-2108",
+    "note": "If leaving a message please include cell phone and email address. We try our best to respond the same day but it may be 24 hours."
+  },
+  "emails": [
+    {
+      "label": "Information",
+      "address": "info@waylandgc.org"
+    },
+    {
+      "label": "Webmaster",
+      "address": "webmaster@waylandgc.org"
+    }
+  ],
+  "seo": {
+    "title": "Contact - Wayland Rod & Gun Club",
+    "description": "Contact information for Wayland Rod & Gun Club including mailing address, phone number, and email addresses for information and webmaster inquiries."
+  }
+}

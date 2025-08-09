@@ -252,3 +252,293 @@ export interface CMPData {
     description: string;
   };
 }
+
+// Club Clothing data
+export interface ClothingItem {
+  id: string;
+  name: string;
+  image: string;
+  alt: string;
+  dimensions: {
+    width: number;
+    height: number;
+  };
+}
+
+export interface ClubClothingData {
+  title: string;
+  description: string[];
+  orderFormLink: {
+    label: string;
+    href: string;
+    external: boolean;
+  };
+  items: ClothingItem[];
+}
+
+// Contact page data
+export interface ContactEmail {
+  label: string;
+  address: string;
+}
+
+export interface ContactData {
+  title: string;
+  mailingAddress: {
+    name: string;
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+  };
+  phone: {
+    number: string;
+    note: string;
+  };
+  emails: ContactEmail[];
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// Club History data
+export interface HistoryData {
+  title: string;
+  content: string[];
+  footer: {
+    source: string;
+    contactNote: string;
+  };
+  externalLink: {
+    label: string;
+    href: string;
+  };
+}
+
+// Links page data
+export interface LinkItem {
+  label: string;
+  href: string;
+  description?: string;
+  external: boolean;
+}
+
+export interface LinkCategory {
+  title: string;
+  links: LinkItem[];
+}
+
+export interface LinksData {
+  title: string;
+  categories: LinkCategory[];
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// Meetings page data
+export interface MeetingRow {
+  boardMeeting: string;
+  generalMeeting: string;
+}
+
+export interface MeetingsData {
+  title: string;
+  description: {
+    boardMeetings: string;
+    generalMeetings: string;
+  };
+  schedule: MeetingRow[];
+}
+
+// Membership page data
+export interface MembershipType {
+  type: string;
+  annualFee: string;
+  comments: string;
+  septOctFee: string;
+  novDecFee: string;
+}
+
+export interface ApplicationRequirement {
+  text: string;
+  link?: {
+    label: string;
+    href: string;
+    external: boolean;
+  };
+}
+
+export interface MembershipData {
+  title: string;
+  applications: {
+    title: string;
+    description: string;
+    requirements: ApplicationRequirement[];
+    afterVoting: string;
+  };
+  dues: {
+    title: string;
+    generalInfo: string[];
+    importantNote: string;
+    seasonalInfo: string[];
+    membershipTypes: MembershipType[];
+    applicationFee: {
+      amount: string;
+      description: string;
+    };
+  };
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// Location page data
+export interface LocationInfo {
+  id: string;
+  name: string;
+  description: string;
+  address: string;
+  directions: string[];
+  amenities: string[];
+  hours?: string;
+  restrictions?: string[];
+  image?: string;
+}
+
+export interface LocationData {
+  title: string;
+  locations: LocationInfo[];
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// The Bow page data
+export interface BowRangeInfo {
+  title: string;
+  content: string[];
+}
+
+export interface BowLink {
+  label: string;
+  href: string;
+  external: boolean;
+}
+
+export interface BowData {
+  title: string;
+  subtitle: string;
+  rangeInfo: {
+    announcement: string;
+    image?: {
+      src: string;
+      alt: string;
+    };
+    sections: BowRangeInfo[];
+  };
+  newEnglandInfo: {
+    title: string;
+    presentationPrompts: string[];
+    links: BowLink[];
+  };
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// The Rod page data
+export interface RodLink {
+  label: string;
+  href: string;
+  external: boolean;
+}
+
+export interface RodData {
+  title: string;
+  subtitle: string;
+  backgroundImage: string;
+  leadRegulation: {
+    effectiveDate: string;
+    title: string;
+    content: string[];
+    links: RodLink[];
+  };
+  fishingShows: {
+    title: string;
+    links: RodLink[];
+  };
+  memberPresentation: {
+    introduction: string;
+    prompts: string[];
+    contact: string;
+  };
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// Previous Events page data
+export interface PreviousEvent {
+  id: string;
+  title: string;
+  date: string;
+  year: number;
+  description: string;
+  image?: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
+  link?: {
+    href: string;
+    label: string;
+    external: boolean;
+  };
+  status: 'available' | 'unavailable' | 'archived';
+}
+
+export interface PreviousEventsData {
+  title: string;
+  description: string;
+  events: PreviousEvent[];
+  seo: {
+    title: string;
+    description: string;
+  };
+}
+
+// The Gun page data
+export interface GunLink {
+  label: string;
+  href: string;
+  external: boolean;
+}
+
+export interface GunLinkCategory {
+  title: string;
+  links: GunLink[];
+}
+
+export interface GunData {
+  title: string;
+  subtitle: string;
+  categories: GunLinkCategory[];
+  memberPresentation: {
+    title: string;
+    introduction: string;
+    topics: string[];
+    contact: string;
+  };
+  seo: {
+    title: string;
+    description: string;
+  };
+}

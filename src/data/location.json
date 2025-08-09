@@ -1,0 +1,53 @@
+{
+  "title": "Club Locations",
+  "locations": [
+    {
+      "id": "clubhouse",
+      "name": "Club House",
+      "description": "The main club house facility serves as the central hub for club activities and meetings.",
+      "address": "4 Meadowview Road, Wayland, MA 01778",
+      "directions": [
+        "Park at the main clubhouse parking area",
+        "The clubhouse is the main building at the entrance of the property"
+      ],
+      "amenities": [
+        "Meeting rooms",
+        "Kitchen facilities", 
+        "Restrooms",
+        "Equipment storage",
+        "Administrative offices"
+      ],
+      "hours": "Access varies by event and meeting schedule"
+    },
+    {
+      "id": "outdoor-range",
+      "name": "Outdoor Range",
+      "description": "Our outdoor shooting range provides a safe and controlled environment for firearms training and practice.",
+      "address": "4 Meadowview Road, Wayland, MA 01778",
+      "directions": [
+        "Park at the clubhouse",
+        "Follow the marked path from the clubhouse to the outdoor range",
+        "Range is located behind the main building complex"
+      ],
+      "amenities": [
+        "Multiple shooting lanes",
+        "Target systems",
+        "Safety equipment",
+        "Range officer supervision during events",
+        "Covered shooting positions"
+      ],
+      "hours": "Daylight hours only - sunrise to sunset",
+      "restrictions": [
+        "Range rules must be followed at all times",
+        "Eye and ear protection required",
+        "Approved ammunition only",
+        "No rapid fire",
+        "Range officer supervision required for some activities"
+      ]
+    }
+  ],
+  "seo": {
+    "title": "Club Locations - Wayland Rod & Gun Club",
+    "description": "Find information about the Wayland Rod & Gun Club locations including the main clubhouse and outdoor shooting range facilities."
+  }
+}

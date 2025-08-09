@@ -55,10 +55,22 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           {/* Navigation Menu */}
           <nav className="space-y-2">
             {navigationData.mainNavigation.map((item, index) => {
-              // Convert some HTML pages to React routes
+              // Convert HTML pages to React routes
               const getReactRoute = (href: string): string | null => {
                 if (href === 'general2.html') return '/';
                 if (href === 'facilities.html') return '/facilities';
+                if (href === 'ClubClothing/clubclothing.html') return '/clubclothing';
+                if (href === 'cmp.html') return '/cmp';
+                if (href === 'contact.html') return '/contact';
+                if (href === 'history.html') return '/history';
+                if (href === 'links.html') return '/links';
+                if (href === 'location.html') return '/location';
+                if (href === 'meetings.html') return '/meetings';
+                if (href === 'membership.html') return '/membership';
+                if (href === 'PreviousEvents.html') return '/previous-events';
+                if (href === 'TheBow.html') return '/thebow';
+                if (href === 'TheGun.html') return '/thegun';
+                if (href === 'TheRod.html') return '/therod';
                 return null;
               };
               
@@ -94,7 +106,6 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                   ) : (
                     <a
                       href={item.href}
-                      target={item.target}
                       className="text-black hover:text-gray-600 text-sm block py-1"
                     >
                       <div className="flex items-center">

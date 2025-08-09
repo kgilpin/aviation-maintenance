@@ -1,0 +1,227 @@
+{
+  "title": "The Gun",
+  "subtitle": "To be sure of hitting the target, shoot first, and call whatever you hit the target",
+  "categories": [
+    {
+      "title": "Commonwealth of Massachusetts",
+      "links": [
+        {
+          "label": "Executive Office of Public Safety and Security - LATEST APPROVED FIREARMS ROSTER - All Types",
+          "href": "http://www.mass.gov/eopss/firearms-reg-and-laws/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Gun Owners' Organizations",
+      "links": [
+        {
+          "label": "Gun Owner's Action League",
+          "href": "http://www.goal.org",
+          "external": true
+        },
+        {
+          "label": "Comm2A",
+          "href": "http://www.comm2a.org",
+          "external": true
+        },
+        {
+          "label": "National Rifle Association",
+          "href": "http://www.nra.org",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Firearms Related Forums",
+      "links": [
+        {
+          "label": "The High Road",
+          "href": "http://www.thehighroad.org",
+          "external": true
+        },
+        {
+          "label": "NorthEast Shooters Forum",
+          "href": "http://www.northeastshooters.com/vbulletin/forum.php",
+          "external": true
+        },
+        {
+          "label": "1911 Forum",
+          "href": "http://www.1911forum.com",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Air Rifle Competition",
+      "links": [
+        {
+          "label": "National Match Air Rifle",
+          "href": "http://thecmp.us/Competitions/NMAR.htm",
+          "external": true
+        },
+        {
+          "label": "Civilian Marksmanship Program Airgun Competition",
+          "href": "http://thecmp.org/air/",
+          "external": true
+        },
+        {
+          "label": "NRA Airgun - How to get Started",
+          "href": "http://compete.nra.org/how-to-get-started/air-gun-competition.aspx",
+          "external": true
+        },
+        {
+          "label": "NRA Airgun Programs",
+          "href": "http://competitions.nra.org/news-and-events/air-gun-programs.aspx",
+          "external": true
+        },
+        {
+          "label": "American Airguns",
+          "href": "http://www.airguns.net/competitions.php",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Organizations Recommended by Club Members",
+      "links": [
+        {
+          "label": "The Civilian Marksmanship Program (CMP)",
+          "href": "http://thecmp.org/",
+          "external": true
+        },
+        {
+          "label": "North-South Skirmish Association, Inc.",
+          "href": "http://www.n-ssa.org",
+          "external": true
+        },
+        {
+          "label": "National Shooting Sports Foundation",
+          "href": "http://www.nssf.org",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Massachusetts Gun Shows",
+      "links": [
+        {
+          "label": "Northeast Gun Shows",
+          "href": "http://northeastgunshows.com/",
+          "external": true
+        },
+        {
+          "label": "MA-GunShows",
+          "href": "http://www.americangunshows.com/GunShows/MA-GunShows.htm",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Boston Area Gun Stores",
+      "links": [
+        {
+          "label": "Four Season's Firearms",
+          "href": "http://www.fsguns.com",
+          "external": true
+        },
+        {
+          "label": "A.G. Guns",
+          "href": "http://www.agguns.com",
+          "external": true
+        },
+        {
+          "label": "Law Enforcement Equipment - Waltham, MA, (781) 894-2879",
+          "href": "http://www.lawenforcementequipmentinc.com/index.htm",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Gun Parts and Accessories",
+      "links": [
+        {
+          "label": "Dillon Precision -- reloading equipment",
+          "href": "http://www.dillonprecision.com",
+          "external": true
+        },
+        {
+          "label": "RCBS -- reloading equipment",
+          "href": "http://www.rcbs.com/",
+          "external": true
+        },
+        {
+          "label": "Wilson Combat -- 1911 stuff and more",
+          "href": "http://www.wilsoncombat.com",
+          "external": true
+        },
+        {
+          "label": "Brownells -- gun parts and tools",
+          "href": "http://www.brownells.com",
+          "external": true
+        },
+        {
+          "label": "Speedwell Targets",
+          "href": "http://www.speedwelltargets.com",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Black Powder",
+      "links": [
+        {
+          "label": "Callaghan's Firearms Sales, 7 Mechanic St , Marlborough , MA 01752",
+          "href": "http://www.callaghansfirearms.com/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Holster Makers",
+      "links": [
+        {
+          "label": "Rusty Sherrick",
+          "href": "http://www.c-rusty.com",
+          "external": true
+        },
+        {
+          "label": "Milt Sparks",
+          "href": "http://www.miltsparks.com",
+          "external": true
+        },
+        {
+          "label": "Alessi Holsters",
+          "href": "http://www.alessigunholsters.com/",
+          "external": true
+        },
+        {
+          "label": "Blade Tech",
+          "href": "http://www.blade-tech.com",
+          "external": true
+        },
+        {
+          "label": "Mitch Rosen",
+          "href": "http://www.mitchrosen.com",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "memberPresentation": {
+    "title": "Member Presentations Welcome",
+    "introduction": "Are you a club member and would like to:",
+    "topics": [
+      "captivate a General Meeting with a memorable gun competition or hunting expedition?",
+      "tell us about a memorable place you went hunting?",
+      "tell us about an unusual game you have gone after.",
+      "teach us about the techniques in gun smithing?",
+      "tell us about the history of the gun, a marksman in history, or the impact of the gun on history!"
+    ],
+    "contact": "** Contact the Executive Board to make arrangements! **"
+  },
+  "seo": {
+    "title": "The Gun - Wayland Rod & Gun Club",
+    "description": "Comprehensive firearms resources including Massachusetts regulations, shooting organizations, forums, competitions, gun stores, and equipment suppliers for club members."
+  }
+}

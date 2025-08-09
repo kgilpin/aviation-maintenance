@@ -1,0 +1,50 @@
+{
+  "title": "Outdoor Organizations & Activity Links",
+  "categories": [
+    {
+      "title": "Commonwealth of Massachusetts",
+      "links": [
+        {
+          "label": "Massachusetts Division of Fisheries and Wildlife (DFW)",
+          "href": "http://www.mass.gov/dfwele/dfw/",
+          "external": true
+        },
+        {
+          "label": "Commonwealth of Massachusetts - Department of Fish and Game",
+          "href": "http://www.mass.gov/dfwele/index.htm",
+          "external": true
+        },
+        {
+          "label": "Effectiveness of Blaze Orange Safety Video",
+          "href": "http://player.vimeo.com/video/47113670",
+          "description": "Hunters and other outdoor enthusiasts are encouraged to check out a new short (5-minute) video on the 'Effectiveness of Blaze Orange' from Kalkomey Enterprises. See some excellent footage demonstrating how wearing fluorescent orange in the woods makes you highly visible to others.",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Organizations Recommended by Club Members",
+      "links": [
+        {
+          "label": "Northern Forest Canoe Trail",
+          "href": "http://www.northernforestcanoetrail.org",
+          "external": true
+        },
+        {
+          "label": "New England Sportsmen Shows",
+          "href": "http://www.nesportsman.com/resources/sportsmenshows.shtml",
+          "external": true
+        },
+        {
+          "label": "OARS for the Assabet, Sudbury, and Concord Rivers",
+          "href": "http://www.oars3rivers.org/",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "title": "Outdoor Organizations & Activity Links - Wayland Rod & Gun Club",
+    "description": "Useful links to Massachusetts outdoor organizations, government agencies, and recreational activities recommended by Wayland Rod & Gun Club members."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "title": "Membership",
+  "applications": {
+    "title": "Applications",
+    "description": "The Wayland Rod & Gun Club always welcomes applications for membership.",
+    "requirements": [
+      {
+        "text": "Legibly fill out an application form and submit a non-refundable $200 application fee. This may be done at the same time as the interview.",
+        "link": {
+          "label": "Download an application form (pdf)",
+          "href": "pdf/Application_fillable_052025.pdf",
+          "external": true
+        }
+      },
+      {
+        "text": "Attend the membership meeting after your interview to be introduced to the club and have your application voted on by the club members.",
+        "link": {
+          "label": "membership meeting",
+          "href": "meetings.html",
+          "external": false
+        }
+      }
+    ],
+    "afterVoting": "Once you are voted into the club, you must pay your annual membership dues and attend a range safety class at the club. Once you have attended the range safety class, you will be given your key and range privileges."
+  },
+  "dues": {
+    "title": "Dues",
+    "generalInfo": [
+      "The annual dues shall be an amount approved at the December meeting, to take effect the following January 1st. After the March meeting any member whose dues are unpaid shall be considered not in good standing and have their name posted in the Clubhouse."
+    ],
+    "importantNote": "After the APRIL meeting members whose dues are unpaid will be dropped from the rolls ..... and must re-apply for membership and pay the application fee.",
+    "seasonalInfo": [
+      "Persons accepted for membership during September, October, and November shall pay one-quarter (rounded up to the nearest dollar) the regular dues.",
+      "Persons accepted for membership during the month of December shall pay the following years dues at the current rate."
+    ],
+    "membershipTypes": [
+      {
+        "type": "Individual Membership",
+        "annualFee": "$150",
+        "comments": "",
+        "septOctFee": "$75",
+        "novDecFee": "$150, but prepays for the next year"
+      },
+      {
+        "type": "Family Membership",
+        "annualFee": "$215",
+        "comments": "Covers spouses and family members under 18. Once a family member reaches 18 they should apply for individual membership (application fee waived)",
+        "septOctFee": "$108",
+        "novDecFee": "$215, but prepays for the next year"
+      },
+      {
+        "type": "Senior Family Membership *",
+        "annualFee": "$165",
+        "comments": "Where both spouses are over 60",
+        "septOctFee": "$83",
+        "novDecFee": "$165, but prepays for the next year"
+      },
+      {
+        "type": "Senior Membership *",
+        "annualFee": "$105",
+        "comments": "Age 60 and over",
+        "septOctFee": "$53",
+        "novDecFee": "$105, but prepays for the next year"
+      },
+      {
+        "type": "Affiliate Membership",
+        "annualFee": "$25",
+        "comments": "No range privileges",
+        "septOctFee": "",
+        "novDecFee": ""
+      }
+    ],
+    "applicationFee": {
+      "amount": "$200",
+      "description": "New Membership"
+    }
+  },
+  "seo": {
+    "title": "Membership - Wayland Rod & Gun Club",
+    "description": "Learn about membership options, dues structure, and application requirements for the Wayland Rod & Gun Club including individual, family, and senior membership types."
+  }
+}

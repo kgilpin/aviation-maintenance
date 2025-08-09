@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useClubData } from '@/hooks/useClubData';
 import { useNavigationData } from '@/hooks/useNavigationData';
 import { useMediaData } from '@/hooks/useMediaData';
@@ -53,37 +54,60 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           {/* Navigation Menu */}
           <nav className="space-y-2">
-            {navigationData.mainNavigation.map((item, index) => (
-              <div key={index} className="block">
-                {item.external ? (
-                  <ExternalLink
-                    href={item.href}
-                    target={item.target || '_blank'}
-                    className="text-black hover:text-gray-600 text-sm block py-1"
-                  >
-                    <div className="flex items-center">
-                      {item.label}
-                      {item.newIndicator && newIconSrc && (
-                        <img src={newIconSrc} alt="new" className="ml-1 w-8 h-4" />
-                      )}
-                    </div>
-                  </ExternalLink>
-                ) : (
-                  <a
-                    href={item.href}
-                    target={item.target}
-                    className="text-black hover:text-gray-600 text-sm block py-1"
-                  >
-                    <div className="flex items-center">
-                      {item.label}
-                      {item.newIndicator && newIconSrc && (
-                        <img src={newIconSrc} alt="new" className="ml-1 w-8 h-4" />
-                      )}
-                    </div>
-                  </a>
-                )}
-              </div>
-            ))}
+            {navigationData.mainNavigation.map((item, index) => {
+              // Convert some HTML pages to React routes
+              const getReactRoute = (href: string): string | null => {
+                if (href === 'general2.html') return '/';
+                if (href === 'facilities.html') return '/facilities';
+                return null;
+              };
+              
+              const reactRoute = getReactRoute(item.href);
+              
+              return (
+                <div key={index} className="block">
+                  {item.external ? (
+                    <ExternalLink
+                      href={item.href}
+                      target={item.target || '_blank'}
+                      className="text-black hover:text-gray-600 text-sm block py-1"
+                    >
+                      <div className="flex items-center">
+                        {item.label}
+                        {item.newIndicator && newIconSrc && (
+                          <img src={newIconSrc} alt="new" className="ml-1 w-8 h-4" />
+                        )}
+                      </div>
+                    </ExternalLink>
+                  ) : reactRoute ? (
+                    <Link
+                      to={reactRoute}
+                      className="text-black hover:text-gray-600 text-sm block py-1"
+                    >
+                      <div className="flex items-center">
+                        {item.label}
+                        {item.newIndicator && newIconSrc && (
+                          <img src={newIconSrc} alt="new" className="ml-1 w-8 h-4" />
+                        )}
+                      </div>
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      target={item.target}
+                      className="text-black hover:text-gray-600 text-sm block py-1"
+                    >
+                      <div className="flex items-center">
+                        {item.label}
+                        {item.newIndicator && newIconSrc && (
+                          <img src={newIconSrc} alt="new" className="ml-1 w-8 h-4" />
+                        )}
+                      </div>
+                    </a>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* Additional section */}

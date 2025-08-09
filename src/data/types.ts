@@ -218,3 +218,37 @@ export interface WaylandEvent {
 export interface WaylandEventsData {
   events: WaylandEvent[];
 }
+
+// Facilities data
+export interface FacilityInfo {
+  id: string;
+  title: string;
+  description: string;
+  links?: Array<{
+    label: string;
+    href: string;
+    external?: boolean;
+    target?: string;
+  }>;
+  specifications?: string[];
+  restrictions?: string[];
+}
+
+export interface FacilitiesData {
+  pageTitle: string;
+  facilities: FacilityInfo[];
+}
+
+// CMP (Civilian Marksmanship Program) page data
+export interface CMPData {
+  title: string;
+  certificate: {
+    image: string;
+    alt: string;
+  };
+  description: string;
+  seo: {
+    title: string;
+    description: string;
+  };
+}

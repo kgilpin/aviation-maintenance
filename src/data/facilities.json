@@ -1,0 +1,50 @@
+{
+  "pageTitle": "Facilities",
+  "facilities": [
+    {
+      "id": "clubhouse",
+      "title": "Club House",
+      "description": "Our club house has meeting rooms, an office, a full kitchen, and rest room. We also have picnic tables for club events.",
+      "links": [
+        {
+          "label": "club house",
+          "href": "clubhouse.html",
+          "external": false
+        }
+      ]
+    },
+    {
+      "id": "indoor-range",
+      "title": "Indoor Range",
+      "description": "The indoor range has two positions and is about 45 feet long. Pistol calibers shot in pistols up to and including .45 ACP may be used on the indoor range, with the exception that no centerfire magnums are allowed. Members with .357 Magnum and .44 Magnum pistols may shoot .38 Spcl and .44 Spcl, respectively.",
+      "restrictions": [
+        "All centerfire ammunition used on the indoor range must be jacketed."
+      ],
+      "links": [
+        {
+          "label": "indoor range",
+          "href": "indoor.html",
+          "external": false
+        },
+        {
+          "label": "Indoor_Range_Firearm_Caliber_Restrictions",
+          "href": "pdf/Indoor_Range_Firearm_Caliber_Restrictions.pdf",
+          "external": true,
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "id": "outdoor-range",
+      "title": "Outdoor Range",
+      "description": "The outdoor range has five postions and is 100 yards long. You may shoot at any distance from 0 to 100 yards, provided that all range users shoot at the same distance. Members can use pistols, rifles, and shotguns on the outdoor range.",
+      "links": [
+        {
+          "label": "outdoor range",
+          "href": "outdoor.html",
+          "external": false
+        }
+      ]
+    }
+  ]
+}

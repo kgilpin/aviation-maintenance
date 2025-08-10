@@ -1,0 +1,7 @@
+# Git LFS configuration
+
+# Include public directory for static assets
+public filter=lfs diff=lfs merge=lfs -text
+
+# Ensure src/assets uses regular Git storage for build optimization
+src/assets/** -filter -diff -merge text

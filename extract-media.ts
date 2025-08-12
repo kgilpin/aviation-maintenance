@@ -53,6 +53,7 @@ class MediaExtractor {
   private mediaUrls: Set<string>;
   private downloadedMedia: MediaDownloadResult[];
   private errors: ExtractorError[];
+  private baseUrl: string;
 
   constructor(htmlFile: string, outputDir: string = "./crawl/media") {
     this.htmlFile = htmlFile;
@@ -60,6 +61,7 @@ class MediaExtractor {
     this.mediaUrls = new Set();
     this.downloadedMedia = [];
     this.errors = [];
+    this.baseUrl = this.extractBaseUrlFromFilePath(htmlFile);
   }
 
   async extract(): Promise<void> {
@@ -79,6 +81,7 @@ class MediaExtractor {
     this.extractFromVideoTags($);
     this.extractFromAudioTags($);
     this.extractFromWixStaticUrls($, html);
+    this.extractFromNextJsImages($, html);
     this.extractFromDataSrcAttributes($);
     this.extractFromStyleBackgrounds($, html);
     this.extractFromScriptData($);
@@ -148,6 +151,75 @@ class MediaExtractor {
 
       if (href && this.isMediaUrl(href) && rel !== "stylesheet") {
         this.addMedia(href);
+      }
+    });
+  }
+
+  private extractBaseUrlFromFilePath(htmlFile: string): string {
+    // Extract base URL from the crawl directory structure
+    // Example: crawl/bostongunandrifle.com/get-your-ltc/index.html -> https://bostongunandrifle.com
+    const pathParts = htmlFile.split(path.sep);
+    const crawlIndex = pathParts.indexOf("crawl");
+    
+    if (crawlIndex !== -1 && pathParts.length > crawlIndex + 1) {
+      const domain = pathParts[crawlIndex + 1];
+      return `https://${domain}`;
+    }
+    
+    return "";
+  }
+
+  private extractFromNextJsImages($: cheerio.CheerioAPI, html: string): void {
+    // Extract Next.js optimized images from various sources
+    
+    // 1. Extract from srcset attributes (Next.js image optimization)
+    $("[srcset]").each((_, elem) => {
+      const srcset = $(elem).attr("srcset");
+      if (srcset) {
+        // Parse srcset URLs - format: "url 1x, url 2x" or "url 640w, url 750w"
+        const srcsetUrls = srcset.split(",").map(src => src.trim().split(" ")[0]);
+        srcsetUrls.forEach(url => {
+          if (url.startsWith("/_next/")) {
+            this.addMedia(url);
+          }
+        });
+      }
+    });
+
+    // 2. Extract from imagesrcset attributes (Next.js preload images)
+    $("[imagesrcset]").each((_, elem) => {
+      const imagesrcset = $(elem).attr("imagesrcset");
+      if (imagesrcset) {
+        const srcsetUrls = imagesrcset.split(",").map(src => src.trim().split(" ")[0]);
+        srcsetUrls.forEach(url => {
+          if (url.startsWith("/_next/")) {
+            this.addMedia(url);
+          }
+        });
+      }
+    });
+
+    // 3. Extract Next.js static media URLs from HTML content
+    const nextStaticRegex = /\/_next\/static\/media\/[^"'\s)>]+\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm|avi|mov|mp3|wav|ogg|pdf|doc|docx)/gi;
+    const nextImageRegex = /\/_next\/image\?url=[^"'\s)>]+/gi;
+    
+    const staticMatches = html.match(nextStaticRegex) || [];
+    const imageMatches = html.match(nextImageRegex) || [];
+    
+    [...staticMatches, ...imageMatches].forEach((url) => this.addMedia(url));
+
+    // 4. Extract from script tags containing Next.js data
+    $('script[id="__NEXT_DATA__"]').each((_, elem) => {
+      const content = $(elem).html();
+      if (content) {
+        // Look for media URLs in Next.js data
+        const nextMediaRegex = /["']\/_next\/[^"'\s]*\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm|avi|mov|mp3|wav|ogg|pdf|doc|docx)[^"']*["']/gi;
+        const matches = content.match(nextMediaRegex) || [];
+        
+        matches.forEach((match) => {
+          const url = match.replace(/^["']|["']$/g, "");
+          this.addMedia(url);
+        });
       }
     });
   }
@@ -228,20 +300,31 @@ class MediaExtractor {
     if (!url || url.startsWith("data:")) return; // Skip data URLs
 
     try {
+      let fullUrl = url;
+
+      // Decode HTML entities (e.g., &amp; -> &)
+      fullUrl = fullUrl.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+
       // Handle relative URLs
-      if (url.startsWith("//")) {
-        url = "https:" + url;
-      } else if (url.startsWith("/")) {
-        // For relative paths, we'd need the base URL - skip for now
-        return;
+      if (fullUrl.startsWith("//")) {
+        fullUrl = "https:" + fullUrl;
+      } else if (fullUrl.startsWith("/")) {
+        // Handle relative paths with base URL
+        if (this.baseUrl) {
+          fullUrl = this.baseUrl + fullUrl;
+        } else {
+          // If no base URL available, skip this URL
+          console.warn(`Skipping relative URL without base URL: ${fullUrl}`);
+          return;
+        }
       }
 
       // Validate URL
-      new URL(url);
+      new URL(fullUrl);
 
-      // Only add media URLs
-      if (this.isMediaUrl(url)) {
-        this.mediaUrls.add(url);
+      // Only add media URLs (check both original and full URL)
+      if (this.isMediaUrl(url) || this.isMediaUrl(fullUrl)) {
+        this.mediaUrls.add(fullUrl);
       }
     } catch {
       // Invalid URL, skip
@@ -261,6 +344,16 @@ class MediaExtractor {
 
     // Check file extension
     if (allExtensions.some((ext) => lowerUrl.includes(ext))) {
+      return true;
+    }
+
+    // Check for Next.js media patterns
+    if (lowerUrl.includes("/_next/static/media/")) {
+      return true;
+    }
+
+    // Check for Next.js image optimization URLs
+    if (lowerUrl.includes("/_next/image?url=")) {
       return true;
     }
 
@@ -369,15 +462,39 @@ class MediaExtractor {
     try {
       const urlObj = new URL(url);
       const pathname = urlObj.pathname;
+      let filename = "";
 
-      // Extract filename from URL
-      let filename = path.basename(pathname);
-
-      // If no extension, try to determine from URL params or use .jpg as default
-      if (!path.extname(filename)) {
-        // Check URL params for format info
-        const format = urlObj.searchParams.get("fm") || urlObj.searchParams.get("format") || "jpg";
-        filename += "." + format;
+      // Handle Next.js image optimization URLs
+      if (pathname.startsWith("/_next/image")) {
+        const originalUrl = urlObj.searchParams.get("url");
+        if (originalUrl) {
+          // Decode the original URL and extract filename
+          const decodedUrl = decodeURIComponent(originalUrl);
+          const originalFilename = path.basename(decodedUrl);
+          const width = urlObj.searchParams.get("w");
+          const quality = urlObj.searchParams.get("q");
+          
+          // Create descriptive filename with dimensions
+          const baseName = path.parse(originalFilename).name;
+          const ext = path.parse(originalFilename).ext || ".jpg";
+          filename = `${baseName}${width ? `_${width}w` : ""}${quality ? `_q${quality}` : ""}${ext}`;
+        } else {
+          filename = `nextjs_image_${Date.now()}.jpg`;
+        }
+      }
+      // Handle Next.js static media URLs
+      else if (pathname.startsWith("/_next/static/media/")) {
+        filename = path.basename(pathname);
+      }
+      // Handle regular URLs
+      else {
+        filename = path.basename(pathname);
+        
+        // If no extension, try to determine from URL params or use .jpg as default
+        if (!path.extname(filename)) {
+          const format = urlObj.searchParams.get("fm") || urlObj.searchParams.get("format") || "jpg";
+          filename += "." + format;
+        }
       }
 
       // Handle Wix media URLs which might have path parameters
